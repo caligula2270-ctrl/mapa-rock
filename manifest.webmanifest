@@ -1,0 +1,19 @@
+{
+  "name": "MAPA ROCK · Fretboard Trainer",
+  "short_name": "Mapa Rock",
+  "description": "Curso interactivo de 30 días para dominar las notas del mástil de la guitarra eléctrica.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#041020",
+  "theme_color": "#071C38",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
