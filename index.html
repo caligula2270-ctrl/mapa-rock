@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071C38">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mapa Rock">
+  <meta name="description" content="Curso interactivo de 30 días para dominar las notas del mástil de la guitarra eléctrica.">
+  <title>MAPA ROCK · Fretboard Trainer</title>
+  <style>
+    :root{
+      --bg:#041020; --bg2:#071C38; --panel:#0B2548; --panel2:#10325E;
+      --blue:#1479FF; --cyan:#4BC7FF; --ice:#DDF3FF; --text:#F5FAFF; --muted:#9DB7D1;
+      --ok:#33D69F; --warn:#FFC857; --bad:#FF6B78; --line:rgba(255,255,255,.10);
+      --shadow:0 12px 34px rgba(0,0,0,.28);
+      --r:20px;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--bg)}
+    body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 70% -10%, rgba(20,121,255,.30), transparent 38%),
+        linear-gradient(180deg,var(--bg2),var(--bg) 42%);
+      color:var(--text);min-height:100vh;-webkit-tap-highlight-color:transparent}
+    button,a{font:inherit}
+    button{color:inherit}
+    .app{max-width:760px;margin:auto;min-height:100vh;padding-bottom:96px}
+    header{padding:calc(18px + env(safe-area-inset-top)) 18px 8px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:11px}
+    .brandmark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,var(--blue),#0049B8);
+      display:grid;place-items:center;box-shadow:0 8px 24px rgba(20,121,255,.35)}
+    .brandmark svg{width:26px;height:26px}
+    h1{font-size:18px;margin:0;letter-spacing:.4px}
+    .sub{font-size:12px;color:var(--muted);margin-top:2px}
+    .level-pill{background:rgba(75,199,255,.12);color:var(--cyan);border:1px solid rgba(75,199,255,.25);padding:8px 10px;border-radius:999px;font-size:12px;font-weight:800}
+    main{padding:8px 16px 12px}
+    .screen{display:none;animation:fade .22s ease}.screen.active{display:block}
+    @keyframes fade{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
+    .hero{position:relative;overflow:hidden;border-radius:26px;padding:22px;background:
+      linear-gradient(135deg,rgba(20,121,255,.26),rgba(75,199,255,.05)),
+      var(--panel);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+    .hero::after{content:"";position:absolute;right:-58px;top:-60px;width:190px;height:190px;border-radius:50%;background:rgba(75,199,255,.09)}
+    .eyebrow{color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase}
+    .hero h2{font-size:31px;line-height:1.02;margin:8px 0 10px;max-width:430px}
+    .hero p{color:var(--muted);line-height:1.48;margin:0;max-width:540px}
+    .hero-art{margin:18px -8px -4px;display:block;width:calc(100% + 16px);height:auto}
+    .progress-wrap{margin-top:18px}
+    .progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:7px}
+    .bar{height:8px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:99px;transition:width .3s}
+    .cta-row{display:flex;gap:10px;margin-top:16px}
+    .btn{border:0;border-radius:14px;padding:12px 14px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+    .btn.primary{background:linear-gradient(135deg,var(--blue),#0563DB);box-shadow:0 8px 24px rgba(20,121,255,.28)}
+    .btn.secondary{background:rgba(255,255,255,.07);border:1px solid var(--line)}
+    .btn.small{padding:9px 11px;border-radius:12px;font-size:12px}
+    .btn:active{transform:scale(.98)}
+    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:24px 2px 12px}
+    .section-title h3{margin:0;font-size:20px}.section-title span{font-size:12px;color:var(--muted)}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.035),transparent),var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.14)}
+    .stat strong{display:block;font-size:26px}.stat span{color:var(--muted);font-size:12px}
+    .quick{display:flex;gap:12px;align-items:center;cursor:pointer}
+    .qicon{width:44px;height:44px;border-radius:14px;background:rgba(20,121,255,.16);display:grid;place-items:center;color:var(--cyan);font-size:22px;flex:none}
+    .quick h4{margin:0 0 3px;font-size:15px}.quick p{margin:0;color:var(--muted);font-size:12px;line-height:1.35}
+    .day-list{display:grid;gap:10px}
+    .day{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:12px;cursor:pointer}
+    .daynum{width:52px;height:52px;border-radius:16px;background:rgba(20,121,255,.13);display:grid;place-items:center;text-align:center}
+    .daynum b{font-size:18px}.daynum small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.8px}
+    .day h4{margin:0 0 4px;font-size:14px}.day p{margin:0;color:var(--muted);font-size:11px;line-height:1.35}
+    .check{width:27px;height:27px;border:1px solid rgba(255,255,255,.16);border-radius:9px;display:grid;place-items:center}
+    .day.done .check{background:var(--ok);color:#00170E;border-color:transparent;font-weight:1000}.day.done{opacity:.72}
+    .filter{display:flex;gap:8px;overflow:auto;padding:2px 0 10px;scrollbar-width:none}.filter::-webkit-scrollbar{display:none}
+    .chip{white-space:nowrap;border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:999px;padding:8px 11px;color:var(--muted);font-size:12px;cursor:pointer}
+    .chip.active{background:rgba(20,121,255,.18);color:var(--ice);border-color:rgba(20,121,255,.45)}
+    .lesson-overlay{position:fixed;inset:0;background:rgba(0,0,0,.66);backdrop-filter:blur(8px);z-index:50;display:none;align-items:flex-end;justify-content:center}
+    .lesson-overlay.open{display:flex}
+    .lesson-sheet{width:min(760px,100%);max-height:91vh;overflow:auto;background:linear-gradient(180deg,#0C2B53,#06182D);border-radius:28px 28px 0 0;padding:18px 18px calc(26px + env(safe-area-inset-bottom));border:1px solid rgba(255,255,255,.12);box-shadow:0 -20px 70px rgba(0,0,0,.55)}
+    .sheet-handle{width:48px;height:5px;background:rgba(255,255,255,.22);border-radius:99px;margin:0 auto 16px}
+    .lesson-sheet h2{font-size:25px;margin:6px 0}.lesson-sheet .lead{color:var(--muted);line-height:1.5}
+    .lesson-block{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid var(--line)}
+    .lesson-block h4{margin:0 0 7px}.lesson-block p{margin:0;color:var(--muted);line-height:1.48;font-size:13px}
+    .task-row{display:flex;gap:10px;align-items:flex-start;margin:10px 0}.task-dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);margin-top:5px;flex:none}
+    .trainer-tabs{display:flex;gap:8px;margin-bottom:12px;overflow:auto}.trainer-tabs button{border:0}
+    .trainer{min-height:420px}
+    .target{font-size:56px;font-weight:1000;text-align:center;letter-spacing:-2px;margin:8px 0 0}.target-sub{text-align:center;color:var(--muted);margin-bottom:16px}
+    .scoreline{display:flex;justify-content:center;gap:20px;color:var(--muted);font-size:13px;margin:8px 0 18px}.scoreline b{color:var(--text)}
+    .fret-scroll{overflow:auto;padding-bottom:5px;border-radius:16px}
+    .fretboard{position:relative;min-width:690px;background:linear-gradient(90deg,#73502D,#9B6B3E 55%,#704923);padding:17px 12px;border-radius:16px;box-shadow:inset 0 0 28px rgba(0,0,0,.28)}
+    .fret-row{display:grid;grid-template-columns:42px repeat(13,48px);height:34px;align-items:center;position:relative}
+    .string-line{position:absolute;left:42px;right:0;height:2px;background:linear-gradient(90deg,#D9DDE1,#818891);box-shadow:0 1px 1px rgba(0,0,0,.35)}
+    .fret-cell{height:34px;border-right:2px solid rgba(230,236,242,.70);position:relative;z-index:2;display:grid;place-items:center;cursor:pointer}
+    .fret-cell.open{border-right:4px solid #EEE}
+    .str-label{font-size:11px;font-weight:900;color:#F5D7A1;text-align:center;z-index:3}
+    .dotnote{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:1000;background:transparent;color:transparent;border:1px solid transparent}
+    .dotnote.show{background:#051A32;color:#EAF8FF;border-color:rgba(255,255,255,.34)}.dotnote.targetnote{background:var(--cyan);color:#002442;box-shadow:0 0 0 4px rgba(75,199,255,.18)}
+    .dotnote.wrong{background:var(--bad);color:white}.dotnote.right{background:var(--ok);color:#002217}
+    .fret-numbers{display:grid;grid-template-columns:42px repeat(13,48px);min-width:690px;margin-top:8px;color:var(--muted);font-size:10px;text-align:center}
+    .result{min-height:26px;text-align:center;font-weight:900;margin:12px 0;color:var(--cyan)}
+    .timerbox{text-align:center;padding:8px}.timerbox .time{font-size:50px;font-weight:1000;font-variant-numeric:tabular-nums}
+    .metronome{display:flex;align-items:center;gap:14px;justify-content:center;margin:18px 0}.pulse{width:58px;height:58px;border-radius:50%;background:rgba(20,121,255,.22);border:2px solid var(--blue);transition:.08s}.pulse.hit{transform:scale(1.18);background:var(--cyan)}
+    .range{width:100%}
+    .neck-map{overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:12px}
+    .legend{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.legend span{font-size:11px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted)}
+    .diagram{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px;padding:12px;margin:12px 0}.diagram img{display:block;width:100%;border-radius:12px}
+    .video-card{overflow:hidden;border-radius:20px;background:var(--panel);border:1px solid var(--line);margin-bottom:14px}
+    .video-frame{position:relative;padding-top:56.25%;background:#02070D}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .video-copy{padding:14px}.video-copy h4{margin:0 0 6px}.video-copy p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.source{font-size:10px;color:#7191B1;margin-top:8px}
+    .bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(4,16,32,.91);backdrop-filter:blur(18px);border-top:1px solid rgba(255,255,255,.09);padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+    .bottomnav .inner{max-width:760px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr)}
+    .navbtn{border:0;background:none;color:#7F9AB6;padding:6px 2px;display:grid;gap:3px;place-items:center;font-size:10px;cursor:pointer}.navbtn svg{width:21px;height:21px;stroke:currentColor}.navbtn.active{color:var(--cyan)}
+    .toast{position:fixed;left:50%;bottom:98px;transform:translateX(-50%) translateY(20px);background:#EAF7FF;color:#06203A;border-radius:14px;padding:11px 14px;font-weight:800;font-size:12px;opacity:0;pointer-events:none;transition:.22s;z-index:90;box-shadow:var(--shadow)}.toast.show{opacity:1;transform:translateX(-50%)}
+    .note-table{width:100%;border-collapse:collapse;font-size:11px;min-width:690px}.note-table th,.note-table td{padding:8px 6px;border:1px solid rgba(255,255,255,.08);text-align:center}.note-table th{background:#0E315C;color:var(--cyan);position:sticky;top:0}.note-table td:first-child{font-weight:900;color:#FFD99A;position:sticky;left:0;background:#0B2548}
+    .week-banner{margin:18px 0 10px;padding:12px 14px;border-radius:16px;background:linear-gradient(90deg,rgba(20,121,255,.20),rgba(75,199,255,.06));border:1px solid rgba(20,121,255,.24)}.week-banner b{display:block}.week-banner span{font-size:11px;color:var(--muted)}
+    @media(max-width:430px){.hero h2{font-size:28px}.grid2{grid-template-columns:1fr 1fr}.card{padding:14px}.cta-row .btn{font-size:12px}.day{grid-template-columns:46px 1fr auto}.daynum{width:46px;height:46px}.hero{padding:18px}}
+  </style>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand">
+      <div class="brandmark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M8.5 5.5l10 10M4 20l3-1 11-11-2-2L5 17l-1 3Z" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <div><h1>MAPA ROCK</h1><div class="sub">Fretboard Trainer · 30 días</div></div>
+    </div>
+    <div class="level-pill" id="levelPill">ROADIE</div>
+  </header>
+
+  <main>
+    <section class="screen active" id="home">
+      <div class="hero">
+        <div class="eyebrow" id="todayEyebrow">DÍA 1 · AUTOPISTAS</div>
+        <h2 id="todayTitle">Convierte el mástil en un mapa.</h2>
+        <p id="todayDesc">10 minutos. Cuerdas al aire, notas naturales y tu primer reto de localización.</p>
+        <img class="hero-art" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MDAgMjEwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeDI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiMwNjE3MmQiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxMDNiNzAiLz48L2xpbmVhckdyYWRpZW50PjxmaWx0ZXIgaWQ9ImdsIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI2Ii8+PC9maWx0ZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjIxMCIgcng9IjI0IiBmaWxsPSJ1cmwoI2cpIi8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM1IDI3KSByb3RhdGUoLTUgMzE1IDgwKSI+CjxyZWN0IHg9IjAiIHk9IjE1IiB3aWR0aD0iNjMwIiBoZWlnaHQ9IjE0NSIgcng9IjMwIiBmaWxsPSIjN2I0ZjJjIi8+PHJlY3QgeD0iMTAiIHk9IjIwIiB3aWR0aD0iNjEwIiBoZWlnaHQ9IjEzNSIgcng9IjI2IiBmaWxsPSIjOTM2MTNhIi8+CjxnIHN0cm9rZT0iI2Q4ZTRlYyIgb3BhY2l0eT0iLjg1Ij48bGluZSB4MT0iNTUiIHkxPSIyMCIgeDI9IjU1IiB5Mj0iMTU1IiBzdHJva2Utd2lkdGg9IjEuOSIvPjxsaW5lIHgxPSIxMDAiIHkxPSIyMCIgeDI9IjEwMCIgeTI9IjE1NSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48bGluZSB4MT0iMTQ1IiB5MT0iMjAiIHgyPSIxNDUiIHkyPSIxNTUiIHN0cm9rZS13aWR0aD0iMS40Ii8+PGxpbmUgeDE9IjE5MCIgeTE9IjIwIiB4Mj0iMTkwIiB5Mj0iMTU1IiBzdHJva2Utd2lkdGg9IjEuNCIvPjxsaW5lIHgxPSIyMzUiIHkxPSIyMCIgeDI9IjIzNSIgeTI9IjE1NSIgc3Ryb2tlLXdpZHRoPSIxLjkiLz48bGluZSB4MT0iMjgwIiB5MT0iMjAiIHgyPSIyODAiIHkyPSIxNTUiIHN0cm9rZS13aWR0aD0iMS40Ii8+PGxpbmUgeDE9IjMyNSIgeTE9IjIwIiB4Mj0iMzI1IiB5Mj0iMTU1IiBzdHJva2Utd2lkdGg9IjEuNCIvPjxsaW5lIHgxPSIzNzAiIHkxPSIyMCIgeDI9IjM3MCIgeTI9IjE1NSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48bGluZSB4MT0iNDE1IiB5MT0iMjAiIHgyPSI0MTUiIHkyPSIxNTUiIHN0cm9rZS13aWR0aD0iMS45Ii8+PGxpbmUgeDE9IjQ2MCIgeTE9IjIwIiB4Mj0iNDYwIiB5Mj0iMTU1IiBzdHJva2Utd2lkdGg9IjEuNCIvPjxsaW5lIHgxPSI1MDUiIHkxPSIyMCIgeDI9IjUwNSIgeTI9IjE1NSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48bGluZSB4MT0iNTUwIiB5MT0iMjAiIHgyPSI1NTAiIHkyPSIxNTUiIHN0cm9rZS13aWR0aD0iMS40Ii8+PGxpbmUgeDE9IjU5NSIgeTE9IjIwIiB4Mj0iNTk1IiB5Mj0iMTU1IiBzdHJva2Utd2lkdGg9IjEuOSIvPjwvZz4KPGcgc3Ryb2tlPSIjYjhjN2QzIj48bGluZSB4MT0iMTIiIHkxPSIzNSIgeDI9IjYxOCIgeTI9IjM1IiBzdHJva2Utd2lkdGg9IjEuMiIvPjxsaW5lIHgxPSIxMiIgeTE9IjU2IiB4Mj0iNjE4IiB5Mj0iNTYiIHN0cm9rZS13aWR0aD0iMS4zOCIvPjxsaW5lIHgxPSIxMiIgeTE9Ijc3IiB4Mj0iNjE4IiB5Mj0iNzciIHN0cm9rZS13aWR0aD0iMS41NiIvPjxsaW5lIHgxPSIxMiIgeTE9Ijk4IiB4Mj0iNjE4IiB5Mj0iOTgiIHN0cm9rZS13aWR0aD0iMS43NCIvPjxsaW5lIHgxPSIxMiIgeTE9IjExOSIgeDI9IjYxOCIgeTI9IjExOSIgc3Ryb2tlLXdpZHRoPSIxLjkyIi8+PGxpbmUgeDE9IjEyIiB5MT0iMTQwIiB4Mj0iNjE4IiB5Mj0iMTQwIiBzdHJva2Utd2lkdGg9IjIuMDk5OTk5OTk5OTk5OTk5NiIvPjwvZz4KPGcgZmlsbD0iIzRiYzdmZiI+PGNpcmNsZSBjeD0iMTkwIiBjeT0iODciIHI9IjEwIi8+PGNpcmNsZSBjeD0iMjgwIiBjeT0iNjYiIHI9IjEwIi8+PGNpcmNsZSBjeD0iMzcwIiBjeT0iMTA4IiByPSIxMCIvPjxjaXJjbGUgY3g9IjUwNSIgY3k9IjQ1IiByPSIxMCIvPjxjaXJjbGUgY3g9IjU5NSIgY3k9IjEyOSIgcj0iMTAiLz48L2c+CjxnIGZpbGw9IiM0YmM3ZmYiIG9wYWNpdHk9Ii4zNSIgZmlsdGVyPSJ1cmwoI2dsKSI+PGNpcmNsZSBjeD0iMTkwIiBjeT0iODciIHI9IjE4Ii8+PGNpcmNsZSBjeD0iMjgwIiBjeT0iNjYiIHI9IjE4Ii8+PGNpcmNsZSBjeD0iMzcwIiBjeT0iMTA4IiByPSIxOCIvPjxjaXJjbGUgY3g9IjUwNSIgY3k9IjQ1IiByPSIxOCIvPjxjaXJjbGUgY3g9IjU5NSIgY3k9IjEyOSIgcj0iMTgiLz48L2c+CjxnIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSI5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj48dGV4dCB4PSIxOTAiIHk9IjkwIj5BPC90ZXh0Pjx0ZXh0IHg9IjI4MCIgeT0iNjkiPkM8L3RleHQ+PHRleHQgeD0iMzcwIiB5PSIxMTEiPkU8L3RleHQ+PHRleHQgeD0iNTA1IiB5PSI0OCI+RzwvdGV4dD48dGV4dCB4PSI1OTUiIHk9IjEzMiI+RDwvdGV4dD48L2c+CjwvZz48dGV4dCB4PSIzNiIgeT0iMTk1IiBmaWxsPSIjOWRiN2QxIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGxldHRlci1zcGFjaW5nPSIyIj5TRUUgTk9URVMgwrcgTk9UIEZSRVQgTlVNQkVSUzwvdGV4dD48L3N2Zz4=" alt="Ilustración de un mástil de guitarra eléctrica con notas iluminadas">
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Progreso del curso</span><b id="progressText">0 / 30</b></div>
+          <div class="bar"><i id="courseBar"></i></div>
+        </div>
+        <div class="cta-row">
+          <button class="btn primary" id="startToday">▶ Empezar hoy</button>
+          <button class="btn secondary" onclick="go('trainer')">⚡ Entrenar</button>
+        </div>
+      </div>
+
+      <div class="section-title"><h3>Tu sesión</h3><span>elige según el tiempo</span></div>
+      <div class="grid2">
+        <div class="card quick" onclick="startQuick(5)"><div class="qicon">5′</div><div><h4>Express</h4><p>1 nota + octavas + riff.</p></div></div>
+        <div class="card quick" onclick="startQuick(10)"><div class="qicon">10′</div><div><h4>Rock</h4><p>Hunter + power chords.</p></div></div>
+        <div class="card quick" onclick="startQuick(15)"><div class="qicon">15′</div><div><h4>Pro</h4><p>Precisión + escala + solo.</p></div></div>
+        <div class="card quick" onclick="go('fretboard')"><div class="qicon">♬</div><div><h4>Mapa libre</h4><p>Toca y revela notas.</p></div></div>
+      </div>
+
+      <div class="section-title"><h3>Marcador</h3><span>tu evolución</span></div>
+      <div class="grid2">
+        <div class="card stat"><strong id="streak">0</strong><span>días completados</span></div>
+        <div class="card stat"><strong id="bestScore">0</strong><span>mejor Note Hunter</span></div>
+      </div>
+
+      <div class="section-title"><h3>Atajos visuales</h3><span>memoriza formas, no tablas</span></div>
+      <div class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MDAgMjUwIj4KPHJlY3Qgd2lkdGg9IjcwMCIgaGVpZ2h0PSIyNTAiIHJ4PSIyMiIgZmlsbD0iIzA3MUMzOCIvPjx0ZXh0IHg9IjI4IiB5PSIzNiIgZmlsbD0iI0RERjNGRiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIj5GT1JNQSBERSBPQ1RBVkE8L3RleHQ+PHRleHQgeD0iMjgiIHk9IjU4IiBmaWxsPSIjOURCN0QxIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiPkxhIG1pc21hIG5vdGEgcmVhcGFyZWNlIGRvcyBjdWVyZGFzIHkgZG9zIHRyYXN0ZXMgbcOhcyBhcnJpYmEuPC90ZXh0Pgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNCA4MCkiPjxyZWN0IHdpZHRoPSI2MzAiIGhlaWdodD0iMTMwIiByeD0iMTQiIGZpbGw9IiM4YjVhMzQiLz4KPGcgc3Ryb2tlPSIjRDRERUU3Ij48bGluZSB4MT0iNjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSIxMzAiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxMzAiIHkxPSIwIiB4Mj0iMTMwIiB5Mj0iMTMwIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjAwIiB5MT0iMCIgeDI9IjIwMCIgeTI9IjEzMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjI3MCIgeTE9IjAiIHgyPSIyNzAiIHkyPSIxMzAiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIzNDAiIHkxPSIwIiB4Mj0iMzQwIiB5Mj0iMTMwIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDEwIiB5MT0iMCIgeDI9IjQxMCIgeTI9IjEzMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQ4MCIgeTE9IjAiIHgyPSI0ODAiIHkyPSIxMzAiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI1NTAiIHkxPSIwIiB4Mj0iNTUwIiB5Mj0iMTMwIiBzdHJva2Utd2lkdGg9IjIiLz48L2c+CjxnIHN0cm9rZT0iI0I5QzVDRSI+PGxpbmUgeDE9IjAiIHkxPSIyNSIgeDI9IjYzMCIgeTI9IjI1Ii8+PGxpbmUgeDE9IjAiIHkxPSI2NSIgeDI9IjYzMCIgeTI9IjY1Ii8+PGxpbmUgeDE9IjAiIHkxPSIxMDUiIHgyPSI2MzAiIHkyPSIxMDUiLz48L2c+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjI1IiByPSIxNyIgZmlsbD0iIzE0NzlGRiIvPjx0ZXh0IHg9IjIwMCIgeT0iMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSI3MDAiPkE8L3RleHQ+CjxjaXJjbGUgY3g9IjM0MCIgY3k9IjEwNSIgcj0iMTciIGZpbGw9IiM0QkM3RkYiLz48dGV4dCB4PSIzNDAiIHk9IjExMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzA0MjEzYiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIj5BPC90ZXh0Pgo8cGF0aCBkPSJNMjIwIDM4IEMyNTAgNzUgMjg1IDkzIDMxNSAxMDEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRCQzdGRiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtZGFzaGFycmF5PSI2IDUiLz4KPC9nPjwvc3ZnPg==" alt="Diagrama visual de las formas de octava en guitarra"></div>
+    </section>
+
+    <section class="screen" id="course">
+      <div class="section-title" style="margin-top:5px"><h3>Curso · 30 días</h3><span id="courseDoneLabel">0 completados</span></div>
+      <div class="filter" id="weekFilter">
+        <button class="chip active" data-week="all">Todos</button>
+        <button class="chip" data-week="1">Semana 1</button>
+        <button class="chip" data-week="2">Semana 2</button>
+        <button class="chip" data-week="3">Semana 3</button>
+        <button class="chip" data-week="4">Semana 4</button>
+        <button class="chip" data-week="5">Final</button>
+      </div>
+      <div class="day-list" id="dayList"></div>
+    </section>
+
+    <section class="screen" id="trainer">
+      <div class="section-title" style="margin-top:5px"><h3>Entrenador</h3><span>precisión antes que velocidad</span></div>
+      <div class="trainer-tabs">
+        <button class="chip active" data-trainer="hunter">Note Hunter</button>
+        <button class="chip" data-trainer="speed">Velocidad</button>
+        <button class="chip" data-trainer="metro">Metrónomo</button>
+      </div>
+      <div class="card trainer" id="trainerBody"></div>
+    </section>
+
+    <section class="screen" id="fretboard">
+      <div class="section-title" style="margin-top:5px"><h3>Mapa del mástil</h3><span>0–12 se repite</span></div>
+      <div class="legend"><span>● toca una posición para revelar</span><span>3–5–7 son tus faros</span><span>B–C y E–F van juntos</span></div>
+      <div class="neck-map">
+        <div id="mapBoard"></div>
+      </div>
+      <div class="cta-row">
+        <button class="btn primary small" onclick="toggleAllNotes()">Mostrar / ocultar todas</button>
+        <button class="btn secondary small" onclick="highlightNatural()">Solo naturales</button>
+      </div>
+      <div class="section-title"><h3>Tabla rápida</h3><span>referencia 0–12</span></div>
+      <div class="neck-map"><div id="noteTable"></div></div>
+      <div class="section-title"><h3>Formas que debes ver</h3><span>atajos visuales</span></div>
+      <div class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MDAgMjUwIj4KPHJlY3Qgd2lkdGg9IjcwMCIgaGVpZ2h0PSIyNTAiIHJ4PSIyMiIgZmlsbD0iIzA3MUMzOCIvPjx0ZXh0IHg9IjI4IiB5PSIzNiIgZmlsbD0iI0RERjNGRiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIj5QT1dFUiBDSE9SRCA9IEdQUzwvdGV4dD48dGV4dCB4PSIyOCIgeT0iNTgiIGZpbGw9IiM5REI3RDEiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiI+UGllbnNhIHByaW1lcm8gZW4gbGEgcmHDrXouIExhIGZvcm1hIHZpZW5lIGRlc3B1w6lzLjwvdGV4dD4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzggODYpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iNjI0IiBoZWlnaHQ9IjEyMCIgcng9IjE0IiBmaWxsPSIjMTAyQjREIi8+CjxnIHN0cm9rZT0iIzdCOThCMyI+PGxpbmUgeDE9IjAiIHkxPSIxOCIgeDI9IjYyNCIgeTI9IjE4Ii8+PGxpbmUgeDE9IjAiIHkxPSIzNiIgeDI9IjYyNCIgeTI9IjM2Ii8+PGxpbmUgeDE9IjAiIHkxPSI1NCIgeDI9IjYyNCIgeTI9IjU0Ii8+PGxpbmUgeDE9IjAiIHkxPSI3MiIgeDI9IjYyNCIgeTI9IjcyIi8+PGxpbmUgeDE9IjAiIHkxPSI5MCIgeDI9IjYyNCIgeTI9IjkwIi8+PGxpbmUgeDE9IjAiIHkxPSIxMDgiIHgyPSI2MjQiIHkyPSIxMDgiLz48L2c+CjxnIHN0cm9rZT0iI0Q2RTJFQSI+PGxpbmUgeDE9IjgwIiB5MT0iMCIgeDI9IjgwIiB5Mj0iMTIwIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMTUwIiB5MT0iMCIgeDI9IjE1MCIgeTI9IjEyMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjIyMCIgeTE9IjAiIHgyPSIyMjAiIHkyPSIxMjAiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyOTAiIHkxPSIwIiB4Mj0iMjkwIiB5Mj0iMTIwIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMzYwIiB5MT0iMCIgeDI9IjM2MCIgeTI9IjEyMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQzMCIgeTE9IjAiIHgyPSI0MzAiIHkyPSIxMjAiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI1MDAiIHkxPSIwIiB4Mj0iNTAwIiB5Mj0iMTIwIiBzdHJva2Utd2lkdGg9IjIiLz48L2c+CjxjaXJjbGUgY3g9IjIyMCIgY3k9IjEwOCIgcj0iMTUiIGZpbGw9IiM0QkM3RkYiLz48dGV4dCB4PSIyMjAiIHk9IjExMiIgZmlsbD0iIzA0MjEzYiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIj5BPC90ZXh0Pgo8Y2lyY2xlIGN4PSIyOTAiIGN5PSI5MCIgcj0iMTUiIGZpbGw9IiMxNDc5RkYiLz48dGV4dCB4PSIyOTAiIHk9Ijk0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIj5FPC90ZXh0Pgo8Y2lyY2xlIGN4PSIyOTAiIGN5PSI3MiIgcj0iMTUiIGZpbGw9IiMxNDc5RkYiLz48dGV4dCB4PSIyOTAiIHk9Ijc2IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIj5BPC90ZXh0Pgo8L2c+PC9zdmc+" alt="Diagrama visual de power chord"></div>
+      <div class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MDAgMzAwIj4KPHJlY3Qgd2lkdGg9IjcwMCIgaGVpZ2h0PSIzMDAiIHJ4PSIyMiIgZmlsbD0iIzA3MUMzOCIvPjx0ZXh0IHg9IjI4IiB5PSIzNiIgZmlsbD0iI0RERjNGRiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIj5BIE1JTk9SIFBFTlRBVE9OSUMgwrcgUE9TSVRJT04gMTwvdGV4dD48dGV4dCB4PSIyOCIgeT0iNTgiIGZpbGw9IiM5REI3RDEiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiI+QSDCtyBDIMK3IEQgwrcgRSDCtyBHIOKAlCBkZWphIGRlIHZlciA14oCTOCAvIDXigJM3IHkgZW1waWV6YSBhIHZlciBub21icmVzLjwvdGV4dD4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDUgODYpIj48cmVjdCB3aWR0aD0iNjEwIiBoZWlnaHQ9IjE2NSIgcng9IjE0IiBmaWxsPSIjMTAyQjREIi8+CjxnIHN0cm9rZT0iIzdCOThCMyI+PGxpbmUgeDE9IjAiIHkxPSIyMCIgeDI9IjYxMCIgeTI9IjIwIi8+PGxpbmUgeDE9IjAiIHkxPSI0NSIgeDI9IjYxMCIgeTI9IjQ1Ii8+PGxpbmUgeDE9IjAiIHkxPSI3MCIgeDI9IjYxMCIgeTI9IjcwIi8+PGxpbmUgeDE9IjAiIHkxPSI5NSIgeDI9IjYxMCIgeTI9Ijk1Ii8+PGxpbmUgeDE9IjAiIHkxPSIxMjAiIHgyPSI2MTAiIHkyPSIxMjAiLz48bGluZSB4MT0iMCIgeTE9IjE0NSIgeDI9IjYxMCIgeTI9IjE0NSIvPjwvZz4KPGcgc3Ryb2tlPSIjRDZFMkVBIj48bGluZSB4MT0iODAiIHkxPSIwIiB4Mj0iODAiIHkyPSIxNjUiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxODUiIHkxPSIwIiB4Mj0iMTg1IiB5Mj0iMTY1IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjkwIiB5MT0iMCIgeDI9IjI5MCIgeTI9IjE2NSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjM5NSIgeTE9IjAiIHgyPSIzOTUiIHkyPSIxNjUiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI1MDAiIHkxPSIwIiB4Mj0iNTAwIiB5Mj0iMTY1IiBzdHJva2Utd2lkdGg9IjIiLz48L2c+CjxnIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIxMSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+PGNpcmNsZSBjeD0iMTg1IiBjeT0iMjAiIHI9IjE0IiBmaWxsPSIjNEJDN0ZGIi8+PHRleHQgeD0iMTg1IiB5PSIyNCIgZmlsbD0iIzA0MjEzQiI+QTwvdGV4dD48Y2lyY2xlIGN4PSI1MDAiIGN5PSIyMCIgcj0iMTQiIGZpbGw9IiMxNDc5RkYiLz48dGV4dCB4PSI1MDAiIHk9IjI0IiBmaWxsPSJ3aGl0ZSI+QzwvdGV4dD48Y2lyY2xlIGN4PSIxODUiIGN5PSI0NSIgcj0iMTQiIGZpbGw9IiMxNDc5RkYiLz48dGV4dCB4PSIxODUiIHk9IjQ5IiBmaWxsPSJ3aGl0ZSI+RTwvdGV4dD48Y2lyY2xlIGN4PSI1MDAiIGN5PSI0NSIgcj0iMTQiIGZpbGw9IiMxNDc5RkYiLz48dGV4dCB4PSI1MDAiIHk9IjQ5IiBmaWxsPSJ3aGl0ZSI+RzwvdGV4dD48Y2lyY2xlIGN4PSIxODUiIGN5PSI3MCIgcj0iMTQiIGZpbGw9IiMxNDc5RkYiLz48dGV4dCB4PSIxODUiIHk9Ijc0IiBmaWxsPSJ3aGl0ZSI+QzwvdGV4dD48Y2lyY2xlIGN4PSIzOTUiIGN5PSI3MCIgcj0iMTQiIGZpbGw9IiMxNDc5RkYiLz48dGV4dCB4PSIzOTUiIHk9Ijc0IiBmaWxsPSJ3aGl0ZSI+RDwvdGV4dD48Y2lyY2xlIGN4PSIxODUiIGN5PSI5NSIgcj0iMTQiIGZpbGw9IiMxNDc5RkYiLz48dGV4dCB4PSIxODUiIHk9Ijk5IiBmaWxsPSJ3aGl0ZSI+RzwvdGV4dD48Y2lyY2xlIGN4PSIzOTUiIGN5PSI5NSIgcj0iMTQiIGZpbGw9IiM0QkM3RkYiLz48dGV4dCB4PSIzOTUiIHk9Ijk5IiBmaWxsPSIjMDQyMTNCIj5BPC90ZXh0PjxjaXJjbGUgY3g9IjE4NSIgY3k9IjEyMCIgcj0iMTQiIGZpbGw9IiMxNDc5RkYiLz48dGV4dCB4PSIxODUiIHk9IjEyNCIgZmlsbD0id2hpdGUiPkQ8L3RleHQ+PGNpcmNsZSBjeD0iMzk1IiBjeT0iMTIwIiByPSIxNCIgZmlsbD0iIzE0NzlGRiIvPjx0ZXh0IHg9IjM5NSIgeT0iMTI0IiBmaWxsPSJ3aGl0ZSI+RTwvdGV4dD48Y2lyY2xlIGN4PSIxODUiIGN5PSIxNDUiIHI9IjE0IiBmaWxsPSIjNEJDN0ZGIi8+PHRleHQgeD0iMTg1IiB5PSIxNDkiIGZpbGw9IiMwNDIxM0IiPkE8L3RleHQ+PGNpcmNsZSBjeD0iNTAwIiBjeT0iMTQ1IiByPSIxNCIgZmlsbD0iIzE0NzlGRiIvPjx0ZXh0IHg9IjUwMCIgeT0iMTQ5IiBmaWxsPSJ3aGl0ZSI+QzwvdGV4dD48L2c+PHRleHQgeD0iMTg1IiB5PSIxNjIiIGZpbGw9IiM5REI3RDEiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NTwvdGV4dD48dGV4dCB4PSIzOTUiIHk9IjE2MiIgZmlsbD0iIzlEQjdEMSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj43PC90ZXh0Pjx0ZXh0IHg9IjUwMCIgeT0iMTYyIiBmaWxsPSIjOURCN0QxIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjg8L3RleHQ+PC9nPjwvc3ZnPg==" alt="Diagrama visual de pentatónica menor de La"></div>
+    </section>
+
+    <section class="screen" id="videos">
+      <div class="section-title" style="margin-top:5px"><h3>Vídeos</h3><span>apoyo visual externo</span></div>
+      <div class="video-card">
+        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/RsOCG-Ne5V4" title="Berklee Online - Memorize the Notes on the Fretboard" allowfullscreen loading="lazy"></iframe></div>
+        <div class="video-copy"><h4>Empieza por las cuerdas E y A</h4><p>Una explicación muy útil para reforzar la lógica de empezar por las cuerdas exteriores y construir el resto del mapa.</p><div class="source">Fuente: Berklee Online · YouTube</div></div>
+      </div>
+      <div class="video-card">
+        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/lFwjqPxgjCA" title="Guitar Notes on Fretboard Made Easy" allowfullscreen loading="lazy"></iframe></div>
+        <div class="video-copy"><h4>Notas + formas de octava</h4><p>Repaso de notas naturales, sostenidos/bemoles y conexión de posiciones mediante octavas.</p><div class="source">Fuente: Desi Serna · Guitar Music Theory · YouTube</div></div>
+      </div>
+      <div class="card">
+        <div class="eyebrow">MINI DEMO INTERACTIVA</div>
+        <h3 style="margin:7px 0 6px">Pulso de práctica</h3>
+        <p style="color:var(--muted);font-size:13px;line-height:1.5">Usa el metrónomo integrado y toca una nota objetivo en una cuerda diferente en cada pulso. Empieza a 40 BPM y sube solo cuando tengas cero errores.</p>
+        <button class="btn primary small" style="margin-top:10px" onclick="go('trainer'); setTrainer('metro')">Abrir metrónomo</button>
+      </div>
+      <p class="source" style="padding:8px 4px 20px">Los vídeos requieren conexión a Internet. El resto de la app funciona sin conexión una vez instalada.</p>
+    </section>
+  </main>
+
+  <nav class="bottomnav">
+    <div class="inner">
+      <button class="navbtn active" data-screen="home"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5V21h-6v-6H9v6H3v-9.5Z" stroke-width="1.8"/></svg><span>Hoy</span></button>
+      <button class="navbtn" data-screen="course"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5" stroke-width="1.8"/></svg><span>Curso</span></button>
+      <button class="navbtn" data-screen="trainer"><svg viewBox="0 0 24 24" fill="none"><path d="m13 2-8 12h7l-1 8 8-12h-7l1-8Z" stroke-width="1.8"/></svg><span>Entrenar</span></button>
+      <button class="navbtn" data-screen="fretboard"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16M8 4v16M14 4v16" stroke-width="1.6"/></svg><span>Mástil</span></button>
+      <button class="navbtn" data-screen="videos"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="3" stroke-width="1.8"/><path d="m10 9 5 3-5 3V9Z" stroke-width="1.8"/></svg><span>Vídeos</span></button>
+    </div>
+  </nav>
+</div>
+
+<div class="lesson-overlay" id="lessonOverlay" onclick="overlayClick(event)">
+  <div class="lesson-sheet" id="lessonSheet"><div class="sheet-handle"></div><div id="lessonContent"></div></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const STRINGS = [
+  {n:6, open:"E", semi:4},{n:5, open:"A", semi:9},{n:4, open:"D", semi:2},
+  {n:3, open:"G", semi:7},{n:2, open:"B", semi:11},{n:1, open:"E", semi:4}
+];
+const NOTES=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+const NATURAL=new Set(["C","D","E","F","G","A","B"]);
+const noteAt=(s,f)=>NOTES[(s.semi+f)%12];
+
+const DAYS = [
+{d:1,w:1,t:"E–A–D–G–B–E",sub:"Cuerdas al aire + regla de los semitonos",focus:"Aprende el esqueleto del instrumento.",tasks:["Di E–A–D–G–B–E cinco veces sin mirar.","Recorre la 6ª cuerda del traste 0 al 5 diciendo E–F–F#–G–G#–A.","Reto: encuentra E, A y D en menos de 3 segundos."],challenge:"ROADIE START · 10 respuestas sin contar trastes."},
+{d:2,w:1,t:"Autopista E",sub:"Naturales de la 6ª cuerda",focus:"Tus primeros faros: 3–5–7 = G–A–B.",tasks:["Toca 0–1–3–5–7–8–10–12 y di las notas.","Haz viajes aleatorios entre G, A, B, C y D.","Toca G5–A5–C5–D5 como power chords."],challenge:"AC/DC MODE · 20 cambios de raíz sin error."},
+{d:3,w:1,t:"Autopista A",sub:"Naturales de la 5ª cuerda",focus:"3–5–7 = C–D–E.",tasks:["Toca 0–2–3–5–7–8–10–12 diciendo las notas.","Alterna C–D–E–F–G en orden aleatorio.","Combina raíces de 6ª y 5ª cuerda."],challenge:"20 aciertos en 60 segundos."},
+{d:4,w:1,t:"Dos autopistas",sub:"6ª + 5ª sin contar",focus:"Empieza a pensar en nombres, no números.",tasks:["Elige A, C, D, E y G y búscalas en ambas cuerdas.","Di la nota antes de mover la mano.","Finaliza con 2 minutos de Note Hunter."],challenge:"Cada nota en < 3 s."},
+{d:5,w:1,t:"Power Chord GPS",sub:"La raíz manda",focus:"Convierte memoria en música.",tasks:["Toca E5–G5–A5–C5–D5.","Después D5–F5–G5–A5–C5 usando 5ª y 6ª cuerda.","Di siempre la raíz en voz alta."],challenge:"2 vueltas limpias a 70 BPM."},
+{d:6,w:1,t:"B–C / E–F",sub:"Las parejas pegadas",focus:"Dos excepciones que desbloquean el mapa.",tasks:["Localiza todos los pares B–C en 6ª y 5ª.","Localiza E–F sin contar.","Completa 15 preguntas aleatorias."],challenge:"Cero errores en las parejas."},
+{d:7,w:1,t:"Reto AC/DC",sub:"Semana 1 · examen",focus:"Domina E y A como carreteras principales.",tasks:["60 s de Note Hunter.","Progresión E–G–A–D–C.","Repite hasta lograr 90% de precisión."],challenge:"Desbloquea GARAGE ROCKER."},
+
+{d:8,w:2,t:"Octavas desde 6ª",sub:"Una nota, dos lugares",focus:"Forma +2 cuerdas / +2 trastes.",tasks:["E→E, G→G, A→A usando octavas.","Mueve la forma por cinco raíces.","Toca raíz y octava alternando púa."],challenge:"5 octavas seguidas sin cálculo."},
+{d:9,w:2,t:"Octavas desde 5ª",sub:"Conecta con la 3ª cuerda",focus:"Expande el mapa hacia el centro.",tasks:["A, C, D, E y G: raíz en 5ª + octava.","Nombra ambas posiciones.","Combina con power chords."],challenge:"10 saltos limpios a 60 BPM."},
+{d:10,w:2,t:"Zona 5–8",sub:"El corazón del mástil",focus:"Aprende por territorio.",tasks:["Recorre solo trastes 5–8.","Encuentra A, C, D, E y G sin salir de la zona.","Improvisa 2 minutos aterrizando en A."],challenge:"Encuentra 5 notas objetivo en < 15 s total."},
+{d:11,w:2,t:"Cuerda D",sub:"La 4ª ya no es territorio desconocido",focus:"Usa octavas para verificar.",tasks:["Naturales de la 4ª: D–E–F–G–A–B–C.","Compara con raíces conocidas.","Reto de 20 posiciones."],challenge:"80% o más en 4ª cuerda."},
+{d:12,w:2,t:"Cuerda G",sub:"Entrada al registro medio",focus:"Conecta la 5ª con su octava.",tasks:["Naturales de la 3ª cuerda.","Encuentra C, D, E, G y A.","Haz una frase de 5 notas y di sus nombres."],challenge:"5 frases sin mirar una tabla."},
+{d:13,w:2,t:"Pentatónica consciente",sub:"A–C–D–E–G",focus:"La caja deja de ser una caja.",tasks:["Toca pentatónica de Am posición 1.","Di cada nota mientras subes.","Detente en una nota objetivo distinta cada vuelta."],challenge:"Subir y bajar sin pensar en números."},
+{d:14,w:2,t:"Reto Sabbath",sub:"Semana 2 · riff con nombres",focus:"E–G–A–A#–B.",tasks:["Construye un riff con esas cinco notas.","Di cada raíz antes de tocarla.","Acaba con 60 s de Note Hunter."],challenge:"Desbloquea STAGE GUITARIST."},
+
+{d:15,w:3,t:"Zona 0–5",sub:"Recorrido total",focus:"Todas las cuerdas, territorio pequeño.",tasks:["Elige C y encuéntralo en 0–5.","Repite con E y G.","Hazlo después con A y D."],challenge:"5 notas × todas las posiciones disponibles."},
+{d:16,w:3,t:"Zona 5–9",sub:"Centro conectado",focus:"Une formas de escala y nombres.",tasks:["Encuentra A–B–C–D–E–F–G en esta zona.","Toca una nota por pulso a 50 BPM.","Sube solo con cero errores."],challenge:"60 BPM limpio."},
+{d:17,w:3,t:"Zona 8–12",sub:"Antes de que el mapa se repita",focus:"Completa el primer ciclo.",tasks:["Aprende los naturales 8–12.","Compara traste 12 con cuerdas al aire.","Reto aleatorio de 20 preguntas."],challenge:"90% de precisión."},
+{d:18,w:3,t:"La 2ª cuerda",sub:"La excepción de afinación",focus:"B cambia algunas formas visuales.",tasks:["Naturales: B–C–D–E–F–G–A.","Encuentra A, C, E y G.","Conecta con una forma de acorde que conozcas."],challenge:"15 respuestas en 2ª cuerda."},
+{d:19,w:3,t:"La 1ª cuerda",sub:"Tu 6ª cuerda en agudo",focus:"Mismo mapa, otro registro.",tasks:["Copia mentalmente el mapa de la 6ª.","Haz saltos 6ª→1ª con la misma nota.","Improvisa acabando en E, G y A."],challenge:"10 saltos instantáneos."},
+{d:20,w:3,t:"Metallica Drill",sub:"E–F#–G con palm mute",focus:"Precisión rítmica + ubicación.",tasks:["Toca E×4, F#×4, G×4.","Cambia de cuerda cada ronda.","Usa 60→80 BPM."],challenge:"3 rondas sin error."},
+{d:21,w:3,t:"Examen de conexión",sub:"Semana 3 · todo el mástil",focus:"Deja de depender de una sola cuerda.",tasks:["20 preguntas cuerda+nota.","10 preguntas nota libre.","Improvisa 2 min con notas objetivo."],challenge:"Desbloquea GUITAR HERO."},
+
+{d:22,w:4,t:"3 segundos",sub:"Empieza la fase de reacción",focus:"No calcules: reconoce.",tasks:["20 notas con límite de 3 s.","Repite solo los fallos.","Termina con un riff libre."],challenge:"16/20 o mejor."},
+{d:23,w:4,t:"2 segundos",sub:"Velocidad controlada",focus:"Rapidez sin sacrificar precisión.",tasks:["15 notas con límite de 2 s.","Toca cada acierto dos veces.","Revisa las 3 peores notas."],challenge:"12/15 o mejor."},
+{d:24,w:4,t:"1 segundo",sub:"Reflejos",focus:"Busca reconocimiento instantáneo.",tasks:["10 raíces en 6ª/5ª.","10 posiciones en cuerdas interiores.","Descansa y repite."],challenge:"8/10 en autopistas."},
+{d:25,w:4,t:"Reto Gilmour",sub:"Aterriza donde quieres",focus:"A–C–E como notas objetivo.",tasks:["Improvisa sobre Am.","Frase 1 termina en A; 2 en C; 3 en E.","Canta mentalmente la nota antes de tocarla."],challenge:"9 aterrizajes conscientes."},
+{d:26,w:4,t:"Reto Hendrix",sub:"Conecta posiciones",focus:"Una misma nota en varias zonas.",tasks:["Improvisa sin quedarte en una caja.","Cada 4 compases cambia de zona.","Localiza A antes de cada cambio."],challenge:"3 zonas conectadas."},
+{d:27,w:4,t:"Reto Zakk",sub:"Secuencia vertical",focus:"Una nota a través de 6 cuerdas.",tasks:["Elige A y recorre todas sus posiciones.","Repite con E y C.","Metrónomo 40→70 BPM."],challenge:"70 BPM sin fallo."},
+{d:28,w:4,t:"Reto 60 segundos",sub:"Semana 4 · velocidad + precisión",focus:"Tu marcador real.",tasks:["60 s de Note Hunter.","Apunta aciertos y errores.","Repite una vez buscando superar la marca."],challenge:"Desbloquea FRETBOARD MASTER."},
+
+{d:29,w:5,t:"Boss Fight",sub:"Examen final mixto",focus:"Notas + octavas + power chords + escala.",tasks:["20 notas aleatorias.","5 octavas.","5 power chords por nombre.","Pentatónica Am nombrando notas."],challenge:"90% global."},
+{d:30,w:5,t:"Mapa libre",sub:"Graduación",focus:"Toca música, no ejercicios.",tasks:["Improvisa 5 minutos.","Elige 3 notas objetivo por minuto.","Haz el reto de 60 s final y compara con el Día 1."],challenge:"FRETBOARD MASTER · el mástil ya es música."}
+];
+
+let state = JSON.parse(localStorage.getItem("mapaRockState") || '{"done":[],"best":0}');
+let hunter={score:0,tries:0,target:"A",revealed:false};
+let speed={score:0,tries:0,limit:3,string:null,target:"C",start:0};
+let metroTimer=null, metroOn=false, allShown=false, naturalsOnly=false;
+
+function save(){localStorage.setItem("mapaRockState",JSON.stringify(state)); renderStats();}
+function go(id){
+  document.querySelectorAll(".screen").forEach(x=>x.classList.toggle("active",x.id===id));
+  document.querySelectorAll(".navbtn").forEach(x=>x.classList.toggle("active",x.dataset.screen===id));
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(id==="fretboard") renderMap();
+}
+document.querySelectorAll(".navbtn").forEach(b=>b.onclick=()=>go(b.dataset.screen));
+
+function renderStats(){
+  const done=state.done.length, pct=Math.round(done/30*100);
+  document.getElementById("progressText").textContent=`${done} / 30`;
+  document.getElementById("courseBar").style.width=pct+"%";
+  document.getElementById("streak").textContent=done;
+  document.getElementById("bestScore").textContent=state.best||0;
+  document.getElementById("courseDoneLabel").textContent=`${done} completados`;
+  const lvl=done<7?"ROADIE":done<14?"GARAGE ROCKER":done<21?"STAGE GUITARIST":done<28?"GUITAR HERO":"FRETBOARD MASTER";
+  document.getElementById("levelPill").textContent=lvl;
+  const next = DAYS.find(d=>!state.done.includes(d.d)) || DAYS[29];
+  document.getElementById("todayEyebrow").textContent=`DÍA ${next.d} · ${next.w===5?"FINAL":"SEMANA "+next.w}`;
+  document.getElementById("todayTitle").textContent=next.t;
+  document.getElementById("todayDesc").textContent=next.focus+" "+next.sub+".";
+  document.getElementById("startToday").onclick=()=>openLesson(next.d);
+  renderCourse(currentFilter);
+}
+
+let currentFilter="all";
+function renderCourse(filter="all"){
+  const list=document.getElementById("dayList"); if(!list)return;
+  currentFilter=filter; list.innerHTML="";
+  let lastW=null;
+  DAYS.filter(d=>filter==="all" || String(d.w)===String(filter)).forEach(d=>{
+    if(d.w!==lastW){
+      const wb=document.createElement("div");wb.className="week-banner";
+      const labels={1:["SEMANA 1","Las autopistas del rock"],2:["SEMANA 2","Octavas y centro del mástil"],3:["SEMANA 3","Conecta las seis cuerdas"],4:["SEMANA 4","Velocidad y libertad"],5:["FINAL","Prueba de dominio"]};
+      wb.innerHTML=`<b>${labels[d.w][0]}</b><span>${labels[d.w][1]}</span>`;list.appendChild(wb);lastW=d.w;
+    }
+    const el=document.createElement("div");el.className="day "+(state.done.includes(d.d)?"done":"");el.onclick=()=>openLesson(d.d);
+    el.innerHTML=`<div class="daynum"><div><small>DÍA</small><b>${d.d}</b></div></div><div><h4>${d.t}</h4><p>${d.sub}</p></div><div class="check">${state.done.includes(d.d)?"✓":""}</div>`;
+    list.appendChild(el);
+  });
+}
+document.querySelectorAll("#weekFilter .chip").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("#weekFilter .chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderCourse(b.dataset.week);
+});
+
+function openLesson(n){
+  const d=DAYS.find(x=>x.d===n); if(!d)return;
+  const c=document.getElementById("lessonContent");
+  c.innerHTML=`<div class="eyebrow">DÍA ${d.d} · ${d.w===5?"FINAL":"SEMANA "+d.w}</div>
+  <h2>${d.t}</h2><p class="lead">${d.focus}<br><b style="color:#DDF3FF">${d.sub}</b></p>
+  <div class="lesson-block"><h4>🎸 Sesión de hoy · 10–15 min</h4>${d.tasks.map((x,i)=>`<div class="task-row"><span class="task-dot"></span><p><b>${i+1}.</b> ${x}</p></div>`).join("")}</div>
+  <div class="lesson-block"><h4>⚡ Reto</h4><p>${d.challenge}</p></div>
+  <div class="lesson-block"><h4>🧠 Regla MAPA ROCK</h4><p>Di el <b>nombre de la nota</b> antes de mover la mano. Si tienes que contar trastes, hazlo; la velocidad llegará después.</p></div>
+  <div class="cta-row"><button class="btn primary" onclick="completeDay(${d.d})">${state.done.includes(d.d)?"✓ Completado":"Marcar completado"}</button><button class="btn secondary" onclick="closeLesson()">Cerrar</button></div>`;
+  document.getElementById("lessonOverlay").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeLesson(){document.getElementById("lessonOverlay").classList.remove("open");document.body.style.overflow=""}
+function overlayClick(e){if(e.target.id==="lessonOverlay")closeLesson()}
+function completeDay(n){if(!state.done.includes(n)){state.done.push(n);state.done.sort((a,b)=>a-b);save(); toast("🤘 Día completado. Siguiente nivel desbloqueado.");} closeLesson();}
+function startQuick(min){go("trainer");setTrainer("hunter");toast(`${min} minutos · empieza con Note Hunter y termina tocando un riff.`)}
+
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800)}
+
+function baseFretboard(mode="map"){
+  let html='<div class="fret-scroll"><div class="fretboard">';
+  STRINGS.forEach(s=>{
+    html+=`<div class="fret-row"><div class="str-label">${s.n}·${s.open}</div><div class="string-line"></div>`;
+    for(let f=0;f<=12;f++){
+      const note=noteAt(s,f);
+      html+=`<div class="fret-cell ${f===0?"open":""}" data-string="${s.n}" data-fret="${f}" data-note="${note}"><span class="dotnote" data-note="${note}">${note}</span></div>`;
+    }
+    html+='</div>';
+  });
+  html+='</div><div class="fret-numbers"><span></span>'+Array.from({length:13},(_,i)=>`<span>${i}</span>`).join("")+'</div></div>';
+  return html;
+}
+
+function setTrainer(type){
+  document.querySelectorAll(".trainer-tabs .chip").forEach(b=>b.classList.toggle("active",b.dataset.trainer===type));
+  if(type==="hunter") renderHunter();
+  if(type==="speed") renderSpeed();
+  if(type==="metro") renderMetro();
+}
+document.querySelectorAll(".trainer-tabs .chip").forEach(b=>b.onclick=()=>setTrainer(b.dataset.trainer));
+
+function randomNote(){return NOTES[Math.floor(Math.random()*NOTES.length)]}
+function renderHunter(newTarget=true){
+  if(newTarget){hunter.target=randomNote();hunter.revealed=false}
+  const body=document.getElementById("trainerBody");
+  body.innerHTML=`<div class="eyebrow">NOTE HUNTER</div><div class="target">${hunter.target}</div><div class="target-sub">Encuentra cualquier ${hunter.target} entre los trastes 0–12</div>
+  <div class="scoreline"><span>Aciertos <b>${hunter.score}</b></span><span>Intentos <b>${hunter.tries}</b></span></div>
+  ${baseFretboard("hunter")}<div class="result" id="huntResult"></div>
+  <div class="cta-row"><button class="btn secondary small" onclick="revealHunter()">Ver todas</button><button class="btn primary small" onclick="nextHunter()">Siguiente nota</button></div>`;
+  body.querySelectorAll(".fret-cell").forEach(cell=>cell.onclick=()=>hunterTap(cell));
+}
+function hunterTap(cell){
+  hunter.tries++;
+  const dot=cell.querySelector(".dotnote"), note=cell.dataset.note;
+  if(note===hunter.target){hunter.score++;dot.classList.add("right");dot.textContent=note;document.getElementById("huntResult").textContent="✓ Correcto"; if(hunter.score>state.best){state.best=hunter.score;save()}}
+  else{dot.classList.add("wrong");dot.textContent=note;document.getElementById("huntResult").textContent=`Ese es ${note}. Busca ${hunter.target}.`}
+  document.querySelector(".scoreline").innerHTML=`<span>Aciertos <b>${hunter.score}</b></span><span>Intentos <b>${hunter.tries}</b></span>`;
+}
+function revealHunter(){document.querySelectorAll("#trainerBody .fret-cell").forEach(c=>{if(c.dataset.note===hunter.target)c.querySelector(".dotnote").classList.add("targetnote")});}
+function nextHunter(){renderHunter(true)}
+
+function renderSpeed(){
+  speed.target=randomNote(); speed.string=STRINGS[Math.floor(Math.random()*STRINGS.length)].n; speed.start=performance.now();
+  const body=document.getElementById("trainerBody");
+  body.innerHTML=`<div class="eyebrow">RETO DE VELOCIDAD</div><div class="target">${speed.target}</div><div class="target-sub">Toca ${speed.target} en la cuerda ${speed.string} · límite ${speed.limit}s</div>
+  <div class="scoreline"><span>Aciertos <b>${speed.score}</b></span><span>Intentos <b>${speed.tries}</b></span></div>${baseFretboard("speed")}
+  <div class="result" id="speedResult">⏱ El reloj ya está corriendo</div>
+  <div class="filter" style="justify-content:center"><button class="chip ${speed.limit===3?"active":""}" onclick="setSpeedLimit(3)">3 s</button><button class="chip ${speed.limit===2?"active":""}" onclick="setSpeedLimit(2)">2 s</button><button class="chip ${speed.limit===1?"active":""}" onclick="setSpeedLimit(1)">1 s</button></div>`;
+  body.querySelectorAll(".fret-cell").forEach(cell=>cell.onclick=()=>speedTap(cell));
+}
+function setSpeedLimit(x){speed.limit=x;renderSpeed()}
+function speedTap(cell){
+  const elapsed=(performance.now()-speed.start)/1000; speed.tries++;
+  const ok=Number(cell.dataset.string)===speed.string && cell.dataset.note===speed.target && elapsed<=speed.limit;
+  const dot=cell.querySelector(".dotnote");dot.textContent=cell.dataset.note;dot.classList.add(ok?"right":"wrong");
+  if(ok)speed.score++;
+  document.getElementById("speedResult").textContent=ok?`✓ ${elapsed.toFixed(2)} s`:`✕ ${elapsed.toFixed(2)} s · ${cell.dataset.note} en cuerda ${cell.dataset.string}`;
+  setTimeout(renderSpeed,700);
+}
+
+function renderMetro(){
+  clearInterval(metroTimer);metroOn=false;
+  const body=document.getElementById("trainerBody");
+  body.innerHTML=`<div class="eyebrow">PULSO DE PRÁCTICA</div><div class="timerbox"><div class="time"><span id="bpmText">60</span><small style="font-size:15px;color:var(--muted)"> BPM</small></div><p style="color:var(--muted);font-size:12px">Toca una posición de la nota objetivo en cada pulso.</p></div>
+  <div class="metronome"><div class="pulse" id="pulse"></div><button class="btn primary" id="metroBtn" onclick="toggleMetro()">▶ Iniciar</button></div>
+  <input class="range" id="bpmRange" type="range" min="35" max="160" value="60" oninput="changeBpm(this.value)">
+  <div class="lesson-block"><h4>Drill recomendado</h4><p>Elige <b>A</b>. Pulso 1: A en 6ª; pulso 2: A en 5ª; después 4ª, 3ª, 2ª y 1ª. Cuando salga limpio, cambia a C, E, G y D.</p></div>`;
+}
+function changeBpm(v){document.getElementById("bpmText").textContent=v;if(metroOn){clearInterval(metroTimer);startMetro(Number(v))}}
+function startMetro(bpm){metroTimer=setInterval(()=>{const p=document.getElementById("pulse");if(!p)return;p.classList.add("hit");setTimeout(()=>p.classList.remove("hit"),90)},60000/bpm)}
+function toggleMetro(){metroOn=!metroOn;const b=document.getElementById("metroBtn");if(metroOn){b.textContent="■ Parar";startMetro(Number(document.getElementById("bpmRange").value))}else{b.textContent="▶ Iniciar";clearInterval(metroTimer)}}
+
+function renderMap(){
+  const wrap=document.getElementById("mapBoard");wrap.innerHTML=baseFretboard("map");
+  wrap.querySelectorAll(".fret-cell").forEach(cell=>cell.onclick=()=>{
+    const dot=cell.querySelector(".dotnote");dot.classList.toggle("show");dot.textContent=cell.dataset.note;
+  });
+  if(allShown)wrap.querySelectorAll(".dotnote").forEach(d=>d.classList.add("show"));
+  if(naturalsOnly)wrap.querySelectorAll(".fret-cell").forEach(c=>{if(NATURAL.has(c.dataset.note))c.querySelector(".dotnote").classList.add("show")});
+}
+function toggleAllNotes(){allShown=!allShown;naturalsOnly=false;renderMap()}
+function highlightNatural(){naturalsOnly=!naturalsOnly;allShown=false;renderMap()}
+function renderTable(){
+  const h=['Cuerda',...Array.from({length:13},(_,i)=>i)];
+  let html='<table class="note-table"><thead><tr>'+h.map(x=>`<th>${x}</th>`).join("")+'</tr></thead><tbody>';
+  STRINGS.forEach(s=>{html+=`<tr><td>${s.n} · ${s.open}</td>`+Array.from({length:13},(_,f)=>`<td>${noteAt(s,f)}</td>`).join("")+'</tr>'});
+  document.getElementById("noteTable").innerHTML=html+'</tbody></table>';
+}
+renderTable(); renderMap(); renderCourse(); renderStats(); setTrainer("hunter");
+
+
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(() => {}));
+}
+</script>
+</body>
+</html>
