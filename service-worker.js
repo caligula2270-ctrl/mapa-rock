@@ -1,4 +1,4 @@
-const CACHE="mapa-rock-v2";
+const CACHE="mapa-rock-v3";
 const ASSETS=["./","./index.html","./manifest.webmanifest","./assets/icon.svg"];
 self.addEventListener("install",event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));
