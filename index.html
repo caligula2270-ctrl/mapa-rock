@@ -126,7 +126,7 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
 </head>
-<body>
+<body data-build="v5-orientation">
 <div class="app">
   <header>
     <div class="brand">
@@ -569,7 +569,7 @@ renderTable(); renderMap(); renderCourse(); renderStats(); setTrainer("hunter");
 </script>
 <script>
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(() => {}));
+  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js?v=5").catch(() => {}));
 }
 </script>
 </body>
