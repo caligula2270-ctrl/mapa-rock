@@ -1,0 +1,1 @@
+(()=>{const c={url:'https://ruxvqpxkzxlcamjopptm.supabase.co',key:"sb_publishable_qifEgnZkkv6XhbtZTsbTEQ_OQw6hiZ9"};if(!localStorage.getItem('ir_cloud_config_v3'))localStorage.setItem('ir_cloud_config_v3',JSON.stringify(c));})();
