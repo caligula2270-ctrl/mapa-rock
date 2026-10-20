@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b1727"><link rel="manifest" href="./manifest.webmanifest"><title>Investment Radar · Cloud & SEC</title><style>body{font:16px system-ui;background:#0b1727;color:#fff;display:grid;place-items:center;min-height:90vh}a{color:#49d3c0}#state{max-width:540px;padding:25px}</style></head><body><div id="state"><h1>Investment Radar</h1><p>Cargando el sistema de inversión y sus módulos de sincronización…</p></div>
+<script>
+(async()=>{
+const state=document.getElementById('state');
+try{
+ const r=await fetch('../index.html',{cache:'no-store'});if(!r.ok)throw Error('No se encuentra la versión principal (HTTP '+r.status+')');
+ let h=await r.text();
+ const key="const save=()=>{try{localStorage.setItem(STORE_KEY,JSON.stringify(DB));}";
+ if(!h.includes(key))throw Error('La versión principal cambió: no se puede activar la sincronización de forma segura.');
+ h=h.replace(key,"const save=()=>{try{localStorage.setItem(STORE_KEY,JSON.stringify(DB));window.dispatchEvent(new Event('ir:local-save'));}");
+ const anchor="const toast=msg=>";
+ if(!h.includes(anchor))throw Error('No se puede enlazar la base de datos.');
+ const bridge="window.INVESTMENT_RADAR_BRIDGE={read:()=>clone(DB),replace:(next)=>{if(!next||!Array.isArray(next.appearances)||!Array.isArray(next.companies)||!Array.isArray(next.sources))throw Error('Formato de datos incompatible');DB=clone(next);DB.investors??=[];DB.activity??=[];DB.valuations??={};localStorage.setItem(STORE_KEY,JSON.stringify(DB));render();}};";
+ h=h.replace(anchor,bridge+"\n"+anchor);
+ if(!h.includes('</body>'))throw Error('HTML fuente incompleto');
+ h=h.replace('</body>','<script defer src="./feed.js"><\/script><script defer src="./sync.js"><\/script></body>');
+ h=h.replace(/<link rel="manifest"[^>]*>/,'<link rel="manifest" href="./manifest.webmanifest">');
+ h=h.replace(/<title>[^<]*<\/title>/,'<title>Investment Radar · Cloud & SEC</title>');
+ document.open();document.write(h);document.close();
+}catch(e){state.innerHTML='<h1>No se ha podido cargar</h1><p>'+String(e.message).replace(/[<>]/g,'')+'</p><p>La versión anterior sigue disponible en <a href="../">Investment Radar v1</a>.</p>'}
+})();
+</script></body></html>
