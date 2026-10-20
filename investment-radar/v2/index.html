@@ -14,7 +14,7 @@ try{
  const bridge="window.INVESTMENT_RADAR_BRIDGE={read:()=>clone(DB),replace:(next)=>{if(!next||!Array.isArray(next.appearances)||!Array.isArray(next.companies)||!Array.isArray(next.sources))throw Error('Formato de datos incompatible');DB=clone(next);DB.investors??=[];DB.activity??=[];DB.valuations??={};localStorage.setItem(STORE_KEY,JSON.stringify(DB));render();}};";
  h=h.replace(anchor,bridge+"\n"+anchor);
  if(!h.includes('</body>'))throw Error('HTML fuente incompleto');
- h=h.replace('</body>','<script defer src="./feed.js"><\/script><script defer src="./sync.js"><\/script></body>');
+ h=h.replace('</body>','<script defer src="./feed.js"><\/script><script defer src="./config.js"><\/script><script defer src="./sync.js"><\/script></body>');
  h=h.replace(/<link rel="manifest"[^>]*>/,'<link rel="manifest" href="./manifest.webmanifest">');
  h=h.replace(/<title>[^<]*<\/title>/,'<title>Investment Radar · Cloud & SEC</title>');
  document.open();document.write(h);document.close();
