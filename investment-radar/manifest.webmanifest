@@ -1,0 +1,19 @@
+{
+  "name": "Investment Radar · Value & Quality",
+  "short_name": "Inv. Radar",
+  "id": "./",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#0b1727",
+  "background_color": "#f5f7fa",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
