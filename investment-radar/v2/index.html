@@ -17,6 +17,7 @@ try{
  h=h.replace('</body>','<script defer src="./feed.js"><\/script><script defer src="./config.js"><\/script><script defer src="./sync.js"><\/script></body>');
  h=h.replace(/<link rel="manifest"[^>]*>/,'<link rel="manifest" href="./manifest.webmanifest">');
  h=h.replace(/<title>[^<]*<\/title>/,'<title>Investment Radar · Cloud & SEC</title>');
+ h=h.replace('</div></header>','<a href="./cuenta.html" style="display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:9px;background:#0b786d;color:#fff;font-weight:700;font-size:13px;white-space:nowrap;text-decoration:none;margin-left:9px">☁ Mi cuenta</a></div></header>');
  document.open();document.write(h);document.close();
 }catch(e){state.innerHTML='<h1>No se ha podido cargar</h1><p>'+String(e.message).replace(/[<>]/g,'')+'</p><p>La versión anterior sigue disponible en <a href="../">Investment Radar v1</a>.</p>'}
 })();
