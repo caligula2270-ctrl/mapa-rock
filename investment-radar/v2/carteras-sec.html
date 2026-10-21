@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1727"><title>Investment Radar · Carteras SEC 13F</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f7fa;color:#152b41;font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:#0b1727;color:#fff;padding:21px max(20px,calc((100vw - 1150px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header strong{font-size:21px}header a{color:#91eadb;text-decoration:none}main{max-width:1170px;margin:auto;padding:26px 15px 65px}
+h1{font-size:25px;margin:0 0 4px}p{margin:4px 0 12px}.muted{color:#5b6e84}
+.notice{background:#e9f6f3;border-left:4px solid #169b85;border-radius:8px;padding:13px 15px;margin:16px 0 21px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tile{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:17px}.tile b{display:block;font-size:26px}.tile small{color:#667689}
+.bar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:22px 0 12px}input,select,button{font:inherit;border:1px solid #c8d5e2;border-radius:9px;padding:10px;background:#fff;color:#153049}input{min-width:220px;flex:1}button{cursor:pointer}button.active{background:#0b786d;color:#fff;border-color:#0b786d}.filter{max-width:300px}
+table{width:100%;border-collapse:collapse}td,th{padding:10px 9px;text-align:left;border-bottom:1px solid #e7edf2;vertical-align:top}th{background:#eaf0f6;font-size:12px;position:sticky;top:0}tr:nth-child(2n){background:#fafbfd}
+.table-scroll{overflow:auto;background:#fff;border-radius:12px;border:1px solid #dee7ef;max-height:65vh}.table-scroll table{min-width:740px}
+a{color:#087f72}.meta{font-size:12px;color:#6d7b8e}.counts{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin:12px 0}.paging{display:flex;gap:8px;align-items:center}.paging button:disabled{opacity:.4}
+#alert{color:#9f2544;font-weight:650}.hidden{display:none}@media(max-width:600px){.grid{grid-template-columns:1fr}h1{font-size:21px}header strong{font-size:17px}.bar{align-items:stretch}.filter{max-width:none;width:100%}}
+</style></head><body>
+<header><strong>INVESTMENT RADAR <span style="color:#3bd2bf">· SEC 13F</span></strong><a href="./">← Volver a la aplicación</a></header>
+<main><h1>Carteras oficiales declaradas</h1><p class="muted">Datos del formulario 13F presentados a la SEC · Consulta con trazabilidad al documento original</p>
+<div id="alert" role="alert"></div><div id="cards" class="grid"><div class="tile">Cargando información de la SEC…</div></div>
+<div class="notice">Los datos corresponden a posiciones declaradas al cierre de cada trimestre y pueden publicarse hasta 45 días después. No muestran operaciones en tiempo real, posiciones cortas, ni necesariamente todas las inversiones del gestor. Varias líneas de un CUSIP no representan necesariamente empresas diferentes. No se calculan porcentajes sin verificar el valor total de las posiciones.</div>
+<div class="bar"><button id="tab-positions" class="active">Posiciones declaradas</button><button id="tab-overlap">Coincidencias entre gestores</button><select id="manager" class="filter"><option value="">Todos los gestores</option></select><input id="search" type="search" placeholder="Buscar emisor, gestor o CUSIP..." aria-label="Buscar posiciones"><button id="refresh">Actualizar</button></div>
+<div class="counts"><div id="label" class="muted">Cargando…</div><div class="paging"><button id="prev">Anterior</button><span id="page"></span><button id="next">Siguiente</button></div></div>
+<div class="table-scroll"><table><thead id="head"></thead><tbody id="rows"></tbody></table></div>
+<p class="meta" id="foot"></p></main>
+<script>
+(()=>{'use strict';
+const el=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,t=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','&#39;':'&#39;'}[t])),fmt=n=>typeof n==='number'?new Intl.NumberFormat('es-ES',{maximumFractionDigits:0}).format(n):'—',sec=u=>/^https:\/\/www\.sec\.gov\/Archives\/edgar\/data\//i.test(u||'')?u:'#';
+let data=null,tab='positions',page=0,per=50;
+const state=()=>({term:el('search').value.toLowerCase().trim(),manager:el('manager').value});
+function overlaps(){let idx=new Map();for(const r of data.positions){const key=r.cusip;let it=idx.get(key);if(!it){it={cusip:key,issuer:r.issuer,managers:new Map()};idx.set(key,it)}it.managers.set(r.manager,{period:r.period,url:r.filingUrl})}return [...idx.values()].filter(x=>x.managers.size>=2).sort((a,b)=>b.managers.size-a.managers.size||a.issuer.localeCompare(b.issuer))}
+function draw(){if(!data)return;const {term,manager}=state();
+let records=tab==='positions'?data.positions.filter(r=>(!manager||r.manager===manager)&&(!term||[r.manager,r.cusip,r.issuer].some(x=>(x||'').toLowerCase().includes(term)))):overlaps().filter(r=>(!manager||r.managers.has(manager))&&(!term||[r.issuer,r.cusip,...r.managers.keys()].some(x=>(x||'').toLowerCase().includes(term))));
+const pages=Math.max(1,Math.ceil(records.length/per));page=Math.min(page,pages-1);
+el('label').textContent=fmt(records.length)+' '+(tab==='positions'?'líneas presentadas':'valores presentes en dos o más gestores');el('page').textContent=(page+1)+' / '+pages;el('prev').disabled=page===0;el('next').disabled=page+1>=pages;
+el('tab-positions').classList.toggle('active',tab==='positions');el('tab-overlap').classList.toggle('active',tab==='overlap');
+el('head').innerHTML=tab==='positions'?'<tr><th>Gestor</th><th>Emisor</th><th>CUSIP</th><th>Acciones declaradas</th><th>Trimestre</th><th>SEC</th></tr>':'<tr><th>Emisor</th><th>CUSIP</th><th>Gestores coincidentes</th><th>Nº gestores</th></tr>';
+el('rows').innerHTML=records.slice(page*per,(page+1)*per).map(r=>tab==='positions'?'<tr><td>'+esc(r.manager)+'</td><td><strong>'+esc(r.issuer)+'</strong></td><td>'+esc(r.cusip)+'</td><td>'+fmt(r.shares)+'</td><td>'+esc(r.period)+'</td><td><a target="_blank" rel="noopener noreferrer" href="'+sec(r.filingUrl)+'">13F ↗</a></td></tr>':'<tr><td><strong>'+esc(r.issuer)+'</strong></td><td>'+esc(r.cusip)+'</td><td>'+[...r.managers.entries()].map(([name,p])=>'<a href="'+sec(p.url)+'" target="_blank" rel="noopener noreferrer">'+esc(name)+'</a> <small class="muted">('+esc(p.period)+')</small>').join(', ')+'</td><td>'+fmt(r.managers.size)+'</td></tr>').join('')||'<tr><td colspan="6">Sin coincidencias para los filtros elegidos.</td></tr>';
+}
+async function load(){el('alert').textContent='';el('label').textContent='Descargando posiciones verificadas…';try{const r=await fetch('./data/latest-13f.json?nocache='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);let d=await r.json();if(d.schema!==1||!Array.isArray(d.positions)||!Array.isArray(d.filings))throw Error('Formato de carteras no válido');data=d;const uniq=new Set(d.positions.map(r=>r.manager+'|'+r.cusip));const overlap=overlaps().length;
+el('cards').innerHTML='<div class="tile"><small>Informes de gestores</small><b>'+fmt(d.filings.length)+'</b><small>'+esc(d.generatedAt?new Date(d.generatedAt).toLocaleString('es-ES'):'Sin actualización oficial')+'</small></div><div class="tile"><small>Líneas / gestor-valor únicos</small><b>'+fmt(d.positions.length)+' / '+fmt(uniq.size)+'</b><small>Sin mezclar líneas repetidas</small></div><div class="tile"><small>Valores en varios gestores</small><b>'+fmt(overlap)+'</b><small>Coincidencia por identificador CUSIP</small></div>';
+el('manager').innerHTML='<option value="">Todos los gestores</option>'+d.filings.map(f=>'<option value="'+esc(f.manager)+'">'+esc(f.manager)+' · '+esc(f.period)+'</option>').join('');
+el('foot').textContent='Descarga del repositorio: '+(d.generatedAt||'sin datos')+' · Los datos son públicos y las fichas de investigación privadas se almacenan por separado en Supabase.';page=0;draw();
+}catch(e){el('alert').textContent='No se pudo cargar el archivo oficial: '+e.message;el('label').textContent='Revisa la descarga de GitHub Actions.'}}
+for(const [id,v] of [['tab-positions','positions'],['tab-overlap','overlap']])el(id).onclick=()=>{tab=v;page=0;draw()};
+el('manager').onchange=()=>{page=0;draw()};el('search').oninput=()=>{page=0;draw()};el('prev').onclick=()=>{if(page>0)page--;draw()};el('next').onclick=()=>{page++;draw()};el('refresh').onclick=load;load();
+})();
+</script></body></html>
