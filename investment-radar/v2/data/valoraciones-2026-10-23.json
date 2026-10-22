@@ -1,0 +1,120 @@
+{
+  "asOf": "2026-10-23",
+  "priceAsOf": "2026-10-21",
+  "units": "USD per share",
+  "marginSafety": 0.25,
+  "notes": "Modelo exploratorio. Flujo de caja inicial normalizado, no una previsión auditada. Sin precio en tiempo real.",
+  "companies": [
+    {
+      "t": "CB",
+      "name": "Chubb",
+      "price": 354.95,
+      "model": "pb",
+      "bvps": 191.43,
+      "scenarios": [
+        [
+          0.12,
+          0.115,
+          0.03
+        ],
+        [
+          0.135,
+          0.105,
+          0.04
+        ],
+        [
+          0.148,
+          0.095,
+          0.045
+        ]
+      ]
+    },
+    {
+      "t": "CME",
+      "name": "CME Group",
+      "price": 295.79,
+      "model": "dcf",
+      "scenarios": [
+        [
+          10,
+          0.02,
+          0.02,
+          0.115,
+          0.02
+        ],
+        [
+          11.7,
+          0.055,
+          0.04,
+          0.095,
+          0.03
+        ],
+        [
+          12.5,
+          0.08,
+          0.05,
+          0.085,
+          0.035
+        ]
+      ]
+    },
+    {
+      "t": "GOOGL",
+      "name": "Alphabet",
+      "price": 334.76,
+      "model": "dcf",
+      "scenarios": [
+        [
+          4.5,
+          0.08,
+          0.04,
+          0.11,
+          0.025
+        ],
+        [
+          6.5,
+          0.13,
+          0.06,
+          0.095,
+          0.03
+        ],
+        [
+          9,
+          0.17,
+          0.08,
+          0.085,
+          0.035
+        ]
+      ]
+    },
+    {
+      "t": "FERG",
+      "name": "Ferguson Enterprises",
+      "price": 227.96,
+      "model": "dcf",
+      "scenarios": [
+        [
+          8,
+          0.02,
+          0.02,
+          0.115,
+          0.02
+        ],
+        [
+          10.3,
+          0.05,
+          0.035,
+          0.1,
+          0.025
+        ],
+        [
+          11.5,
+          0.075,
+          0.045,
+          0.09,
+          0.03
+        ]
+      ]
+    }
+  ]
+}
