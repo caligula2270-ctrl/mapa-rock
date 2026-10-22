@@ -1,0 +1,774 @@
+{
+  "schema": 1,
+  "asOf": "2026-10-22",
+  "universe": "SEC 13F: 6 gestores, 1.242 líneas y 1.371 variaciones",
+  "status": "Criba de investigación; ni recomendación ni valor intrínseco calculado",
+  "method": "Fuente de señales: SEC 13F; fundamentales fuentes oficiales de resultados; ratios precio y ROIC compilados por StockAnalysis/S&P Global; no inventar cifras faltantes.",
+  "caveats": [
+    "13F puede retrasarse hasta 45 días; Pershing Square presenta Q1 2026 frente a Q2 de otros gestores.",
+    "CUSIP de múltiples clases de Alphabet agrupado por emisor sólo para managersCount; no sumar acciones entre clases.",
+    "ROIC y FCF de terceros tienen definiciones heterogéneas; comparación entre sectores es orientativa.",
+    "Ningún candidato cumple formalmente umbral de margen de seguridad sin DCF/SOTP y escenarios.",
+    "Berkshire presenta múltiples líneas por un mismo CUSIP; se consolidan únicamente SH sin opciones."
+  ],
+  "candidates": [
+    {
+      "rank": 1,
+      "ticker": "CB",
+      "company": "Chubb",
+      "cusips": [
+        "H1467J104"
+      ],
+      "bucket": "A",
+      "conviction": "Profundizar ahora",
+      "moat": "Escala global, selección de riesgos, información histórica de siniestros, distribución y disciplina de suscripción. Comprobar persistencia a través del ciclo.",
+      "capital": "ROE operativo core anualizado 14,9% y ROTE core 21,6% (Q3 2026); ROIC industrial no apropiado.",
+      "cash": "Evaluar beneficios suscripción + rendimiento de inversiones + reservas; FCF industrial no comparable.",
+      "balance": "Tangible book value/share $126,96 (Q3 2026); revisar reservas, activos y duración, solvencia regulatoria.",
+      "valuation": "PER forward ~12,4x y P/B ~1,83x a 21/10/2026: parece relativamente menos exigente; NO acredita descuento a valor intrínseco.",
+      "metric": "Combined ratio 84,1% · ROE core 14,9% · PER forward ~12,4x",
+      "mos": "Sin verificar; exige valor intrínseco por beneficios normalizados y evolución de valor en libros.",
+      "whyNow": "Berkshire mantiene posición; Bridgewater incrementa acciones en Q2. Resultados Q3 publicados 20/10/2026.",
+      "firstRejection": "Deterioro de reservas, catástrofes estructurales o precio superior a valor por ROE sostenible.",
+      "investableWhen": "DCF/descuento de dividendos/beneficios normalizados con 20-25% de descuento a escenario prudente.",
+      "nextStep": "Modelar beneficios de suscripción por ciclo, reservas, renta de cartera y crecimiento del patrimonio por acción.",
+      "sources": [
+        "https://news.chubb.com/2026-10-20-Chubb-Reports-Third-Quarter-Per-Share-Net-Income-and-Record-Core-Operating-Income-of-7-30-and-7-66%2C-Respectively%2C-Up-4-4-and-0-8-Consolidated-Net-Premiums-Written-of-15-1-Billion%2C-Up-1-9-and-1-4-P-C-Combined-Ratio-of-84-1",
+        "https://stockanalysis.com/stocks/cb/statistics/"
+      ],
+      "managers": [
+        {
+          "manager": "Berkshire Hathaway",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "H1467J104": 34249183
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/56757.xml"
+        },
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "H1467J104": 67050
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000003/infotable.xml"
+        }
+      ],
+      "changes": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "H1467J104",
+          "category": "increase",
+          "deltaPct": 49.72,
+          "previousShares": 44783,
+          "currentShares": 67050
+        }
+      ],
+      "managersCount": 2,
+      "secGeneratedAt": "2026-10-22T21:17:14.208121+00:00"
+    },
+    {
+      "rank": 2,
+      "ticker": "CME",
+      "company": "CME Group",
+      "cusips": [
+        "12572Q105"
+      ],
+      "bucket": "A",
+      "conviction": "Profundizar ahora",
+      "moat": "Efectos de red y liquidez en derivados de referencia, cámara de compensación, regulación y costes de cambio; riesgo en nuevos mercados.",
+      "capital": "ROIC TTM ~12,6% (fuente agregada) requiere ajustar intangibles; margen operativo TTM ~66,2%.",
+      "cash": "FCF TTM ~$4,21 mil millones; yield ~4,0% (fuente agregada, 21/10).",
+      "balance": "Q3 2026: caja ~$2,4 mil millones y deuda ~$3,4 mil millones; poco apalancamiento relativo.",
+      "valuation": "PER ~24,3x; forward ~23,0x; rendimiento FCF ~4,0%. Precio razonable solo con crecimiento y durabilidad verificables.",
+      "metric": "Margen operativo ~66% · FCF yield ~4,0% · PER ~24,3x",
+      "mos": "No demostrado; dependerá de crecimiento del volumen, RPC y estrés de volatilidad baja.",
+      "whyNow": "Nueva posición declarada por Baupost en Q2 2026; Q3 2026 publicado el 21/10.",
+      "firstRejection": "Desintermediación, presión en fee/contrato, menor volatilidad estructural o valoración excesiva.",
+      "investableWhen": "Precio de entrada por DCF normalizado (crecimiento prudente 3-5%) con margen 20-25%.",
+      "nextStep": "Separar ingresos por clearing, datos, volumen/carga por contrato y proyectar FCF en escenario de baja actividad.",
+      "sources": [
+        "https://investor.cmegroup.com/news-releases/news-release-details/cme-group-inc-reports-highest-q3-revenue-record-q3-2026",
+        "https://stockanalysis.com/stocks/cme/statistics/"
+      ],
+      "managers": [
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "12572Q105": 619000
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1061768/000106176826000010/BGLLCQ22026.xml"
+        }
+      ],
+      "changes": [
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "12572Q105",
+          "category": "newly_reported",
+          "deltaPct": null,
+          "previousShares": 0,
+          "currentShares": 619000
+        }
+      ],
+      "managersCount": 1,
+      "secGeneratedAt": "2026-10-22T21:17:14.208121+00:00"
+    },
+    {
+      "rank": 3,
+      "ticker": "GOOGL",
+      "company": "Alphabet (GOOGL/GOOG)",
+      "cusips": [
+        "02079K107",
+        "02079K305"
+      ],
+      "bucket": "A",
+      "conviction": "Profundizar ahora",
+      "moat": "Escala en búsqueda, distribución, anuncios y nube; vigilar sustitución de búsqueda mediante agentes IA y regulación.",
+      "capital": "ROIC TTM ~24,9%; margen operativo Q2 2026 ~34% (+2 puntos).",
+      "cash": "FCF TTM ~$53,3 mil millones, yield ~1,3%; capex IA presiona la conversión de beneficios a caja.",
+      "balance": "Posición de caja neta ~US$121,7 mil millones (agregado a 21/10/2026).",
+      "valuation": "PER reportado ~16,5x engañoso por plusvalías no operativas; PER forward ~24,8x. Se requiere beneficio normalizado.",
+      "metric": "ROIC ~24,9% · FCF yield ~1,3% · PER forward ~24,8x",
+      "mos": "No probado; ganancias extraordinarias de inversiones distorsionan múltiplo histórico.",
+      "whyNow": "Cinco gestores presentes; Berkshire y Baupost aumentaron, Bridgewater y Pershing redujeron (este último Q1). Q3 resultados previstos 28/10.",
+      "firstRejection": "Pérdida permanente de monetización de búsquedas ante IA, sanciones estructurales o capex excesivo.",
+      "investableWhen": "Recalcular FCF normalizado tras separar IA crecimiento/mantenimiento y exigir 20-25% de margen respecto a escenario conservador.",
+      "nextStep": "Normalizar otras ganancias no recurrentes; monetización Search/Cloud, escenarios IA y coste de infraestructura.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+        "https://stockanalysis.com/stocks/goog/statistics/"
+      ],
+      "managers": [
+        {
+          "manager": "Berkshire Hathaway",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "02079K107": 27188433,
+            "02079K305": 78791167
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/56757.xml"
+        },
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "02079K305": 1322176,
+            "02079K107": 74207
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000003/infotable.xml"
+        },
+        {
+          "manager": "Pershing Square",
+          "period": "2026-03-31",
+          "cusips": [],
+          "sharesByCusip": {
+            "02079K305": 32376,
+            "02079K107": 311726
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1336528/000117266126002336/infotable.xml"
+        },
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "02079K107": 1371931
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1061768/000106176826000010/BGLLCQ22026.xml"
+        },
+        {
+          "manager": "Duquesne Family Office",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "02079K305": 336300
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1536411/000153641126000006/form13f_20260630.xml"
+        },
+        {
+          "manager": "Appaloosa Management",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "02079K107": 1850000
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1656456/000165645626000003/Form13FInfoTable.xml"
+        }
+      ],
+      "changes": [
+        {
+          "manager": "Berkshire Hathaway",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "02079K107",
+          "category": "increase",
+          "deltaPct": 658.35,
+          "previousShares": 3585215,
+          "currentShares": 27188433
+        },
+        {
+          "manager": "Berkshire Hathaway",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "02079K305",
+          "category": "increase",
+          "deltaPct": 45.24,
+          "previousShares": 54249798,
+          "currentShares": 78791167
+        },
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "02079K107",
+          "category": "decrease",
+          "deltaPct": -80.83,
+          "previousShares": 387002,
+          "currentShares": 74207
+        },
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "02079K305",
+          "category": "decrease",
+          "deltaPct": -33.81,
+          "previousShares": 1997674,
+          "currentShares": 1322176
+        },
+        {
+          "manager": "Pershing Square",
+          "period": "2026-03-31",
+          "previousPeriod": "2025-12-31",
+          "cusip": "02079K107",
+          "category": "decrease",
+          "deltaPct": -94.94,
+          "previousShares": 6163871,
+          "currentShares": 311726
+        },
+        {
+          "manager": "Pershing Square",
+          "period": "2026-03-31",
+          "previousPeriod": "2025-12-31",
+          "cusip": "02079K305",
+          "category": "decrease",
+          "deltaPct": -95.23,
+          "previousShares": 678297,
+          "currentShares": 32376
+        },
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "02079K107",
+          "category": "increase",
+          "deltaPct": 16.15,
+          "previousShares": 1181131,
+          "currentShares": 1371931
+        },
+        {
+          "manager": "Duquesne Family Office",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "02079K305",
+          "category": "newly_reported",
+          "deltaPct": null,
+          "previousShares": 0,
+          "currentShares": 336300
+        },
+        {
+          "manager": "Appaloosa Management",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "02079K107",
+          "category": "increase",
+          "deltaPct": 6.77,
+          "previousShares": 1732700,
+          "currentShares": 1850000
+        }
+      ],
+      "managersCount": 6,
+      "secGeneratedAt": "2026-10-22T21:17:14.208121+00:00"
+    },
+    {
+      "rank": 4,
+      "ticker": "FERG",
+      "company": "Ferguson Enterprises",
+      "cusips": [
+        "31488V107"
+      ],
+      "bucket": "A",
+      "conviction": "Profundizar ahora",
+      "moat": "Densidad logística, servicio técnico, relaciones con contratistas, disponibilidad y economías de escala en distribución de material profesional.",
+      "capital": "ROIC TTM ~17,6% (agregado); margen operativo Q2 2026 10,2%.",
+      "cash": "FCF yield TTM ~2,5%; capital circulante y existencias sensibles a ciclo residencial.",
+      "balance": "Ratio deuda neta/EBITDA ajustado 1,3x (Q2 2026).",
+      "valuation": "PER forward ~19,4x y P/FCF ~40x; exige normalizar capital circulante y el ciclo.",
+      "metric": "ROIC ~17,6% · deuda neta/EBITDA 1,3x · FCF yield ~2,5%",
+      "mos": "Pendiente de modelar; rendimiento FCF actual no muestra descuento claro.",
+      "whyNow": "Dos gestores (Baupost y Bridgewater) aumentaron la posición Q2; negocio de distribución industrial relativamente estudiable.",
+      "firstRejection": "Caída prolongada de construcción, erosión de precios/márgenes o expansión a retornos inferiores al coste capital.",
+      "investableWhen": "Normalizar margen 9-10%, crecimiento orgánico, capital circulante y aplicar MOS 20-25%.",
+      "nextStep": "Modelo 5 años por residencial/no residencial, ROIC incremental, adquisiciones y conversión EBIT→FCF.",
+      "sources": [
+        "https://www.corporate.ferguson.com/pressroom/news-releases/news-details/2026/Ferguson-Reports-Second-Quarter-Ended-June-30-2026/default.aspx",
+        "https://stockanalysis.com/stocks/ferg/statistics/"
+      ],
+      "managers": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "31488V107": 44686
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000003/infotable.xml"
+        },
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "31488V107": 1450594
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1061768/000106176826000010/BGLLCQ22026.xml"
+        }
+      ],
+      "changes": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "31488V107",
+          "category": "increase",
+          "deltaPct": 16.66,
+          "previousShares": 38304,
+          "currentShares": 44686
+        },
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "31488V107",
+          "category": "increase",
+          "deltaPct": 0.57,
+          "previousShares": 1442411,
+          "currentShares": 1450594
+        }
+      ],
+      "managersCount": 2,
+      "secGeneratedAt": "2026-10-22T21:17:14.208121+00:00"
+    },
+    {
+      "rank": 5,
+      "ticker": "V",
+      "company": "Visa",
+      "cusips": [
+        "92826C839"
+      ],
+      "bucket": "B",
+      "conviction": "Vigilar valoración",
+      "moat": "Red bilateral global de pagos, marca, aceptación, escala y costes de replicación; vigilar pagos cuenta-a-cuenta y regulación.",
+      "capital": "Q3 FY26 margen operativo GAAP ~59% (6.877/11.633); ROIC comparable pendiente de metodología.",
+      "cash": "Negocio de baja intensidad de capital; FCF trimestral normalizado por cargos legales y recompras pendiente.",
+      "balance": "Balance de red de pagos con riesgos legales y obligaciones de compensación; verificar apalancamiento neto y litigios.",
+      "valuation": "PER forward ~28,2x a 21/10/2026; la calidad parece ampliamente conocida y pagada.",
+      "metric": "Ingresos Q3 +14% · margen operativo ~59% · PER forward ~28,2x",
+      "mos": "No demostrado; prima de calidad significativa.",
+      "whyNow": "Bridgewater +223,9% en acciones Q2; Baupost ya tiene posición. Q4 FY26 previsto 27/10.",
+      "firstRejection": "Restricción regulatoria de tasas de intercambio, litigios, presiones de red o disrupción de rails.",
+      "investableWhen": "Conservador crecimiento bajo doble dígito, descuentos regulatorios y descuento al valor estimado.",
+      "nextStep": "Modelar transacciones/precios/yield, ingresos de servicios y sensibilidad regulatoria.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000103/q32026earningsrelease.htm",
+        "https://stockanalysis.com/stocks/v/statistics/"
+      ],
+      "managers": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "92826C839": 81537
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000003/infotable.xml"
+        },
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "92826C839": 701355
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1061768/000106176826000010/BGLLCQ22026.xml"
+        }
+      ],
+      "changes": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "92826C839",
+          "category": "increase",
+          "deltaPct": 223.92,
+          "previousShares": 25172,
+          "currentShares": 81537
+        }
+      ],
+      "managersCount": 2,
+      "secGeneratedAt": "2026-10-22T21:17:14.208121+00:00"
+    },
+    {
+      "rank": 6,
+      "ticker": "TSM",
+      "company": "TSMC",
+      "cusips": [
+        "874039100"
+      ],
+      "bucket": "B",
+      "conviction": "Calidad alta; riesgo precio/geopolítica",
+      "moat": "Liderazgo de proceso avanzado, curva de rendimiento, ecosistema, know-how fab y escala de CAPEX; dependencia geográfica.",
+      "capital": "ROIC TTM ~60,3% según proveedor (definición a contrastar); margen operativo Q3 2026 58,7%.",
+      "cash": "FCF TTM ~$45,7 mil millones; yield ~2,36%; CAPEX estructura del sector.",
+      "balance": "Caja neta estimada ~$100,4 mil millones (fuente agregada, 21/10/2026).",
+      "valuation": "PER forward ~20x; múltiplo no refleja por sí mismo riesgo geopolítico y de ciclo semiconductores.",
+      "metric": "Margen operativo Q3 58,7% · ROIC aprox. 60,3% · FCF yield 2,36%",
+      "mos": "No cuantificado; descontar explícitamente geopolítica, fábricas internacionales y ciclo.",
+      "whyNow": "Duquesne y Appaloosa aumentaron en Q2; Bridgewater redujo. Q3 2026 publicado 15/10.",
+      "firstRejection": "Riesgo geopolítico no diversificable, exceso de capex / caída rendimientos, concentraciones de clientes.",
+      "investableWhen": "Valorar escenario de interrupción y ciclo adverso; margen seguridad exigente, no sólo PER forward.",
+      "nextStep": "Modelar nodos 2nm/3nm, márgenes por utilización, FCF con capex global y escenarios Taiwan.",
+      "sources": [
+        "https://pr.tsmc.com/english/news/3346",
+        "https://stockanalysis.com/stocks/tsm/statistics/"
+      ],
+      "managers": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "874039100": 34525
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000003/infotable.xml"
+        },
+        {
+          "manager": "Duquesne Family Office",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "874039100": 589680
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1536411/000153641126000006/form13f_20260630.xml"
+        },
+        {
+          "manager": "Appaloosa Management",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "874039100": 1650000
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1656456/000165645626000003/Form13FInfoTable.xml"
+        }
+      ],
+      "changes": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "874039100",
+          "category": "decrease",
+          "deltaPct": -96.79,
+          "previousShares": 1077079,
+          "currentShares": 34525
+        },
+        {
+          "manager": "Duquesne Family Office",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "874039100",
+          "category": "increase",
+          "deltaPct": 19.06,
+          "previousShares": 495280,
+          "currentShares": 589680
+        },
+        {
+          "manager": "Appaloosa Management",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "874039100",
+          "category": "increase",
+          "deltaPct": 24.29,
+          "previousShares": 1327500,
+          "currentShares": 1650000
+        }
+      ],
+      "managersCount": 3,
+      "secGeneratedAt": "2026-10-22T21:17:14.208121+00:00"
+    },
+    {
+      "rank": 7,
+      "ticker": "MCO",
+      "company": "Moody's",
+      "cusips": [
+        "615369105"
+      ],
+      "bucket": "B",
+      "conviction": "Gran negocio; esperar precio",
+      "moat": "Duopolio rating, reputación, escala y dependencia de los mercados de deuda; datos y software analítico complementarios.",
+      "capital": "ROIC TTM ~31,6% (agregado); margen operativo Q3 44,8% GAAP.",
+      "cash": "FCF acumulado a septiembre 2026 ~$2,2 mil millones (+22%); FCF yield TTM ~3,6%.",
+      "balance": "Caja neta -$5,87 mil millones; deuda/EBITDA ~1,8x estimado (agregado).",
+      "valuation": "PER forward ~26,5x y FCF yield ~3,6%; valoración exigente para sensibilidad al ciclo de emisiones.",
+      "metric": "ROIC ~31,6% · margen Q3 44,8% · PER forward ~26,5x",
+      "mos": "No probado; elevada prima por moat.",
+      "whyNow": "Berkshire mantiene; Bridgewater declara posición nueva pequeña. Q3 presentado 21/10.",
+      "firstRejection": "Menos emisiones estructurales, regulación agencias calificación, presión competitiva analytics.",
+      "investableWhen": "DCF con emisiones normalizadas, crecimiento analytics modesto y MOS ~20-25%.",
+      "nextStep": "Descomponer Ratings/Analytics, monetización de datos, apalancamiento y base FCF.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1059556/000162828026066594/a3q26earningsrelease.htm",
+        "https://stockanalysis.com/stocks/mco/statistics/"
+      ],
+      "managers": [
+        {
+          "manager": "Berkshire Hathaway",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "615369105": 24669778
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/56757.xml"
+        },
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "615369105": 30139
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000003/infotable.xml"
+        }
+      ],
+      "changes": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "615369105",
+          "category": "newly_reported",
+          "deltaPct": null,
+          "previousShares": 0,
+          "currentShares": 30139
+        }
+      ],
+      "managersCount": 2,
+      "secGeneratedAt": "2026-10-22T21:17:14.208121+00:00"
+    },
+    {
+      "rank": 8,
+      "ticker": "GPC",
+      "company": "Genuine Parts",
+      "cusips": [
+        "372460105"
+      ],
+      "bucket": "B",
+      "conviction": "Value cíclico con reservas",
+      "moat": "Disponibilidad local, logística/servicio y relaciones con talleres/industria; moat menos fuerte que plataformas y bolsas.",
+      "capital": "ROIC TTM ~13,9% según agregado; beneficios GAAP afectados por extraordinarios.",
+      "cash": "FCF TTM ~$759 millones, yield ~4,1%; capital circulante y conversión a caja deben normalizarse.",
+      "balance": "Deuda neta ~$6,09 mil millones; cobertura intereses ~8,5x, apalancamiento no trivial.",
+      "valuation": "PER forward ~16,7x (dato anterior a resultados Q3); comprobar tras guía ajustada 2026 $7,50-7,75 y separación 2027.",
+      "metric": "ROIC ~13,9% · FCF yield ~4,1% · deuda neta ~$6,1 mil millones",
+      "mos": "Potencial relativo por múltiplo, pero deuda y separación exigen colchón adicional.",
+      "whyNow": "Baupost y Bridgewater aumentaron Q2; Q3 publicado 20/10 y plan división GPC/Motion en 2027.",
+      "firstRejection": "Deterioro margen industrial, deuda, costos de escisión o ROIC inferior al coste de capital.",
+      "investableWhen": "Suma de partes post-escisión y capacidad de deuda, FCF/acción sostenible y descuento explícito.",
+      "nextStep": "Separar automoción e industrial, márgenes, deuda asignada y FCF proforma.",
+      "sources": [
+        "https://www.genpt.com/2026-10-20-Genuine-Parts-Company-Reports-Third-Quarter-2026-Results",
+        "https://stockanalysis.com/stocks/gpc/statistics/"
+      ],
+      "managers": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "372460105": 31255
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000003/infotable.xml"
+        },
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "372460105": 2816178
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1061768/000106176826000010/BGLLCQ22026.xml"
+        }
+      ],
+      "changes": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "372460105",
+          "category": "increase",
+          "deltaPct": 240.28,
+          "previousShares": 9185,
+          "currentShares": 31255
+        },
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "372460105",
+          "category": "increase",
+          "deltaPct": 88.96,
+          "previousShares": 1490348,
+          "currentShares": 2816178
+        }
+      ],
+      "managersCount": 2,
+      "secGeneratedAt": "2026-10-22T21:17:14.208121+00:00"
+    },
+    {
+      "rank": 9,
+      "ticker": "AMZN",
+      "company": "Amazon",
+      "cusips": [
+        "023135106"
+      ],
+      "bucket": "B",
+      "conviction": "Valoración bloqueada por FCF",
+      "moat": "AWS: escala y switching; retail distribución y logística; anuncios y prime; capex IA muy elevado.",
+      "capital": "ROIC TTM ~11,9% según proveedor; margen operativo Q2 13,7% (27,5/200,6).",
+      "cash": "FCF TTM oficial -$7,6 mil millones a junio 2026 por inversión en infraestructuras IA; otros proveedores miden distinto.",
+      "balance": "Interés cubierto ampliamente; deuda/EBITDA ~1,35x (agregado); gran peso CAPEX/leases.",
+      "valuation": "PER forward ~27,8x, PER histórico distorsionado por ganancias en Anthropic de $53,4 mil millones en Q2.",
+      "metric": "AWS Q2 +37% · FCF oficial TTM -$7,6 mil millones · PER forward ~27,8x",
+      "mos": "No demostrado; más allá del FCF actual hay que medir retorno incremental del CAPEX.",
+      "whyNow": "Cinco gestores presentes: Pershing, Baupost, Duquesne y Appaloosa aumentan y Bridgewater reduce; próxima publicación 29/10.",
+      "firstRejection": "Capex supera de forma permanente su retorno, menor crecimiento de AWS o destrucción de cash conversion.",
+      "investableWhen": "Estimar FCF normalizado pos-capex IA con escenarios de rentabilidad y exigir descuento amplio.",
+      "nextStep": "Valorar AWS/publicidad/retail por partes y separar beneficios contables por Anthropic.",
+      "sources": [
+        "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/",
+        "https://stockanalysis.com/stocks/amzn/statistics/"
+      ],
+      "managers": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "023135106": 2025481
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000003/infotable.xml"
+        },
+        {
+          "manager": "Pershing Square",
+          "period": "2026-03-31",
+          "cusips": [],
+          "sharesByCusip": {
+            "023135106": 11451981
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1336528/000117266126002336/infotable.xml"
+        },
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "023135106": 3743854
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1061768/000106176826000010/BGLLCQ22026.xml"
+        },
+        {
+          "manager": "Duquesne Family Office",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "023135106": 541600
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1536411/000153641126000006/form13f_20260630.xml"
+        },
+        {
+          "manager": "Appaloosa Management",
+          "period": "2026-06-30",
+          "cusips": [],
+          "sharesByCusip": {
+            "023135106": 5000000
+          },
+          "filingUrl": "https://www.sec.gov/Archives/edgar/data/1656456/000165645626000003/Form13FInfoTable.xml"
+        }
+      ],
+      "changes": [
+        {
+          "manager": "Bridgewater Associates",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "023135106",
+          "category": "decrease",
+          "deltaPct": -53.85,
+          "previousShares": 4388711,
+          "currentShares": 2025481
+        },
+        {
+          "manager": "Pershing Square",
+          "period": "2026-03-31",
+          "previousPeriod": "2025-12-31",
+          "cusip": "023135106",
+          "category": "increase",
+          "deltaPct": 19.19,
+          "previousShares": 9607824,
+          "currentShares": 11451981
+        },
+        {
+          "manager": "Baupost Group",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "023135106",
+          "category": "increase",
+          "deltaPct": 20.04,
+          "previousShares": 3118754,
+          "currentShares": 3743854
+        },
+        {
+          "manager": "Duquesne Family Office",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "023135106",
+          "category": "increase",
+          "deltaPct": 1082.53,
+          "previousShares": 45800,
+          "currentShares": 541600
+        },
+        {
+          "manager": "Appaloosa Management",
+          "period": "2026-06-30",
+          "previousPeriod": "2026-03-31",
+          "cusip": "023135106",
+          "category": "increase",
+          "deltaPct": 15.74,
+          "previousShares": 4320000,
+          "currentShares": 5000000
+        }
+      ],
+      "managersCount": 5,
+      "secGeneratedAt": "2026-10-22T21:17:14.208121+00:00"
+    }
+  ]
+}
