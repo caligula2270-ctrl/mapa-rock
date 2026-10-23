@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "asOf": "2026-10-24",
+  "status": "Due diligence en curso, no recomendación de compra",
+  "marginSafety": 0.25,
+  "notes": [
+    "Supuestos conservadores, no previsiones de emisores.",
+    "Chubb: BVPS GAAP con ROE GAAP sostenible hipotético; diferencia frente ROE core.",
+    "CME: DCF sobre FCFE normalizado, alto peso del valor terminal.",
+    "No cambiar las valoraciones previas hasta tener corroboración independiente."
+  ],
+  "cases": [
+    {
+      "ticker": "CB",
+      "name": "Chubb",
+      "referencePrice": 356.64,
+      "method": "P/B justificado",
+      "priorCentral": 279.78,
+      "scenarios": [
+        180.795,
+        246.1243,
+        363.717
+      ],
+      "entry": 184.5932,
+      "quality": [
+        "Ventaja de suscripción y datos actuariales",
+        "ROE core Q3 anualizado 14,9%",
+        "Ratio combinado Q3 84,1%"
+      ],
+      "risk": [
+        "Reservas brutas USD 91.829m y patrimonio atribuible USD 73.227m",
+        "Dev. favorable de reservas previas FY2023/FY2024/FY2025: USD 856m/975m/1.108m",
+        "ROE GAAP sostenible 12,5% es supuesto y no equivale al ROE core informado"
+      ],
+      "catalyst": "Revisar siniestralidad, competencia de tarifas y desarrollo de reservas a ciclo.",
+      "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/R45.htm"
+    },
+    {
+      "ticker": "CME",
+      "name": "CME Group",
+      "referencePrice": 306.33,
+      "method": "DCF 10 años FCFE por acción",
+      "priorCentral": 213.07,
+      "scenarios": [
+        103.0075,
+        160.6312,
+        252.4259
+      ],
+      "entry": 120.4734,
+      "quality": [
+        "Moat por liquidez, clearing y contratos benchmark",
+        "Ingresos Q3 USD 1.737,3m, RPC USD 0,679",
+        "ADV Q3 29,4m contratos y margen operativo ~65,7%"
+      ],
+      "risk": [
+        "FCF inicial 11,60 USD/acc es hipótesis normalizada",
+        "Riesgo de volumen, precio por contrato y competencia venues",
+        "USD 155.180m de colateral de clearing no es caja propia"
+      ],
+      "catalyst": "Modelar ADV × tarifas × trading sessions y separar market-data, clearing y gastos cloud.",
+      "source": "https://investor.cmegroup.com/news-releases/news-release-details/cme-group-inc-reports-highest-q3-revenue-record-q3-2026"
+    }
+  ],
+  "other": [
+    {
+      "ticker": "GOOGL",
+      "status": "No validada la normalización del FCF tras CAPEX de IA."
+    },
+    {
+      "ticker": "FERG",
+      "status": "No validado capital circulante y flujos a ciclo completo."
+    }
+  ]
+}
