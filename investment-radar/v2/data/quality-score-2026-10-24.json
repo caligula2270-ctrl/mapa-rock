@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "asOf": "2026-10-24",
+  "methodology": "Criba Value & Quality, no recomendación. Componentes de juicio analítico con fuentes primarias; la valoración sin MOS validado queda null y anula nota total.",
+  "weights": {
+    "moat": 25,
+    "returns": 20,
+    "cash": 20,
+    "balance": 15,
+    "margin": 20
+  },
+  "scale": "Puntuación provisional de evidencia 0..peso por criterio; nota final 0-100 solo con todos los criterios documentados. No se estima lo ausente.",
+  "companies": [
+    {
+      "ticker": "CB",
+      "company": "Chubb",
+      "scores": {
+        "moat": 20,
+        "returns": 15,
+        "cash": null,
+        "balance": 9,
+        "margin": null
+      },
+      "status": "Investigación adicional",
+      "explanations": {
+        "moat": "Escala de underwriting y distribución; moat aún no demostrado a ciclo completo.",
+        "returns": "ROE core Q3 anualizado 14,9%; falta conciliar con valor libros GAAP.",
+        "cash": "La caja operativa de aseguradora no es FCFE industrial: sin puntuación.",
+        "balance": "Reservas y AOCI requieren stress actuarial y crédito.",
+        "margin": "Precio intrínseco todavía no homologado: sin puntuación."
+      },
+      "sources": [
+        "https://news.chubb.com/",
+        "https://www.sec.gov/edgar/browse/?CIK=896159&owner=exclude"
+      ]
+    },
+    {
+      "ticker": "CME",
+      "company": "CME Group",
+      "scores": {
+        "moat": 23,
+        "returns": 18,
+        "cash": 16,
+        "balance": 12,
+        "margin": null
+      },
+      "status": "Investigar antes de invertir",
+      "explanations": {
+        "moat": "Red de liquidez, clearing y contratos de referencia consolidados.",
+        "returns": "Margen operativo Q3 ~65,7%; ROIC requiere ajuste de intangibles.",
+        "cash": "FCF 2025 elevado; sensible a volúmenes e ingresos por contrato.",
+        "balance": "Liquidez y deuda moderadas; el colateral de clearing no pertenece al accionista.",
+        "margin": "DCF altamente dependiente del terminal; falta valoración alternativa independiente."
+      },
+      "sources": [
+        "https://investor.cmegroup.com/news-releases/news-release-details/cme-group-inc-reports-highest-q3-revenue-record-q3-2026"
+      ]
+    },
+    {
+      "ticker": "GOOGL",
+      "company": "Alphabet",
+      "scores": {
+        "moat": 22,
+        "returns": 14,
+        "cash": 6,
+        "balance": 8,
+        "margin": null
+      },
+      "status": "Precio no validado",
+      "explanations": {
+        "moat": "Distribución Search, YouTube y Cloud; riesgo de disrupción IA y regulación.",
+        "returns": "Margen económico elevado, pero requiere ROIC incremental post inversiones IA.",
+        "cash": "FCF 1S2026 = 84.859 - 80.598 = 4.261 MUSD, no equivale a rentabilidad futura.",
+        "balance": "Financiación deuda/equity, convertibles, compromisos leases e impacto de dilución.",
+        "margin": "FCF base hipotético de 6,5 USD/acción no sustentado por caja 1S2026."
+      },
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+      ]
+    },
+    {
+      "ticker": "FERG",
+      "company": "Ferguson Enterprises",
+      "scores": {
+        "moat": 16,
+        "returns": 15,
+        "cash": 8,
+        "balance": 11,
+        "margin": null
+      },
+      "status": "Precio no validado",
+      "explanations": {
+        "moat": "Densidad logística y escala de distribución profesional, vulnerable al ciclo.",
+        "returns": "Margen operativo Q2 10,2%; validar ROIC orgánico e incremental.",
+        "cash": "FCF simple 1S2026 = 716 - 234 = 482 MUSD; FY2025 = 1.908 - 305 = 1.603 MUSD.",
+        "balance": "Deuda neta a junio 2026: 4.468 MUSD; net debt / EBITDA ajustado 1,3x.",
+        "margin": "Base de FCF 10,3 USD/acción aún no conciliada con semestre ni FY2025."
+      },
+      "sources": [
+        "https://www.corporate.ferguson.com/pressroom/news-releases/news-details/2026/Ferguson-Reports-Second-Quarter-Ended-June-30-2026/default.aspx",
+        "https://www.corporate.ferguson.com/pressroom/news-releases/news-details/2025/Ferguson-Reports-Fourth-Quarter-and-Year-End-Results/default.aspx"
+      ]
+    }
+  ],
+  "qc": {
+    "unscoredPolicy": "No inferir nota total cuando falte algún criterio.",
+    "latestFundamentalPeriod": "2026-06-30 for GOOGL and FERG; 2026 Q3 for CB and CME",
+    "fullScoreReadyCount": 0
+  }
+}
