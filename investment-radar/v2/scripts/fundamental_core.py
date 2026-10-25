@@ -204,6 +204,24 @@ def evaluate(company:dict, today:dt.date)->dict:
     if interim:
         issues.append({"severity":"review","code":"INTERIM_PERIOD_NOT_IN_FY_SCREEN",
            "period":interim["end"],"detail":"Newer interim YTD information exists; prior fiscal-year screen excludes it"})
+    if len(annual)>=2:
+        first,prior=annual[:2]
+        for key,code,drop in (
+            ("operatingCashFlow","OPERATING_CASH_COLLAPSE",.30),
+            ("freeCashFlowSimple","FCF_DROP_40PCT",.40),
+        ):
+            x,y=first.get(key),prior.get(key)
+            if x is not None and y is not None and y>0 and x<y*(1-drop):
+                issues.append({"severity":"review","code":code,
+                    "detail":"Latest full-year "+key+" fell by more than "+str(int(drop*100))+"% from prior FY"})
+        curr,prev=first.get("operatingMargin"),prior.get("operatingMargin")
+        if curr is not None and prev is not None and curr<prev-.05:
+            issues.append({"severity":"review","code":"OPERATING_MARGIN_DROP",
+                "detail":"Latest annual operating margin declined by more than five percentage points"})
+    if recent["stockCompensation"] is not None and recent["operatingCashFlow"] and recent["operatingCashFlow"]>0:
+        if recent["stockCompensation"]/recent["operatingCashFlow"]>.30:
+            issues.append({"severity":"review","code":"HIGH_STOCK_COMP",
+                "detail":"Stock compensation exceeds 30% of operating cash flow; normalize share count and owner earnings"})
     blocked=any(x["severity"]=="block" for x in issues)
     return {"ticker":ticker,"name":company.get("name",ticker),"cik":company.get("cik"),
        "sourceURL":company.get("factsURL"),"category":category,"latestFiscalYearEnd":latest,
