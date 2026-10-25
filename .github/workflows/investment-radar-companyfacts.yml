@@ -12,6 +12,9 @@ on:
       - 'investment-radar/v2/scripts/test_sector_models.py'
       - 'investment-radar/v2/scripts/filing_audit.py'
       - 'investment-radar/v2/scripts/build_filing_audit.py'
+      - 'investment-radar/v2/scripts/cashflow_evidence.py'
+      - 'investment-radar/v2/scripts/build_cashflow_evidence.py'
+      - 'investment-radar/v2/scripts/test_cashflow_evidence.py'
       - 'investment-radar/v2/scripts/autonomous_analyst.py'
       - 'investment-radar/v2/scripts/build_autonomous_analysis.py'
       - 'investment-radar/v2/scripts/test_autonomous_analyst.py'
@@ -38,6 +41,7 @@ jobs:
           python -m unittest discover -s investment-radar/v2/scripts -p 'test_fundamental_core.py' -v
           python -m unittest discover -s investment-radar/v2/scripts -p 'test_sector_models.py' -v
           python -m unittest discover -s investment-radar/v2/scripts -p 'test_autonomous_analyst.py' -v
+          python -m unittest discover -s investment-radar/v2/scripts -p 'test_cashflow_evidence.py' -v
       - name: Retrieve as-filed XBRL data
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
@@ -46,6 +50,8 @@ jobs:
         run: python investment-radar/v2/scripts/analyze_fundamentals.py
       - name: Normalize statements and run sector valuations with hard gates
         run: python investment-radar/v2/scripts/build_sector_models.py
+      - name: Reconcile FCFF and FCFE against SEC as-filed tags
+        run: python investment-radar/v2/scripts/build_cashflow_evidence.py
       - name: Audit documentary FY net-debt and scenario consistency
         run: python investment-radar/v2/scripts/build_filing_audit.py
       - name: Update autonomous equity research and scenario audits
@@ -54,5 +60,5 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add investment-radar/v2/data/sec-financial-facts.json investment-radar/v2/data/fundamental-research.json investment-radar/v2/data/normalized-financials.json investment-radar/v2/data/sector-models.json investment-radar/v2/data/filing-audit.json investment-radar/v2/data/autonomous-analysis.json
+          git add investment-radar/v2/data/sec-financial-facts.json investment-radar/v2/data/fundamental-research.json investment-radar/v2/data/normalized-financials.json investment-radar/v2/data/sector-models.json investment-radar/v2/data/filing-audit.json investment-radar/v2/data/autonomous-analysis.json investment-radar/v2/data/cashflow-evidence.json
           git diff --cached --quiet || (git commit -m "Investment Radar: refresh audited SEC fundamentals" && git push)
