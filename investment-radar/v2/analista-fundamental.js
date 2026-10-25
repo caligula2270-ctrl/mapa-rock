@@ -96,6 +96,24 @@ function render(){
  $('details').innerHTML=rows.map(detail).join('')||'<p>Sin resultados.</p>';
  $('limits').innerHTML=d.limitations.map(x=>'<li>'+esc(x)+'</li>').join('');
 }
+async function loadAutoResearch(){
+ try{
+  const response=await fetch('./data/autonomous-analysis.json?'+Date.now(),{cache:'no-store'});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  const d=await response.json();
+  $('autoStatus').textContent='Analizadas '+d.summary.covered+' empresas; '+d.summary.withDiagnostics+' con escenarios reproducibles, '+d.summary.blocked+' bloqueadas, '+d.summary.approved+' homologadas.';
+  $('autoRows').innerHTML=d.companies.map(x=>{
+   const fmt=n=>typeof n==='number'?num(n)+' USD':'—';
+   const scenario=x.scenarios||{},g=x.assumptions?.blendedForwardGrowth;
+   return '<tr><td><b>'+esc(x.ticker)+'</b></td><td>'+esc(x.readiness)+'</td><td>'+(typeof g==='number'?num(100*g)+'%':'—')+'</td><td>'+fmt(scenario.downside?.illustrativeCashFlowProxyPerShareUSD)+'</td><td>'+fmt(scenario.central?.illustrativeCashFlowProxyPerShareUSD)+'</td><td>'+fmt(scenario.upside?.illustrativeCashFlowProxyPerShareUSD)+'</td><td>'+x.hardGates.length+' pendientes</td></tr>';
+  }).join('');
+  $('autoDetails').innerHTML=d.companies.map(x=>{
+   const sens=x.sensitivity,show=n=>typeof n==='number'?num(n):'—';
+   const grid=sens?'<div class="scroller"><table><thead><tr><th>Descuento / Δ crecimiento</th>'+sens.growthDeltas.map(v=>'<th>'+num(100*v)+' pp</th>').join('')+'</tr></thead><tbody>'+sens.rows.map(row=>'<tr><td>'+num(row.discount*100)+'%</td>'+row.values.map(v=>'<td>'+show(v)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>':'<p>Sin escenarios: datos o modelo sectorial insuficientes.</p>';
+   return '<details><summary>'+esc(x.ticker)+' · '+esc(x.name)+' · '+esc(x.readiness)+'</summary><p><b>Hipótesis:</b> '+esc(x.assumptions?.growthMethod||'Modelo sectorial pendiente')+'.</p><p><b>Comprobaciones pendientes:</b> '+esc(x.hardGates.join(', '))+'</p>'+grid+'<p><b>Precio aprobado:</b> ninguno. Fuente: '+(x.evidence?.sourceURL?'<a href="'+esc(x.evidence.sourceURL)+'" target="_blank" rel="noopener">SEC oficial</a>':'pendiente')+'</p></details>';
+  }).join('');
+ }catch(e){$('autoStatus').textContent='No disponible: '+e.message}
+}
 async function loadFilingAudit(){
  try{
  const r=await fetch('./data/filing-audit.json?'+Date.now(),{cache:'no-store'});
@@ -128,7 +146,7 @@ async function load(){
   const res=await fetch('./data/fundamental-research.json?'+Date.now(),{cache:'no-store'});
   if(!res.ok)throw Error('La primera ejecución del motor no está disponible: HTTP '+res.status);
   const d=await res.json();if(d.schema!==1||!Array.isArray(d.companies)||!d.summary)throw Error('Archivo de análisis incompatible');
-  dataset=d;render();await loadSectorModels();await loadFilingAudit();
+  dataset=d;render();await loadSectorModels();await loadFilingAudit();await loadAutoResearch();
  }catch(e){$('notice').textContent='Motor pendiente o no disponible: '+e.message}
 }
 $('search').oninput=()=>dataset&&render();$('filter').onchange=()=>dataset&&render();load();
