@@ -5731,6 +5731,11 @@
           "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
           "period": "2026-03-31",
           "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
+        },
+        {
+          "severity": "review",
+          "code": "OPERATING_MARGIN_DROP",
+          "detail": "Latest annual operating margin declined by more than five percentage points"
         }
       ],
       "investmentSignal": "disabled",
