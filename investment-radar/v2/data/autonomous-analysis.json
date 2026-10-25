@@ -1,0 +1,1131 @@
+{
+  "schema": 1,
+  "model": "research-analyst-evidence-gated-v1",
+  "asOf": "2026-10-25",
+  "sourceRetrievedAt": "2026-10-25T13:07:37.071051+00:00",
+  "policy": "ZERO automatic buy/entry recommendations; values are diagnostics only.",
+  "companies": [
+    {
+      "ticker": "ADBE",
+      "name": "Adobe",
+      "sector": "software",
+      "model": "owner_cash_proxy_equity_dcf",
+      "asOf": "2026-10-25",
+      "lastFiscalYear": "2025-11-28",
+      "latestInterimYTD": "2026-08-28",
+      "evidence": {
+        "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+        "normalizedFactsAccession": "0000796343-26-000003",
+        "balanceBridgeURL": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+      },
+      "revenueGrowth3FY": [
+        0.10527784236224136,
+        0.10799113813179462,
+        0.10240826990798602
+      ],
+      "assumptions": {
+        "growthMethod": "median of recent YoY revenue changes, capped by sector; blended 50% sector baseline",
+        "blendedForwardGrowth": 0.07764,
+        "sectorPolicy": {
+          "equity_discount": 0.105,
+          "growth_cap": 0.12,
+          "terminal": 0.025,
+          "base_growth": 0.05,
+          "method": "owner_cash_proxy_equity_dcf"
+        },
+        "cashBasis": "median of 3 annual (CFO minus PPE capex minus SBC) proxies; NOT verified FCFE or FCFF",
+        "missingOwnerCashTreatment": "no projection"
+      },
+      "scenarios": {
+        "downside": {
+          "illustrativeCashFlowProxyPerShareUSD": 119.1926,
+          "assumptions": {
+            "normalizedCashUSD": 4530000000.0,
+            "discountRate": 0.125,
+            "annualGrowth": 0.04264,
+            "terminalGrowth": 0.025,
+            "shares": 427000000.0,
+            "horizonYears": 10
+          }
+        },
+        "central": {
+          "illustrativeCashFlowProxyPerShareUSD": 241.3195,
+          "assumptions": {
+            "normalizedCashUSD": 6040000000.0,
+            "discountRate": 0.105,
+            "annualGrowth": 0.07764,
+            "terminalGrowth": 0.025,
+            "shares": 427000000.0,
+            "horizonYears": 10
+          }
+        },
+        "upside": {
+          "illustrativeCashFlowProxyPerShareUSD": 413.9645,
+          "assumptions": {
+            "normalizedCashUSD": 7248000000.0,
+            "discountRate": 0.09,
+            "annualGrowth": 0.10264000000000001,
+            "terminalGrowth": 0.025,
+            "shares": 427000000.0,
+            "horizonYears": 10
+          }
+        }
+      },
+      "sensitivity": {
+        "growthDeltas": [
+          -0.04,
+          -0.02,
+          0,
+          0.02,
+          0.04
+        ],
+        "rows": [
+          {
+            "discount": 0.085,
+            "values": [
+              259.85,
+              291.3199,
+              326.3458,
+              365.2794,
+              408.5014
+            ]
+          },
+          {
+            "discount": 0.095,
+            "values": [
+              222.3191,
+              248.5527,
+              277.7087,
+              310.0737,
+              345.958
+            ]
+          },
+          {
+            "discount": 0.105,
+            "values": [
+              194.1886,
+              216.5274,
+              241.3195,
+              268.8037,
+              299.2381
+            ]
+          },
+          {
+            "discount": 0.115,
+            "values": [
+              172.3241,
+              191.6605,
+              213.0907,
+              236.8165,
+              263.0563
+            ]
+          },
+          {
+            "discount": 0.125,
+            "values": [
+              154.8448,
+              171.8022,
+              190.5698,
+              211.3208,
+              234.2424
+            ]
+          }
+        ]
+      },
+      "checks": {
+        "FISCAL_YEAR_CURRENT": true,
+        "SEC_PRIMARY_SOURCE": true,
+        "THREE_ANNUAL_CASH_PERIODS": true,
+        "DILUTED_SHARES_PRESENT": true,
+        "NET_DEBT_DOCUMENTED": true,
+        "REPORTED_CASH_RECONCILED": false,
+        "DILUTED_SHARES_TIED": true,
+        "CAPEX_VALID": true,
+        "NO_MATERIAL_SOURCE_GAPS": true,
+        "NO_FUNDAMENTAL_BLOCK": true,
+        "NO_REVENUE_CONFLICT": true,
+        "NO_MAJOR_MARGIN_SHOCK": true,
+        "CURRENT_QUARTER_REVIEWED": false,
+        "SECTOR_ACCOUNTING_BRIDGE": false,
+        "MOAT_ROIC_EVIDENCE": false,
+        "FORWARD_REINVESTMENT_FORECAST": false,
+        "COST_OF_EQUITY_CALIBRATION": false,
+        "SCENARIO_ORDER_VALID": true,
+        "SENSITIVITY_FINITE": true
+      },
+      "hardGates": [
+        "REPORTED_CASH_RECONCILED",
+        "CURRENT_QUARTER_REVIEWED",
+        "SECTOR_ACCOUNTING_BRIDGE",
+        "MOAT_ROIC_EVIDENCE",
+        "FORWARD_REINVESTMENT_FORECAST",
+        "COST_OF_EQUITY_CALIBRATION"
+      ],
+      "warnings": [],
+      "readiness": "research_only",
+      "decisionReady": false,
+      "approvedFairValueUSD": null,
+      "approvedEntryPriceUSD": null,
+      "summary": "Automated cash proxy scenarios for research. Sector ROIC, moat, cost of capital, reinvestment and equity reconciliation require independent evidence."
+    },
+    {
+      "ticker": "CB",
+      "name": "Chubb",
+      "sector": "insurance",
+      "model": "adjusted_book_and_normalized_core_roe_required",
+      "asOf": "2026-10-25",
+      "lastFiscalYear": "2025-12-31",
+      "latestInterimYTD": "2026-03-31",
+      "evidence": {
+        "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json",
+        "normalizedFactsAccession": "0000896159-26-000005",
+        "balanceBridgeURL": null
+      },
+      "revenueGrowth3FY": [],
+      "assumptions": {
+        "growthMethod": "median of recent YoY revenue changes, capped by sector; blended 50% sector baseline",
+        "blendedForwardGrowth": null,
+        "sectorPolicy": {
+          "method": "adjusted_book_and_normalized_core_roe_required"
+        },
+        "cashBasis": "median of 3 annual (CFO minus PPE capex minus SBC) proxies; NOT verified FCFE or FCFF",
+        "missingOwnerCashTreatment": "no projection"
+      },
+      "scenarios": null,
+      "sensitivity": null,
+      "checks": {
+        "FISCAL_YEAR_CURRENT": true,
+        "SEC_PRIMARY_SOURCE": true,
+        "THREE_ANNUAL_CASH_PERIODS": false,
+        "DILUTED_SHARES_PRESENT": true,
+        "NET_DEBT_DOCUMENTED": false,
+        "REPORTED_CASH_RECONCILED": false,
+        "DILUTED_SHARES_TIED": false,
+        "CAPEX_VALID": false,
+        "NO_MATERIAL_SOURCE_GAPS": false,
+        "NO_FUNDAMENTAL_BLOCK": false,
+        "NO_REVENUE_CONFLICT": true,
+        "NO_MAJOR_MARGIN_SHOCK": true,
+        "CURRENT_QUARTER_REVIEWED": false,
+        "SECTOR_ACCOUNTING_BRIDGE": false,
+        "MOAT_ROIC_EVIDENCE": false,
+        "FORWARD_REINVESTMENT_FORECAST": false,
+        "COST_OF_EQUITY_CALIBRATION": false,
+        "VALUATION_INPUTS_COMPLETE": false,
+        "INSURANCE_RESERVES_AND_ROE": false
+      },
+      "hardGates": [
+        "THREE_ANNUAL_CASH_PERIODS",
+        "NET_DEBT_DOCUMENTED",
+        "REPORTED_CASH_RECONCILED",
+        "DILUTED_SHARES_TIED",
+        "CAPEX_VALID",
+        "NO_MATERIAL_SOURCE_GAPS",
+        "NO_FUNDAMENTAL_BLOCK",
+        "CURRENT_QUARTER_REVIEWED",
+        "SECTOR_ACCOUNTING_BRIDGE",
+        "MOAT_ROIC_EVIDENCE",
+        "FORWARD_REINVESTMENT_FORECAST",
+        "COST_OF_EQUITY_CALIBRATION",
+        "VALUATION_INPUTS_COMPLETE",
+        "INSURANCE_RESERVES_AND_ROE"
+      ],
+      "warnings": [],
+      "readiness": "blocked",
+      "decisionReady": false,
+      "approvedFairValueUSD": null,
+      "approvedEntryPriceUSD": null,
+      "summary": "Automated cash proxy scenarios for research. Sector ROIC, moat, cost of capital, reinvestment and equity reconciliation require independent evidence."
+    },
+    {
+      "ticker": "CME",
+      "name": "CME Group",
+      "sector": "exchange",
+      "model": "owner_cash_proxy_equity_dcf",
+      "asOf": "2026-10-25",
+      "lastFiscalYear": "2025-12-31",
+      "latestInterimYTD": "2026-09-30",
+      "evidence": {
+        "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001156375.json",
+        "normalizedFactsAccession": "0001156375-26-000009",
+        "balanceBridgeURL": "https://www.sec.gov/Archives/edgar/data/1156375/000115637526000009/cme-20251231.htm"
+      },
+      "revenueGrowth3FY": [
+        0.06370206032528025,
+        0.09880083887504698,
+        0.11146750607642342
+      ],
+      "assumptions": {
+        "growthMethod": "median of recent YoY revenue changes, capped by sector; blended 50% sector baseline",
+        "blendedForwardGrowth": 0.0525,
+        "sectorPolicy": {
+          "equity_discount": 0.105,
+          "growth_cap": 0.07,
+          "terminal": 0.025,
+          "base_growth": 0.035,
+          "method": "owner_cash_proxy_equity_dcf"
+        },
+        "cashBasis": "median of 3 annual (CFO minus PPE capex minus SBC) proxies; NOT verified FCFE or FCFF",
+        "missingOwnerCashTreatment": "no projection"
+      },
+      "scenarios": {
+        "downside": {
+          "illustrativeCashFlowProxyPerShareUSD": 71.9591,
+          "assumptions": {
+            "normalizedCashUSD": 2630250000.0,
+            "discountRate": 0.125,
+            "annualGrowth": 0.017499999999999995,
+            "terminalGrowth": 0.025,
+            "shares": 360310000.0,
+            "horizonYears": 10
+          }
+        },
+        "central": {
+          "illustrativeCashFlowProxyPerShareUSD": 144.8868,
+          "assumptions": {
+            "normalizedCashUSD": 3507000000.0,
+            "discountRate": 0.105,
+            "annualGrowth": 0.0525,
+            "terminalGrowth": 0.025,
+            "shares": 360310000.0,
+            "horizonYears": 10
+          }
+        },
+        "upside": {
+          "illustrativeCashFlowProxyPerShareUSD": 237.4544,
+          "assumptions": {
+            "normalizedCashUSD": 4208400000.0,
+            "discountRate": 0.09,
+            "annualGrowth": 0.07,
+            "terminalGrowth": 0.025,
+            "shares": 360310000.0,
+            "horizonYears": 10
+          }
+        }
+      },
+      "sensitivity": {
+        "growthDeltas": [
+          -0.04,
+          -0.02,
+          0,
+          0.02,
+          0.04
+        ],
+        "rows": [
+          {
+            "discount": 0.085,
+            "values": [
+              154.7119,
+              173.6049,
+              194.6671,
+              215.0474,
+              215.0474
+            ]
+          },
+          {
+            "discount": 0.095,
+            "values": [
+              132.8606,
+              148.6406,
+              166.205,
+              183.1775,
+              183.1775
+            ]
+          },
+          {
+            "discount": 0.105,
+            "values": [
+              116.4616,
+              129.9244,
+              144.8868,
+              159.3254,
+              159.3254
+            ]
+          },
+          {
+            "discount": 0.115,
+            "values": [
+              103.6978,
+              115.3732,
+              128.3295,
+              140.8156,
+              140.8156
+            ]
+          },
+          {
+            "discount": 0.125,
+            "values": [
+              93.4794,
+              103.7373,
+              115.1036,
+              126.0432,
+              126.0432
+            ]
+          }
+        ]
+      },
+      "checks": {
+        "FISCAL_YEAR_CURRENT": true,
+        "SEC_PRIMARY_SOURCE": true,
+        "THREE_ANNUAL_CASH_PERIODS": true,
+        "DILUTED_SHARES_PRESENT": true,
+        "NET_DEBT_DOCUMENTED": true,
+        "REPORTED_CASH_RECONCILED": false,
+        "DILUTED_SHARES_TIED": true,
+        "CAPEX_VALID": true,
+        "NO_MATERIAL_SOURCE_GAPS": true,
+        "NO_FUNDAMENTAL_BLOCK": true,
+        "NO_REVENUE_CONFLICT": true,
+        "NO_MAJOR_MARGIN_SHOCK": true,
+        "CURRENT_QUARTER_REVIEWED": false,
+        "SECTOR_ACCOUNTING_BRIDGE": false,
+        "MOAT_ROIC_EVIDENCE": false,
+        "FORWARD_REINVESTMENT_FORECAST": false,
+        "COST_OF_EQUITY_CALIBRATION": false,
+        "SCENARIO_ORDER_VALID": true,
+        "SENSITIVITY_FINITE": true
+      },
+      "hardGates": [
+        "REPORTED_CASH_RECONCILED",
+        "CURRENT_QUARTER_REVIEWED",
+        "SECTOR_ACCOUNTING_BRIDGE",
+        "MOAT_ROIC_EVIDENCE",
+        "FORWARD_REINVESTMENT_FORECAST",
+        "COST_OF_EQUITY_CALIBRATION"
+      ],
+      "warnings": [],
+      "readiness": "research_only",
+      "decisionReady": false,
+      "approvedFairValueUSD": null,
+      "approvedEntryPriceUSD": null,
+      "summary": "Automated cash proxy scenarios for research. Sector ROIC, moat, cost of capital, reinvestment and equity reconciliation require independent evidence."
+    },
+    {
+      "ticker": "DE",
+      "name": "Deere",
+      "sector": "industrial",
+      "model": "sum_of_industrial_finance_parts_required",
+      "asOf": "2026-10-25",
+      "lastFiscalYear": "2025-11-02",
+      "latestInterimYTD": "2026-08-02",
+      "evidence": {
+        "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000315189.json",
+        "normalizedFactsAccession": "0001104659-25-122321",
+        "balanceBridgeURL": null
+      },
+      "revenueGrowth3FY": [],
+      "assumptions": {
+        "growthMethod": "median of recent YoY revenue changes, capped by sector; blended 50% sector baseline",
+        "blendedForwardGrowth": null,
+        "sectorPolicy": {
+          "method": "sum_of_industrial_finance_parts_required"
+        },
+        "cashBasis": "median of 3 annual (CFO minus PPE capex minus SBC) proxies; NOT verified FCFE or FCFF",
+        "missingOwnerCashTreatment": "no projection"
+      },
+      "scenarios": null,
+      "sensitivity": null,
+      "checks": {
+        "FISCAL_YEAR_CURRENT": true,
+        "SEC_PRIMARY_SOURCE": true,
+        "THREE_ANNUAL_CASH_PERIODS": true,
+        "DILUTED_SHARES_PRESENT": true,
+        "NET_DEBT_DOCUMENTED": false,
+        "REPORTED_CASH_RECONCILED": false,
+        "DILUTED_SHARES_TIED": false,
+        "CAPEX_VALID": true,
+        "NO_MATERIAL_SOURCE_GAPS": true,
+        "NO_FUNDAMENTAL_BLOCK": false,
+        "NO_REVENUE_CONFLICT": true,
+        "NO_MAJOR_MARGIN_SHOCK": true,
+        "CURRENT_QUARTER_REVIEWED": false,
+        "SECTOR_ACCOUNTING_BRIDGE": false,
+        "MOAT_ROIC_EVIDENCE": false,
+        "FORWARD_REINVESTMENT_FORECAST": false,
+        "COST_OF_EQUITY_CALIBRATION": false,
+        "VALUATION_INPUTS_COMPLETE": false,
+        "CAPTIVE_FINANCE_SEPARATED": false
+      },
+      "hardGates": [
+        "NET_DEBT_DOCUMENTED",
+        "REPORTED_CASH_RECONCILED",
+        "DILUTED_SHARES_TIED",
+        "NO_FUNDAMENTAL_BLOCK",
+        "CURRENT_QUARTER_REVIEWED",
+        "SECTOR_ACCOUNTING_BRIDGE",
+        "MOAT_ROIC_EVIDENCE",
+        "FORWARD_REINVESTMENT_FORECAST",
+        "COST_OF_EQUITY_CALIBRATION",
+        "VALUATION_INPUTS_COMPLETE",
+        "CAPTIVE_FINANCE_SEPARATED"
+      ],
+      "warnings": [
+        "FULL_YEAR_REPORT_OLDER_THAN_350_DAYS"
+      ],
+      "readiness": "blocked",
+      "decisionReady": false,
+      "approvedFairValueUSD": null,
+      "approvedEntryPriceUSD": null,
+      "summary": "Automated cash proxy scenarios for research. Sector ROIC, moat, cost of capital, reinvestment and equity reconciliation require independent evidence."
+    },
+    {
+      "ticker": "FERG",
+      "name": "Ferguson Enterprises",
+      "sector": "distribution",
+      "model": "owner_cash_proxy_equity_dcf",
+      "asOf": "2026-10-25",
+      "lastFiscalYear": "2025-07-31",
+      "latestInterimYTD": "2025-10-31",
+      "evidence": {
+        "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002011641.json",
+        "normalizedFactsAccession": "0002011641-25-000027",
+        "balanceBridgeURL": null
+      },
+      "revenueGrowth3FY": [
+        0.03802935717901135,
+        -0.0033295217596017723,
+        0.040887768676048486
+      ],
+      "assumptions": {
+        "growthMethod": "median of recent YoY revenue changes, capped by sector; blended 50% sector baseline",
+        "blendedForwardGrowth": 0.03651,
+        "sectorPolicy": {
+          "equity_discount": 0.115,
+          "growth_cap": 0.065,
+          "terminal": 0.025,
+          "base_growth": 0.035,
+          "method": "owner_cash_proxy_equity_dcf"
+        },
+        "cashBasis": "median of 3 annual (CFO minus PPE capex minus SBC) proxies; NOT verified FCFE or FCFF",
+        "missingOwnerCashTreatment": "no projection"
+      },
+      "scenarios": null,
+      "sensitivity": null,
+      "checks": {
+        "FISCAL_YEAR_CURRENT": true,
+        "SEC_PRIMARY_SOURCE": true,
+        "THREE_ANNUAL_CASH_PERIODS": false,
+        "DILUTED_SHARES_PRESENT": true,
+        "NET_DEBT_DOCUMENTED": false,
+        "REPORTED_CASH_RECONCILED": false,
+        "DILUTED_SHARES_TIED": false,
+        "CAPEX_VALID": false,
+        "NO_MATERIAL_SOURCE_GAPS": false,
+        "NO_FUNDAMENTAL_BLOCK": false,
+        "NO_REVENUE_CONFLICT": true,
+        "NO_MAJOR_MARGIN_SHOCK": true,
+        "CURRENT_QUARTER_REVIEWED": false,
+        "SECTOR_ACCOUNTING_BRIDGE": false,
+        "MOAT_ROIC_EVIDENCE": false,
+        "FORWARD_REINVESTMENT_FORECAST": false,
+        "COST_OF_EQUITY_CALIBRATION": false,
+        "VALUATION_INPUTS_COMPLETE": false
+      },
+      "hardGates": [
+        "THREE_ANNUAL_CASH_PERIODS",
+        "NET_DEBT_DOCUMENTED",
+        "REPORTED_CASH_RECONCILED",
+        "DILUTED_SHARES_TIED",
+        "CAPEX_VALID",
+        "NO_MATERIAL_SOURCE_GAPS",
+        "NO_FUNDAMENTAL_BLOCK",
+        "CURRENT_QUARTER_REVIEWED",
+        "SECTOR_ACCOUNTING_BRIDGE",
+        "MOAT_ROIC_EVIDENCE",
+        "FORWARD_REINVESTMENT_FORECAST",
+        "COST_OF_EQUITY_CALIBRATION",
+        "VALUATION_INPUTS_COMPLETE"
+      ],
+      "warnings": [
+        "FULL_YEAR_REPORT_OLDER_THAN_350_DAYS"
+      ],
+      "readiness": "blocked",
+      "decisionReady": false,
+      "approvedFairValueUSD": null,
+      "approvedEntryPriceUSD": null,
+      "summary": "Automated cash proxy scenarios for research. Sector ROIC, moat, cost of capital, reinvestment and equity reconciliation require independent evidence."
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet",
+      "sector": "digital_platform",
+      "model": "owner_cash_proxy_equity_dcf",
+      "asOf": "2026-10-25",
+      "lastFiscalYear": "2025-12-31",
+      "latestInterimYTD": "2026-06-30",
+      "evidence": {
+        "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+        "normalizedFactsAccession": "0001652044-26-000018",
+        "balanceBridgeURL": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm"
+      },
+      "revenueGrowth3FY": [
+        0.1509008108154437,
+        0.1386624332290156,
+        0.0868277022726951
+      ],
+      "assumptions": {
+        "growthMethod": "median of recent YoY revenue changes, capped by sector; blended 50% sector baseline",
+        "blendedForwardGrowth": 0.075,
+        "sectorPolicy": {
+          "equity_discount": 0.12,
+          "growth_cap": 0.1,
+          "terminal": 0.025,
+          "base_growth": 0.05,
+          "method": "owner_cash_proxy_equity_dcf"
+        },
+        "cashBasis": "median of 3 annual (CFO minus PPE capex minus SBC) proxies; NOT verified FCFE or FCFF",
+        "missingOwnerCashTreatment": "no projection"
+      },
+      "scenarios": {
+        "downside": {
+          "illustrativeCashFlowProxyPerShareUSD": 28.4747,
+          "assumptions": {
+            "normalizedCashUSD": 36234750000.0,
+            "discountRate": 0.13999999999999999,
+            "annualGrowth": 0.039999999999999994,
+            "terminalGrowth": 0.025,
+            "shares": 12230000000.0,
+            "horizonYears": 10
+          }
+        },
+        "central": {
+          "illustrativeCashFlowProxyPerShareUSD": 55.4268,
+          "assumptions": {
+            "normalizedCashUSD": 48313000000.0,
+            "discountRate": 0.12,
+            "annualGrowth": 0.075,
+            "terminalGrowth": 0.025,
+            "shares": 12230000000.0,
+            "horizonYears": 10
+          }
+        },
+        "upside": {
+          "illustrativeCashFlowProxyPerShareUSD": 91.2338,
+          "assumptions": {
+            "normalizedCashUSD": 57975600000.0,
+            "discountRate": 0.105,
+            "annualGrowth": 0.1,
+            "terminalGrowth": 0.025,
+            "shares": 12230000000.0,
+            "horizonYears": 10
+          }
+        }
+      },
+      "sensitivity": {
+        "growthDeltas": [
+          -0.04,
+          -0.02,
+          0,
+          0.02,
+          0.04
+        ],
+        "rows": [
+          {
+            "discount": 0.1,
+            "values": [
+              57.0589,
+              63.7106,
+              71.0992,
+              79.2967,
+              81.4815
+            ]
+          },
+          {
+            "discount": 0.11,
+            "values": [
+              50.2778,
+              55.9924,
+              62.3312,
+              69.3546,
+              71.225
+            ]
+          },
+          {
+            "discount": 0.12,
+            "values": [
+              44.9272,
+              49.9088,
+              55.4268,
+              61.5327,
+              63.1575
+            ]
+          },
+          {
+            "discount": 0.13,
+            "values": [
+              40.5982,
+              44.9923,
+              49.8526,
+              55.2238,
+              56.652
+            ]
+          },
+          {
+            "discount": 0.14,
+            "values": [
+              37.0243,
+              40.9378,
+              45.2607,
+              50.0319,
+              51.2995
+            ]
+          }
+        ]
+      },
+      "checks": {
+        "FISCAL_YEAR_CURRENT": true,
+        "SEC_PRIMARY_SOURCE": true,
+        "THREE_ANNUAL_CASH_PERIODS": true,
+        "DILUTED_SHARES_PRESENT": true,
+        "NET_DEBT_DOCUMENTED": true,
+        "REPORTED_CASH_RECONCILED": false,
+        "DILUTED_SHARES_TIED": true,
+        "CAPEX_VALID": true,
+        "NO_MATERIAL_SOURCE_GAPS": true,
+        "NO_FUNDAMENTAL_BLOCK": true,
+        "NO_REVENUE_CONFLICT": true,
+        "NO_MAJOR_MARGIN_SHOCK": true,
+        "CURRENT_QUARTER_REVIEWED": false,
+        "SECTOR_ACCOUNTING_BRIDGE": false,
+        "MOAT_ROIC_EVIDENCE": false,
+        "FORWARD_REINVESTMENT_FORECAST": false,
+        "COST_OF_EQUITY_CALIBRATION": false,
+        "SCENARIO_ORDER_VALID": true,
+        "SENSITIVITY_FINITE": true,
+        "AI_CAPEX_SCENARIOS_UNDERWRITTEN": false
+      },
+      "hardGates": [
+        "REPORTED_CASH_RECONCILED",
+        "CURRENT_QUARTER_REVIEWED",
+        "SECTOR_ACCOUNTING_BRIDGE",
+        "MOAT_ROIC_EVIDENCE",
+        "FORWARD_REINVESTMENT_FORECAST",
+        "COST_OF_EQUITY_CALIBRATION",
+        "AI_CAPEX_SCENARIOS_UNDERWRITTEN"
+      ],
+      "warnings": [
+        "CAPEX_OVER_20PCT_OF_REVENUE"
+      ],
+      "readiness": "research_only",
+      "decisionReady": false,
+      "approvedFairValueUSD": null,
+      "approvedEntryPriceUSD": null,
+      "summary": "Automated cash proxy scenarios for research. Sector ROIC, moat, cost of capital, reinvestment and equity reconciliation require independent evidence."
+    },
+    {
+      "ticker": "MA",
+      "name": "Mastercard",
+      "sector": "payments",
+      "model": "owner_cash_proxy_equity_dcf",
+      "asOf": "2026-10-25",
+      "lastFiscalYear": "2025-12-31",
+      "latestInterimYTD": "2026-06-30",
+      "evidence": {
+        "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001141391.json",
+        "normalizedFactsAccession": "0001141391-26-000013",
+        "balanceBridgeURL": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
+      },
+      "revenueGrowth3FY": [
+        0.16416373770724602,
+        0.12228065981353087,
+        0.1286594414714215
+      ],
+      "assumptions": {
+        "growthMethod": "median of recent YoY revenue changes, capped by sector; blended 50% sector baseline",
+        "blendedForwardGrowth": 0.08,
+        "sectorPolicy": {
+          "equity_discount": 0.105,
+          "growth_cap": 0.11,
+          "terminal": 0.025,
+          "base_growth": 0.05,
+          "method": "owner_cash_proxy_equity_dcf"
+        },
+        "cashBasis": "median of 3 annual (CFO minus PPE capex minus SBC) proxies; NOT verified FCFE or FCFF",
+        "missingOwnerCashTreatment": "no projection"
+      },
+      "scenarios": {
+        "downside": {
+          "illustrativeCashFlowProxyPerShareUSD": 129.7445,
+          "assumptions": {
+            "normalizedCashUSD": 10335000000.0,
+            "discountRate": 0.125,
+            "annualGrowth": 0.045,
+            "terminalGrowth": 0.025,
+            "shares": 906000000.0,
+            "horizonYears": 10
+          }
+        },
+        "central": {
+          "illustrativeCashFlowProxyPerShareUSD": 262.8117,
+          "assumptions": {
+            "normalizedCashUSD": 13780000000.0,
+            "discountRate": 0.105,
+            "annualGrowth": 0.08,
+            "terminalGrowth": 0.025,
+            "shares": 906000000.0,
+            "horizonYears": 10
+          }
+        },
+        "upside": {
+          "illustrativeCashFlowProxyPerShareUSD": 450.9767,
+          "assumptions": {
+            "normalizedCashUSD": 16536000000.0,
+            "discountRate": 0.09,
+            "annualGrowth": 0.10500000000000001,
+            "terminalGrowth": 0.025,
+            "shares": 906000000.0,
+            "horizonYears": 10
+          }
+        }
+      },
+      "sensitivity": {
+        "growthDeltas": [
+          -0.04,
+          -0.02,
+          0,
+          0.02,
+          0.04
+        ],
+        "rows": [
+          {
+            "discount": 0.085,
+            "values": [
+              283.2109,
+              317.4815,
+              355.6189,
+              398.0047,
+              420.9186
+            ]
+          },
+          {
+            "discount": 0.095,
+            "values": [
+              242.2245,
+              270.7879,
+              302.5287,
+              337.758,
+              356.7851
+            ]
+          },
+          {
+            "discount": 0.105,
+            "values": [
+              211.5075,
+              235.826,
+              262.8117,
+              292.7237,
+              308.8637
+            ]
+          },
+          {
+            "discount": 0.115,
+            "values": [
+              187.6355,
+              208.682,
+              232.0045,
+              257.8223,
+              271.7402
+            ]
+          },
+          {
+            "discount": 0.125,
+            "values": [
+              168.5538,
+              187.0079,
+              207.4295,
+              230.0068,
+              242.1666
+            ]
+          }
+        ]
+      },
+      "checks": {
+        "FISCAL_YEAR_CURRENT": true,
+        "SEC_PRIMARY_SOURCE": true,
+        "THREE_ANNUAL_CASH_PERIODS": true,
+        "DILUTED_SHARES_PRESENT": true,
+        "NET_DEBT_DOCUMENTED": true,
+        "REPORTED_CASH_RECONCILED": false,
+        "DILUTED_SHARES_TIED": true,
+        "CAPEX_VALID": true,
+        "NO_MATERIAL_SOURCE_GAPS": true,
+        "NO_FUNDAMENTAL_BLOCK": true,
+        "NO_REVENUE_CONFLICT": false,
+        "NO_MAJOR_MARGIN_SHOCK": true,
+        "CURRENT_QUARTER_REVIEWED": false,
+        "SECTOR_ACCOUNTING_BRIDGE": false,
+        "MOAT_ROIC_EVIDENCE": false,
+        "FORWARD_REINVESTMENT_FORECAST": false,
+        "COST_OF_EQUITY_CALIBRATION": false,
+        "SCENARIO_ORDER_VALID": true,
+        "SENSITIVITY_FINITE": true
+      },
+      "hardGates": [
+        "REPORTED_CASH_RECONCILED",
+        "NO_REVENUE_CONFLICT",
+        "CURRENT_QUARTER_REVIEWED",
+        "SECTOR_ACCOUNTING_BRIDGE",
+        "MOAT_ROIC_EVIDENCE",
+        "FORWARD_REINVESTMENT_FORECAST",
+        "COST_OF_EQUITY_CALIBRATION"
+      ],
+      "warnings": [],
+      "readiness": "research_only",
+      "decisionReady": false,
+      "approvedFairValueUSD": null,
+      "approvedEntryPriceUSD": null,
+      "summary": "Automated cash proxy scenarios for research. Sector ROIC, moat, cost of capital, reinvestment and equity reconciliation require independent evidence."
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft",
+      "sector": "software",
+      "model": "owner_cash_proxy_equity_dcf",
+      "asOf": "2026-10-25",
+      "lastFiscalYear": "2026-06-30",
+      "latestInterimYTD": null,
+      "evidence": {
+        "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+        "normalizedFactsAccession": "0001193125-26-323660",
+        "balanceBridgeURL": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+      },
+      "revenueGrowth3FY": [
+        0.17788686799846665,
+        0.14932156232406713,
+        0.1566996201307127
+      ],
+      "assumptions": {
+        "growthMethod": "median of recent YoY revenue changes, capped by sector; blended 50% sector baseline",
+        "blendedForwardGrowth": 0.085,
+        "sectorPolicy": {
+          "equity_discount": 0.105,
+          "growth_cap": 0.12,
+          "terminal": 0.025,
+          "base_growth": 0.05,
+          "method": "owner_cash_proxy_equity_dcf"
+        },
+        "cashBasis": "median of 3 annual (CFO minus PPE capex minus SBC) proxies; NOT verified FCFE or FCFF",
+        "missingOwnerCashTreatment": "no projection"
+      },
+      "scenarios": {
+        "downside": {
+          "illustrativeCashFlowProxyPerShareUSD": 70.0545,
+          "assumptions": {
+            "normalizedCashUSD": 44727750000.0,
+            "discountRate": 0.125,
+            "annualGrowth": 0.05,
+            "terminalGrowth": 0.025,
+            "shares": 7453000000.0,
+            "horizonYears": 10
+          }
+        },
+        "central": {
+          "illustrativeCashFlowProxyPerShareUSD": 142.048,
+          "assumptions": {
+            "normalizedCashUSD": 59637000000.0,
+            "discountRate": 0.105,
+            "annualGrowth": 0.085,
+            "terminalGrowth": 0.025,
+            "shares": 7453000000.0,
+            "horizonYears": 10
+          }
+        },
+        "upside": {
+          "illustrativeCashFlowProxyPerShareUSD": 243.9121,
+          "assumptions": {
+            "normalizedCashUSD": 71564400000.0,
+            "discountRate": 0.09,
+            "annualGrowth": 0.11000000000000001,
+            "terminalGrowth": 0.025,
+            "shares": 7453000000.0,
+            "horizonYears": 10
+          }
+        }
+      },
+      "sensitivity": {
+        "growthDeltas": [
+          -0.04,
+          -0.02,
+          0,
+          0.02,
+          0.04
+        ],
+        "rows": [
+          {
+            "discount": 0.085,
+            "values": [
+              153.3227,
+              171.8429,
+              192.4461,
+              215.3371,
+              234.1394
+            ]
+          },
+          {
+            "discount": 0.095,
+            "values": [
+              131.0415,
+              146.4717,
+              163.6134,
+              182.6333,
+              198.239
+            ]
+          },
+          {
+            "discount": 0.105,
+            "values": [
+              114.3469,
+              127.4793,
+              142.048,
+              158.192,
+              171.4237
+            ]
+          },
+          {
+            "discount": 0.115,
+            "values": [
+              101.3758,
+              112.7373,
+              125.3242,
+              139.254,
+              150.6588
+            ]
+          },
+          {
+            "discount": 0.125,
+            "values": [
+              91.0104,
+              100.9689,
+              111.9866,
+              124.1642,
+              134.124
+            ]
+          }
+        ]
+      },
+      "checks": {
+        "FISCAL_YEAR_CURRENT": true,
+        "SEC_PRIMARY_SOURCE": true,
+        "THREE_ANNUAL_CASH_PERIODS": true,
+        "DILUTED_SHARES_PRESENT": true,
+        "NET_DEBT_DOCUMENTED": true,
+        "REPORTED_CASH_RECONCILED": false,
+        "DILUTED_SHARES_TIED": true,
+        "CAPEX_VALID": true,
+        "NO_MATERIAL_SOURCE_GAPS": true,
+        "NO_FUNDAMENTAL_BLOCK": true,
+        "NO_REVENUE_CONFLICT": true,
+        "NO_MAJOR_MARGIN_SHOCK": true,
+        "CURRENT_QUARTER_REVIEWED": true,
+        "SECTOR_ACCOUNTING_BRIDGE": false,
+        "MOAT_ROIC_EVIDENCE": false,
+        "FORWARD_REINVESTMENT_FORECAST": false,
+        "COST_OF_EQUITY_CALIBRATION": false,
+        "SCENARIO_ORDER_VALID": true,
+        "SENSITIVITY_FINITE": true
+      },
+      "hardGates": [
+        "REPORTED_CASH_RECONCILED",
+        "SECTOR_ACCOUNTING_BRIDGE",
+        "MOAT_ROIC_EVIDENCE",
+        "FORWARD_REINVESTMENT_FORECAST",
+        "COST_OF_EQUITY_CALIBRATION"
+      ],
+      "warnings": [
+        "CAPEX_OVER_20PCT_OF_REVENUE"
+      ],
+      "readiness": "research_only",
+      "decisionReady": false,
+      "approvedFairValueUSD": null,
+      "approvedEntryPriceUSD": null,
+      "summary": "Automated cash proxy scenarios for research. Sector ROIC, moat, cost of capital, reinvestment and equity reconciliation require independent evidence."
+    },
+    {
+      "ticker": "V",
+      "name": "Visa",
+      "sector": "payments",
+      "model": "owner_cash_proxy_equity_dcf",
+      "asOf": "2026-10-25",
+      "lastFiscalYear": "2025-09-30",
+      "latestInterimYTD": "2026-03-31",
+      "evidence": {
+        "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001403161.json",
+        "normalizedFactsAccession": "0001403161-25-000089",
+        "balanceBridgeURL": null
+      },
+      "revenueGrowth3FY": [
+        0.11339976618604908,
+        0.10023581294214923,
+        0.11405663596042315
+      ],
+      "assumptions": {
+        "growthMethod": "median of recent YoY revenue changes, capped by sector; blended 50% sector baseline",
+        "blendedForwardGrowth": 0.08,
+        "sectorPolicy": {
+          "equity_discount": 0.105,
+          "growth_cap": 0.11,
+          "terminal": 0.025,
+          "base_growth": 0.05,
+          "method": "owner_cash_proxy_equity_dcf"
+        },
+        "cashBasis": "median of 3 annual (CFO minus PPE capex minus SBC) proxies; NOT verified FCFE or FCFF",
+        "missingOwnerCashTreatment": "no projection"
+      },
+      "scenarios": null,
+      "sensitivity": null,
+      "checks": {
+        "FISCAL_YEAR_CURRENT": true,
+        "SEC_PRIMARY_SOURCE": true,
+        "THREE_ANNUAL_CASH_PERIODS": false,
+        "DILUTED_SHARES_PRESENT": false,
+        "NET_DEBT_DOCUMENTED": false,
+        "REPORTED_CASH_RECONCILED": false,
+        "DILUTED_SHARES_TIED": false,
+        "CAPEX_VALID": false,
+        "NO_MATERIAL_SOURCE_GAPS": false,
+        "NO_FUNDAMENTAL_BLOCK": false,
+        "NO_REVENUE_CONFLICT": true,
+        "NO_MAJOR_MARGIN_SHOCK": false,
+        "CURRENT_QUARTER_REVIEWED": false,
+        "SECTOR_ACCOUNTING_BRIDGE": false,
+        "MOAT_ROIC_EVIDENCE": false,
+        "FORWARD_REINVESTMENT_FORECAST": false,
+        "COST_OF_EQUITY_CALIBRATION": false,
+        "VALUATION_INPUTS_COMPLETE": false
+      },
+      "hardGates": [
+        "THREE_ANNUAL_CASH_PERIODS",
+        "DILUTED_SHARES_PRESENT",
+        "NET_DEBT_DOCUMENTED",
+        "REPORTED_CASH_RECONCILED",
+        "DILUTED_SHARES_TIED",
+        "CAPEX_VALID",
+        "NO_MATERIAL_SOURCE_GAPS",
+        "NO_FUNDAMENTAL_BLOCK",
+        "NO_MAJOR_MARGIN_SHOCK",
+        "CURRENT_QUARTER_REVIEWED",
+        "SECTOR_ACCOUNTING_BRIDGE",
+        "MOAT_ROIC_EVIDENCE",
+        "FORWARD_REINVESTMENT_FORECAST",
+        "COST_OF_EQUITY_CALIBRATION",
+        "VALUATION_INPUTS_COMPLETE"
+      ],
+      "warnings": [
+        "FULL_YEAR_REPORT_OLDER_THAN_350_DAYS"
+      ],
+      "readiness": "blocked",
+      "decisionReady": false,
+      "approvedFairValueUSD": null,
+      "approvedEntryPriceUSD": null,
+      "summary": "Automated cash proxy scenarios for research. Sector ROIC, moat, cost of capital, reinvestment and equity reconciliation require independent evidence."
+    }
+  ],
+  "summary": {
+    "covered": 9,
+    "withDiagnostics": 5,
+    "blocked": 4,
+    "researchOnly": 5,
+    "approved": 0,
+    "warnings": 5
+  }
+}
