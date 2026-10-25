@@ -85,6 +85,27 @@ class TestSECNormalization(unittest.TestCase):
         self.assertEqual(report["summary"]["fullQualityScores"],0)
         self.assertEqual(report["summary"]["tracked"],9)
         self.assertTrue(all(x["investmentSignal"]=="disabled" for x in report["companies"]))
+    def test_interim_quarter_not_annualized(self):
+        x=sample()
+        def q(tag,value):
+            x["facts"][tag].append({"start":"2026-01-01","end":"2026-06-30",
+               "val":value,"filed":"2026-08-01","accn":"Q2","form":"10-Q"})
+        q("operating_cash_flow",215)
+        q("property_capex",60)
+        q("revenue_contract",920)
+        a=evaluate(x,TODAY)
+        self.assertEqual(a["annual"][0]["freeCashFlowSimple"],385)
+        self.assertEqual(a["interimYTD"]["metrics"]["freeCashFlowSimple"],155)
+        self.assertEqual(a["interimYTD"]["type"],"as_file_ytd_10q_not_annualized")
+        self.assertIn("INTERIM_PERIOD_NOT_IN_FY_SCREEN",[x["code"] for x in a["issues"]])
+    def test_interim_missing_capex_not_zero(self):
+        x=sample()
+        x["facts"]["operating_cash_flow"].append({"start":"2026-01-01",
+           "end":"2026-09-30","val":350,"filed":"2026-10-15",
+           "accn":"Q3","form":"10-Q"})
+        a=evaluate(x,TODAY)
+        self.assertIsNone(a["interimYTD"]["metrics"]["freeCashFlowSimple"])
+        self.assertIn("INTERIM_FCF_NOT_COMPARABLE",[x["code"] for x in a["issues"]])
     def test_sources_missing_marked(self):
         report=build({"schema":2,"companies":[sample(k) for k in ["MSFT","ADBE","V","MA","CB","CME"]],"errors":[{"ticker":"GOOGL"}]},TODAY)
         self.assertIn("GOOGL",[x["ticker"] for x in report["companies"] if x["status"]=="blocked"])
