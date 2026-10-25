@@ -49,6 +49,42 @@ def instants(company:dict, tag:str)->dict:
             result[end]={k:raw[k] for k in ("end","val","filed","accn","form")}
     return result
 
+def interim_ytd(company:dict, tag:str, latest_fy_end:str):
+    """Latest as-filed 10-Q YTD after FY close. Never extrapolate to FY/TTM."""
+    rows=[]
+    for raw in company.get("facts",{}).get(tag,[]):
+        if raw.get("form")!="10-Q" or not all(k in raw for k in FACT_FIELDS):continue
+        try:
+            start=dt.date.fromisoformat(raw["start"])
+            end=dt.date.fromisoformat(raw["end"])
+            value=float(raw["val"])
+            duration=(end-start).days
+            if not 65<=duration<=305 or not math.isfinite(value):continue
+            if end<=dt.date.fromisoformat(latest_fy_end):continue
+            if start!=dt.date.fromisoformat(latest_fy_end)+dt.timedelta(days=1):continue
+        except (TypeError,ValueError):continue
+        rows.append({k:raw[k] for k in FACT_FIELDS})
+    rows.sort(key=lambda x:(x["end"],x["filed"]),reverse=True)
+    return rows[0] if rows else None
+
+def interim_snapshot(company:dict,fy_end:str):
+    """Cash generation after last FY, with matching start/end across cash and CAPEX."""
+    fields={"operatingCashFlow":"operating_cash_flow","capex":"property_capex",
+            "revenue":"revenue_contract","netIncome":"net_income"}
+    cash=interim_ytd(company,"operating_cash_flow",fy_end)
+    if not cash:return None
+    out={"type":"as_file_ytd_10q_not_annualized","start":cash["start"],"end":cash["end"],
+         "filed":cash["filed"],"metrics":{},"sources":{}}
+    for display,field in fields.items():
+        row=cash if field=="operating_cash_flow" else interim_ytd(company,field,fy_end)
+        if row and (row["start"],row["end"])==(cash["start"],cash["end"]):
+            out["metrics"][display]=float(row["val"])
+            out["sources"][display]={"accn":row["accn"],"filed":row["filed"],"unit":"USD"}
+        else:out["metrics"][display]=None
+    c,cap=out["metrics"]["operatingCashFlow"],out["metrics"]["capex"]
+    out["metrics"]["freeCashFlowSimple"]=c-cap if c is not None and cap is not None else None
+    return out
+
 def latest_row(d:dict,end:str):
     return d.get(end)
 
@@ -161,9 +197,16 @@ def evaluate(company:dict, today:dt.date)->dict:
         cash_score+=5 if recent["cashConversion"]>=1 else 2 if recent["cashConversion"]>=.8 else 0
     score={"moat":None,"returns":None,"cash":cash_score,"balance":None,"valuation":None,"total":None,
       "explanation":"Quantitative cash persistence proxy only; moat, ROIC and valuation are not evidenced by XBRL alone"}
+    interim=interim_snapshot(company,latest)
+    if interim and interim["metrics"]["freeCashFlowSimple"] is None:
+        issues.append({"severity":"review","code":"INTERIM_FCF_NOT_COMPARABLE",
+           "period":interim["end"],"detail":"10-Q YTD CFO and CAPEX do not match or capex is missing"})
+    if interim:
+        issues.append({"severity":"review","code":"INTERIM_PERIOD_NOT_IN_FY_SCREEN",
+           "period":interim["end"],"detail":"Newer interim YTD information exists; prior fiscal-year screen excludes it"})
     blocked=any(x["severity"]=="block" for x in issues)
     return {"ticker":ticker,"name":company.get("name",ticker),"cik":company.get("cik"),
        "sourceURL":company.get("factsURL"),"category":category,"latestFiscalYearEnd":latest,
        "fiscalAgeDays":age,"status":"blocked" if blocked else "review_required",
-       "annual":annual,"partialScore":score,"screening":screening,
+       "annual":annual,"interimYTD":interim,"partialScore":score,"screening":screening,
        "issues":issues,"investmentSignal":"disabled","decisionReady":False}
