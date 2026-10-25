@@ -1,0 +1,3366 @@
+{
+  "schema": 1,
+  "engine": "free-cash-flow-evidence-v1",
+  "cautions": [
+    "Taxes are GAAP expense ratios, not normalized marginal rates",
+    "Debt flows require financing-note reconciliation; missing categories are not zero",
+    "CFO includes working capital and noncash SBC, so adjustment must prevent double counting",
+    "Capex accrual and leases require footnote checks",
+    "Sector cases (insurance, captive finance) cannot use generic FCFF"
+  ],
+  "companies": [
+    {
+      "ticker": "ADBE",
+      "name": "Adobe",
+      "sector": "software",
+      "fiscalAnnualBridges": [
+        {
+          "fiscalYearEnd": "2025-11-28",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2024-11-30",
+              "end": "2025-11-28",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2024-11-30",
+              "end": "2025-11-28",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2024-11-30",
+              "end": "2025-11-28",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2024-11-30",
+              "end": "2025-11-28",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2024-11-30",
+              "end": "2025-11-28",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2024-11-30",
+              "end": "2025-11-28",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 23769000000.0,
+            "EBIT": 8706000000.0,
+            "netIncome": 7130000000.0,
+            "cashFromOperations": 10031000000.0,
+            "capitalExpenditureCash": 179000000.0,
+            "depreciationAndAmortization": 818000000.0,
+            "interestExpense": null,
+            "taxExpense": 1604000000.0,
+            "pretaxIncome": 8734000000.0,
+            "reportedTaxRatioNotMarginal": 0.18365,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 17000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 1942000000.0,
+            "debtProceedsLongTerm": 1997000000.0,
+            "debtRepaymentsLongTerm": 1500000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 9852000000.0,
+            "cashAfterSBCProxy": 7910000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2024-11-29",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2023-12-02",
+              "end": "2024-11-29",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2023-12-02",
+              "end": "2024-11-29",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2023-12-02",
+              "end": "2024-11-29",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2023-12-02",
+              "end": "2024-11-29",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2023-12-02",
+              "end": "2024-11-29",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2023-12-02",
+              "end": "2024-11-29",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 21505000000.0,
+            "EBIT": 6741000000.0,
+            "netIncome": 5560000000.0,
+            "cashFromOperations": 8056000000.0,
+            "capitalExpenditureCash": 183000000.0,
+            "depreciationAndAmortization": 857000000.0,
+            "interestExpense": null,
+            "taxExpense": 1371000000.0,
+            "pretaxIncome": 6931000000.0,
+            "reportedTaxRatioNotMarginal": 0.19781,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 0.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 1833000000.0,
+            "debtProceedsLongTerm": 1997000000.0,
+            "debtRepaymentsLongTerm": 0.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 7873000000.0,
+            "cashAfterSBCProxy": 6040000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2023-12-01",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2022-12-03",
+              "end": "2023-12-01",
+              "filed": "2024-01-17",
+              "accn": "0000796343-24-000006",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2022-12-03",
+              "end": "2023-12-01",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2022-12-03",
+              "end": "2023-12-01",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2022-12-03",
+              "end": "2023-12-01",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2022-12-03",
+              "end": "2023-12-01",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2022-12-03",
+              "end": "2023-12-01",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2022-12-03",
+              "end": "2023-12-01",
+              "filed": "2026-01-15",
+              "accn": "0000796343-26-000003",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 19409000000.0,
+            "EBIT": 6650000000.0,
+            "netIncome": 5428000000.0,
+            "cashFromOperations": 7302000000.0,
+            "capitalExpenditureCash": 360000000.0,
+            "depreciationAndAmortization": 872000000.0,
+            "interestExpense": 113000000.0,
+            "taxExpense": 1371000000.0,
+            "pretaxIncome": 6799000000.0,
+            "reportedTaxRatioNotMarginal": 0.20165,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 0.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 1718000000.0,
+            "debtProceedsLongTerm": 0.0,
+            "debtRepaymentsLongTerm": 500000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 6942000000.0,
+            "cashAfterSBCProxy": 5224000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 7032213854.978673,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2022-12-02",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2021-12-04",
+              "end": "2022-12-02",
+              "filed": "2024-01-17",
+              "accn": "0000796343-24-000006",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2021-12-04",
+              "end": "2022-12-02",
+              "filed": "2025-01-13",
+              "accn": "0000796343-25-000004",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2021-12-04",
+              "end": "2022-12-02",
+              "filed": "2025-01-13",
+              "accn": "0000796343-25-000004",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2021-12-04",
+              "end": "2022-12-02",
+              "filed": "2025-01-13",
+              "accn": "0000796343-25-000004",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2021-12-04",
+              "end": "2022-12-02",
+              "filed": "2025-01-13",
+              "accn": "0000796343-25-000004",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2021-12-04",
+              "end": "2022-12-02",
+              "filed": "2025-01-13",
+              "accn": "0000796343-25-000004",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 17606000000.0,
+            "EBIT": 6098000000.0,
+            "netIncome": 4756000000.0,
+            "cashFromOperations": 7838000000.0,
+            "capitalExpenditureCash": 442000000.0,
+            "depreciationAndAmortization": 856000000.0,
+            "interestExpense": 112000000.0,
+            "taxExpense": 1252000000.0,
+            "pretaxIncome": 6008000000.0,
+            "reportedTaxRatioNotMarginal": 0.20839,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 126000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 1440000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": 0.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 7396000000.0,
+            "cashAfterSBCProxy": 5956000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 7484660452.729693,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2021-12-03",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2020-11-28",
+              "end": "2021-12-03",
+              "filed": "2024-01-17",
+              "accn": "0000796343-24-000006",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2020-11-28",
+              "end": "2021-12-03",
+              "filed": "2024-01-17",
+              "accn": "0000796343-24-000006",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2020-11-28",
+              "end": "2021-12-03",
+              "filed": "2024-01-17",
+              "accn": "0000796343-24-000006",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2020-11-28",
+              "end": "2021-12-03",
+              "filed": "2024-01-17",
+              "accn": "0000796343-24-000006",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2020-11-28",
+              "end": "2021-12-03",
+              "filed": "2024-01-17",
+              "accn": "0000796343-24-000006",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2020-11-28",
+              "end": "2021-12-03",
+              "filed": "2024-01-17",
+              "accn": "0000796343-24-000006",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 15785000000.0,
+            "EBIT": 5802000000.0,
+            "netIncome": 4822000000.0,
+            "cashFromOperations": 7230000000.0,
+            "capitalExpenditureCash": 348000000.0,
+            "depreciationAndAmortization": 788000000.0,
+            "interestExpense": 113000000.0,
+            "taxExpense": 883000000.0,
+            "pretaxIncome": 5705000000.0,
+            "reportedTaxRatioNotMarginal": 0.15478,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 2682000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 1069000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": 0.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 6882000000.0,
+            "cashAfterSBCProxy": 5813000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 6977510254.163015,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        }
+      ],
+      "verification": {
+        "annualRows": 5,
+        "fullFCFF": 0,
+        "fullFCFE": 0,
+        "pendingSourceEvidence": 17
+      },
+      "method": "GAAP tag-level cash bridge with strict controls; not yet normalized FCFF or FCFE"
+    },
+    {
+      "ticker": "CB",
+      "name": "Chubb",
+      "sector": "insurance",
+      "fiscalAnnualBridges": [
+        {
+          "fiscalYearEnd": "2025-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 59402000000.0,
+            "EBIT": null,
+            "netIncome": 10310000000.0,
+            "cashFromOperations": 12816000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": 764000000.0,
+            "taxExpense": 2422000000.0,
+            "pretaxIncome": 13044000000.0,
+            "reportedTaxRatioNotMarginal": 0.18568,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 289000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": null,
+            "debtProceedsLongTerm": 2424000000.0,
+            "debtRepaymentsLongTerm": 800000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "SECTOR_NOT_GENERAL_CORPORATE_FCFF",
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "OPERATING_EARNINGS_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2024-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 55753000000.0,
+            "EBIT": null,
+            "netIncome": 9272000000.0,
+            "cashFromOperations": 16182000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": 741000000.0,
+            "taxExpense": 1815000000.0,
+            "pretaxIncome": 11455000000.0,
+            "reportedTaxRatioNotMarginal": 0.15845,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 538000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": null,
+            "debtProceedsLongTerm": 2408000000.0,
+            "debtRepaymentsLongTerm": 1437000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "SECTOR_NOT_GENERAL_CORPORATE_FCFF",
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "OPERATING_EARNINGS_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2023-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-27",
+              "accn": "0000896159-26-000005",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 49735000000.0,
+            "EBIT": null,
+            "netIncome": 9028000000.0,
+            "cashFromOperations": 12632000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": 672000000.0,
+            "taxExpense": 511000000.0,
+            "pretaxIncome": 9526000000.0,
+            "reportedTaxRatioNotMarginal": 0.05364,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 34000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": null,
+            "debtProceedsLongTerm": 0.0,
+            "debtRepaymentsLongTerm": 475000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "SECTOR_NOT_GENERAL_CORPORATE_FCFF",
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "OPERATING_EARNINGS_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2022-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-27",
+              "accn": "0000896159-25-000004",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-27",
+              "accn": "0000896159-25-000004",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-27",
+              "accn": "0000896159-25-000004",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-27",
+              "accn": "0000896159-25-000004",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-27",
+              "accn": "0000896159-25-000004",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-27",
+              "accn": "0000896159-25-000004",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 43097000000.0,
+            "EBIT": null,
+            "netIncome": 5246000000.0,
+            "cashFromOperations": 11258000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": 570000000.0,
+            "taxExpense": 1239000000.0,
+            "pretaxIncome": 6485000000.0,
+            "reportedTaxRatioNotMarginal": 0.19106,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 5166000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": null,
+            "debtProceedsLongTerm": 0.0,
+            "debtRepaymentsLongTerm": 1000000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "SECTOR_NOT_GENERAL_CORPORATE_FCFF",
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "OPERATING_EARNINGS_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2021-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-23",
+              "accn": "0000896159-24-000003",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-23",
+              "accn": "0000896159-24-000003",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-23",
+              "accn": "0000896159-24-000003",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-23",
+              "accn": "0000896159-24-000003",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-23",
+              "accn": "0000896159-24-000003",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-23",
+              "accn": "0000896159-24-000003",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 40869000000.0,
+            "EBIT": null,
+            "netIncome": 8525000000.0,
+            "cashFromOperations": 11151000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": 492000000.0,
+            "taxExpense": 1269000000.0,
+            "pretaxIncome": 9794000000.0,
+            "reportedTaxRatioNotMarginal": 0.12957,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 1184000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": null,
+            "debtProceedsLongTerm": 1576000000.0,
+            "debtRepaymentsLongTerm": 0.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "SECTOR_NOT_GENERAL_CORPORATE_FCFF",
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "OPERATING_EARNINGS_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        }
+      ],
+      "verification": {
+        "annualRows": 5,
+        "fullFCFF": 0,
+        "fullFCFE": 0,
+        "pendingSourceEvidence": 35
+      },
+      "method": "GAAP tag-level cash bridge with strict controls; not yet normalized FCFF or FCFE"
+    },
+    {
+      "ticker": "CME",
+      "name": "CME Group",
+      "sector": "exchange",
+      "fiscalAnnualBridges": [
+        {
+          "fiscalYearEnd": "2025-12-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-26",
+              "accn": "0001156375-26-000009",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-26",
+              "accn": "0001156375-26-000009",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 6520600000.0,
+            "EBIT": 4229500000.0,
+            "netIncome": 4072200000.0,
+            "cashFromOperations": 4277100000.0,
+            "capitalExpenditureCash": 83500000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 1258300000.0,
+            "pretaxIncome": 5330500000.0,
+            "reportedTaxRatioNotMarginal": 0.23606,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 94800000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 4193600000.0,
+            "cashAfterSBCProxy": 4098800000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2024-12-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-26",
+              "accn": "0001156375-26-000009",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-26",
+              "accn": "0001156375-26-000009",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 6130100000.0,
+            "EBIT": 3931500000.0,
+            "netIncome": 3525800000.0,
+            "cashFromOperations": 3690500000.0,
+            "capitalExpenditureCash": 94000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 1015600000.0,
+            "pretaxIncome": 4541400000.0,
+            "reportedTaxRatioNotMarginal": 0.22363,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 89500000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 3596500000.0,
+            "cashAfterSBCProxy": 3507000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2023-12-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-26",
+              "accn": "0001156375-26-000009",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-26",
+              "accn": "0001156375-26-000009",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 5578900000.0,
+            "EBIT": 3435700000.0,
+            "netIncome": 3226000000.0,
+            "cashFromOperations": 3453800000.0,
+            "capitalExpenditureCash": 76400000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 927400000.0,
+            "pretaxIncome": 4153600000.0,
+            "reportedTaxRatioNotMarginal": 0.22328,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 82900000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 3377400000.0,
+            "cashAfterSBCProxy": 3294500000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2022-12-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-27",
+              "accn": "0001156375-25-000021",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-27",
+              "accn": "0001156375-25-000021",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 5019400000.0,
+            "EBIT": 3015900000.0,
+            "netIncome": 2691000000.0,
+            "cashFromOperations": 3056000000.0,
+            "capitalExpenditureCash": 89700000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 799300000.0,
+            "pretaxIncome": 3490300000.0,
+            "reportedTaxRatioNotMarginal": 0.22901,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 84300000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 2966300000.0,
+            "cashAfterSBCProxy": 2882000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2021-12-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-28",
+              "accn": "0001156375-24-000010",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-28",
+              "accn": "0001156375-24-000010",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 4689700000.0,
+            "EBIT": 2645200000.0,
+            "netIncome": 2637000000.0,
+            "cashFromOperations": 2402400000.0,
+            "capitalExpenditureCash": 127200000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 736700000.0,
+            "pretaxIncome": 3373600000.0,
+            "reportedTaxRatioNotMarginal": 0.21837,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 75200000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 2275200000.0,
+            "cashAfterSBCProxy": 2200000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        }
+      ],
+      "verification": {
+        "annualRows": 5,
+        "fullFCFF": 0,
+        "fullFCFE": 0,
+        "pendingSourceEvidence": 30
+      },
+      "method": "GAAP tag-level cash bridge with strict controls; not yet normalized FCFF or FCFE"
+    },
+    {
+      "ticker": "DE",
+      "name": "Deere",
+      "sector": "industrial",
+      "fiscalAnnualBridges": [
+        {
+          "fiscalYearEnd": "2025-11-02",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2024-10-28",
+              "end": "2025-11-02",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2024-10-28",
+              "end": "2025-11-02",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2024-10-28",
+              "end": "2025-11-02",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2024-10-28",
+              "end": "2025-11-02",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2024-10-28",
+              "end": "2025-11-02",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 45684000000.0,
+            "EBIT": null,
+            "netIncome": 5027000000.0,
+            "cashFromOperations": 7459000000.0,
+            "capitalExpenditureCash": 1360000000.0,
+            "depreciationAndAmortization": 2229000000.0,
+            "interestExpense": 3170000000.0,
+            "taxExpense": 1259000000.0,
+            "pretaxIncome": null,
+            "reportedTaxRatioNotMarginal": null,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 101000000.0,
+            "unpaidPPE": 167000000.0,
+            "stockBasedCompensation": 151000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 6099000000.0,
+            "cashAfterSBCProxy": 5948000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "SECTOR_NOT_GENERAL_CORPORATE_FCFF",
+            "OPERATING_EARNINGS_MISSING",
+            "EFFECTIVE_TAX_RATE_NOT_USABLE",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2024-10-27",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2023-10-30",
+              "end": "2024-10-27",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2023-10-30",
+              "end": "2024-10-27",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2023-10-30",
+              "end": "2024-10-27",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2023-10-30",
+              "end": "2024-10-27",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 51716000000.0,
+            "EBIT": 9039000000.0,
+            "netIncome": 7100000000.0,
+            "cashFromOperations": 9231000000.0,
+            "capitalExpenditureCash": 1640000000.0,
+            "depreciationAndAmortization": 2118000000.0,
+            "interestExpense": 3348000000.0,
+            "taxExpense": 2094000000.0,
+            "pretaxIncome": null,
+            "reportedTaxRatioNotMarginal": null,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": 208000000.0,
+            "stockBasedCompensation": 208000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 7591000000.0,
+            "cashAfterSBCProxy": 7383000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "SECTOR_NOT_GENERAL_CORPORATE_FCFF",
+            "EFFECTIVE_TAX_RATE_NOT_USABLE",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2023-10-29",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2022-10-31",
+              "end": "2023-10-29",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2022-10-31",
+              "end": "2023-10-29",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2022-10-31",
+              "end": "2023-10-29",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2022-10-31",
+              "end": "2023-10-29",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2022-10-31",
+              "end": "2023-10-29",
+              "filed": "2025-12-18",
+              "accn": "0001104659-25-122321",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 61251000000.0,
+            "EBIT": 12958000000.0,
+            "netIncome": 10166000000.0,
+            "cashFromOperations": 8589000000.0,
+            "capitalExpenditureCash": 1498000000.0,
+            "depreciationAndAmortization": 2004000000.0,
+            "interestExpense": 2453000000.0,
+            "taxExpense": 2871000000.0,
+            "pretaxIncome": null,
+            "reportedTaxRatioNotMarginal": null,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 82000000.0,
+            "unpaidPPE": 211000000.0,
+            "stockBasedCompensation": 130000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 7091000000.0,
+            "cashAfterSBCProxy": 6961000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "SECTOR_NOT_GENERAL_CORPORATE_FCFF",
+            "EFFECTIVE_TAX_RATE_NOT_USABLE",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2022-10-30",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2021-11-01",
+              "end": "2022-10-30",
+              "filed": "2024-12-12",
+              "accn": "0001558370-24-016169",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2021-11-01",
+              "end": "2022-10-30",
+              "filed": "2024-12-12",
+              "accn": "0001558370-24-016169",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2021-11-01",
+              "end": "2022-10-30",
+              "filed": "2024-12-12",
+              "accn": "0001558370-24-016169",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2021-11-01",
+              "end": "2022-10-30",
+              "filed": "2022-12-15",
+              "accn": "0001558370-22-018703",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2021-11-01",
+              "end": "2022-10-30",
+              "filed": "2022-12-15",
+              "accn": "0001558370-22-018703",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2021-11-01",
+              "end": "2022-10-30",
+              "filed": "2024-12-12",
+              "accn": "0001558370-24-016169",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2021-11-01",
+              "end": "2022-10-30",
+              "filed": "2024-12-12",
+              "accn": "0001558370-24-016169",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 52577000000.0,
+            "EBIT": 9508000000.0,
+            "netIncome": 7131000000.0,
+            "cashFromOperations": 4699000000.0,
+            "capitalExpenditureCash": 1134000000.0,
+            "depreciationAndAmortization": 1895000000.0,
+            "interestExpense": 1062000000.0,
+            "taxExpense": 2007000000.0,
+            "pretaxIncome": null,
+            "reportedTaxRatioNotMarginal": null,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 498000000.0,
+            "unpaidPPE": 165000000.0,
+            "stockBasedCompensation": 85000000.0,
+            "debtProceedsLongTerm": 10358000000.0,
+            "debtRepaymentsLongTerm": 8445000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 3565000000.0,
+            "cashAfterSBCProxy": 3480000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "SECTOR_NOT_GENERAL_CORPORATE_FCFF",
+            "EFFECTIVE_TAX_RATE_NOT_USABLE",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2021-10-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2020-11-02",
+              "end": "2021-10-31",
+              "filed": "2023-12-15",
+              "accn": "0001558370-23-019812",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2020-11-02",
+              "end": "2021-10-31",
+              "filed": "2023-12-15",
+              "accn": "0001558370-23-019812",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2020-11-02",
+              "end": "2021-10-31",
+              "filed": "2023-12-15",
+              "accn": "0001558370-23-019812",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2020-11-02",
+              "end": "2021-10-31",
+              "filed": "2022-12-15",
+              "accn": "0001558370-22-018703",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2020-11-02",
+              "end": "2021-10-31",
+              "filed": "2022-12-15",
+              "accn": "0001558370-22-018703",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2020-11-02",
+              "end": "2021-10-31",
+              "filed": "2023-12-15",
+              "accn": "0001558370-23-019812",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2020-11-02",
+              "end": "2021-10-31",
+              "filed": "2023-12-15",
+              "accn": "0001558370-23-019812",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 44024000000.0,
+            "EBIT": 8012000000.0,
+            "netIncome": 5963000000.0,
+            "cashFromOperations": 7726000000.0,
+            "capitalExpenditureCash": 848000000.0,
+            "depreciationAndAmortization": 2050000000.0,
+            "interestExpense": 993000000.0,
+            "taxExpense": 1658000000.0,
+            "pretaxIncome": null,
+            "reportedTaxRatioNotMarginal": null,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 244000000.0,
+            "unpaidPPE": 121000000.0,
+            "stockBasedCompensation": 82000000.0,
+            "debtProceedsLongTerm": 8722000000.0,
+            "debtRepaymentsLongTerm": 7090000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 6878000000.0,
+            "cashAfterSBCProxy": 6796000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "SECTOR_NOT_GENERAL_CORPORATE_FCFF",
+            "EFFECTIVE_TAX_RATE_NOT_USABLE",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        }
+      ],
+      "verification": {
+        "annualRows": 5,
+        "fullFCFF": 0,
+        "fullFCFE": 0,
+        "pendingSourceEvidence": 22
+      },
+      "method": "GAAP tag-level cash bridge with strict controls; not yet normalized FCFF or FCFE"
+    },
+    {
+      "ticker": "FERG",
+      "name": "Ferguson Enterprises",
+      "sector": "distribution",
+      "fiscalAnnualBridges": [
+        {
+          "fiscalYearEnd": "2025-07-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2024-08-01",
+              "end": "2025-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2024-08-01",
+              "end": "2025-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2024-08-01",
+              "end": "2025-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2024-08-01",
+              "end": "2025-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2024-08-01",
+              "end": "2025-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 30762000000.0,
+            "EBIT": 2606000000.0,
+            "netIncome": 1856000000.0,
+            "cashFromOperations": 1908000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": 373000000.0,
+            "interestExpense": null,
+            "taxExpense": 567000000.0,
+            "pretaxIncome": 2423000000.0,
+            "reportedTaxRatioNotMarginal": 0.23401,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 301000000.0,
+            "unpaidPPE": 14000000.0,
+            "stockBasedCompensation": 28000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "CFO_OR_CAPEX_ABSENT",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2024-07-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2023-08-01",
+              "end": "2024-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2023-08-01",
+              "end": "2024-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2023-08-01",
+              "end": "2024-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2023-08-01",
+              "end": "2024-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2023-08-01",
+              "end": "2024-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 29635000000.0,
+            "EBIT": 2652000000.0,
+            "netIncome": 1735000000.0,
+            "cashFromOperations": 1873000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": 335000000.0,
+            "interestExpense": null,
+            "taxExpense": 729000000.0,
+            "pretaxIncome": 2464000000.0,
+            "reportedTaxRatioNotMarginal": 0.29586,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 260000000.0,
+            "unpaidPPE": 6000000.0,
+            "stockBasedCompensation": 49000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "CFO_OR_CAPEX_ABSENT",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2023-07-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2022-08-01",
+              "end": "2023-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2022-08-01",
+              "end": "2023-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2022-08-01",
+              "end": "2023-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2022-08-01",
+              "end": "2023-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2022-08-01",
+              "end": "2023-07-31",
+              "filed": "2025-09-26",
+              "accn": "0002011641-25-000027",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 29734000000.0,
+            "EBIT": 2659000000.0,
+            "netIncome": 1889000000.0,
+            "cashFromOperations": 2723000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": 321000000.0,
+            "interestExpense": null,
+            "taxExpense": 575000000.0,
+            "pretaxIncome": 2464000000.0,
+            "reportedTaxRatioNotMarginal": 0.23336,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 616000000.0,
+            "unpaidPPE": 17000000.0,
+            "stockBasedCompensation": 51000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "CFO_OR_CAPEX_ABSENT",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2022-07-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2021-08-01",
+              "end": "2022-07-31",
+              "filed": "2024-09-25",
+              "accn": "0002011641-24-000005",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2021-08-01",
+              "end": "2022-07-31",
+              "filed": "2024-09-25",
+              "accn": "0002011641-24-000005",
+              "form": "10-K"
+            },
+            "depreciation_and_amortization": {
+              "start": "2021-08-01",
+              "end": "2022-07-31",
+              "filed": "2024-09-25",
+              "accn": "0002011641-24-000005",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2021-08-01",
+              "end": "2022-07-31",
+              "filed": "2024-09-25",
+              "accn": "0002011641-24-000005",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2021-08-01",
+              "end": "2022-07-31",
+              "filed": "2024-09-25",
+              "accn": "0002011641-24-000005",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 28566000000.0,
+            "EBIT": 2820000000.0,
+            "netIncome": 2122000000.0,
+            "cashFromOperations": 1149000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": 301000000.0,
+            "interestExpense": null,
+            "taxExpense": 609000000.0,
+            "pretaxIncome": 2708000000.0,
+            "reportedTaxRatioNotMarginal": 0.22489,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 650000000.0,
+            "unpaidPPE": 16000000.0,
+            "stockBasedCompensation": 57000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "CFO_OR_CAPEX_ABSENT",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        }
+      ],
+      "verification": {
+        "annualRows": 4,
+        "fullFCFF": 0,
+        "fullFCFE": 0,
+        "pendingSourceEvidence": 16
+      },
+      "method": "GAAP tag-level cash bridge with strict controls; not yet normalized FCFF or FCFE"
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet",
+      "sector": "digital_platform",
+      "fiscalAnnualBridges": [
+        {
+          "fiscalYearEnd": "2025-12-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-05",
+              "accn": "0001652044-26-000018",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-05",
+              "accn": "0001652044-26-000018",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-05",
+              "accn": "0001652044-26-000018",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 402836000000.0,
+            "EBIT": 129039000000.0,
+            "netIncome": 132170000000.0,
+            "cashFromOperations": 164713000000.0,
+            "capitalExpenditureCash": 91447000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 26656000000.0,
+            "pretaxIncome": 158826000000.0,
+            "reportedTaxRatioNotMarginal": 0.16783,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": 15090000000.0,
+            "stockBasedCompensation": 24953000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 73266000000.0,
+            "cashAfterSBCProxy": 48313000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2024-12-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-05",
+              "accn": "0001652044-26-000018",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-05",
+              "accn": "0001652044-26-000018",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-05",
+              "accn": "0001652044-26-000018",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 350018000000.0,
+            "EBIT": 112390000000.0,
+            "netIncome": 100118000000.0,
+            "cashFromOperations": 125299000000.0,
+            "capitalExpenditureCash": 52535000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 19697000000.0,
+            "pretaxIncome": 119815000000.0,
+            "reportedTaxRatioNotMarginal": 0.1644,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": 10326000000.0,
+            "stockBasedCompensation": 22785000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 72764000000.0,
+            "cashAfterSBCProxy": 49979000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2023-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2024-01-31",
+              "accn": "0001652044-24-000022",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-05",
+              "accn": "0001652044-26-000018",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-05",
+              "accn": "0001652044-26-000018",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-05",
+              "accn": "0001652044-26-000018",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 307394000000.0,
+            "EBIT": 84293000000.0,
+            "netIncome": 73795000000.0,
+            "cashFromOperations": 101746000000.0,
+            "capitalExpenditureCash": 32251000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": 308000000.0,
+            "taxExpense": 11922000000.0,
+            "pretaxIncome": 85717000000.0,
+            "reportedTaxRatioNotMarginal": 0.13909,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": 7435000000.0,
+            "stockBasedCompensation": 22460000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 69495000000.0,
+            "cashAfterSBCProxy": 47035000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 69760161636.54817,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2022-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2024-01-31",
+              "accn": "0001652044-24-000022",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-05",
+              "accn": "0001652044-25-000014",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-05",
+              "accn": "0001652044-25-000014",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 282836000000.0,
+            "EBIT": 74842000000.0,
+            "netIncome": 59972000000.0,
+            "cashFromOperations": 91495000000.0,
+            "capitalExpenditureCash": 31485000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": 357000000.0,
+            "taxExpense": 11356000000.0,
+            "pretaxIncome": 71328000000.0,
+            "reportedTaxRatioNotMarginal": 0.15921,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 19362000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 60010000000.0,
+            "cashAfterSBCProxy": 40648000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 60310162685.06056,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2021-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-01-31",
+              "accn": "0001652044-24-000022",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-01-31",
+              "accn": "0001652044-24-000022",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-01-31",
+              "accn": "0001652044-24-000022",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 257637000000.0,
+            "EBIT": 78714000000.0,
+            "netIncome": 76033000000.0,
+            "cashFromOperations": 91652000000.0,
+            "capitalExpenditureCash": 24640000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": 346000000.0,
+            "taxExpense": 14701000000.0,
+            "pretaxIncome": 90734000000.0,
+            "reportedTaxRatioNotMarginal": 0.16202,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 15376000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 67012000000.0,
+            "cashAfterSBCProxy": 51636000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 67301940022.4833,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        }
+      ],
+      "verification": {
+        "annualRows": 5,
+        "fullFCFF": 0,
+        "fullFCFE": 0,
+        "pendingSourceEvidence": 24
+      },
+      "method": "GAAP tag-level cash bridge with strict controls; not yet normalized FCFF or FCFE"
+    },
+    {
+      "ticker": "MA",
+      "name": "Mastercard",
+      "sector": "payments",
+      "fiscalAnnualBridges": [
+        {
+          "fiscalYearEnd": "2025-12-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-11",
+              "accn": "0001141391-26-000013",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-11",
+              "accn": "0001141391-26-000013",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "filed": "2026-02-11",
+              "accn": "0001141391-26-000013",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 32791000000.0,
+            "EBIT": 18897000000.0,
+            "netIncome": null,
+            "cashFromOperations": 17648000000.0,
+            "capitalExpenditureCash": 489000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 3610000000.0,
+            "pretaxIncome": 18578000000.0,
+            "reportedTaxRatioNotMarginal": 0.19432,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 0.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 597000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 17159000000.0,
+            "cashAfterSBCProxy": 16562000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2024-12-31",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-11",
+              "accn": "0001141391-26-000013",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-11",
+              "accn": "0001141391-26-000013",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "filed": "2026-02-11",
+              "accn": "0001141391-26-000013",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 28167000000.0,
+            "EBIT": 15582000000.0,
+            "netIncome": null,
+            "cashFromOperations": 14780000000.0,
+            "capitalExpenditureCash": 474000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 2380000000.0,
+            "pretaxIncome": 15254000000.0,
+            "reportedTaxRatioNotMarginal": 0.15602,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 2511000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 526000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 14306000000.0,
+            "cashAfterSBCProxy": 13780000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2023-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2024-02-13",
+              "accn": "0001141391-24-000022",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-11",
+              "accn": "0001141391-26-000013",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-11",
+              "accn": "0001141391-26-000013",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "filed": "2026-02-11",
+              "accn": "0001141391-26-000013",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 25098000000.0,
+            "EBIT": 14008000000.0,
+            "netIncome": null,
+            "cashFromOperations": 11980000000.0,
+            "capitalExpenditureCash": 371000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": 575000000.0,
+            "taxExpense": 2444000000.0,
+            "pretaxIncome": 13639000000.0,
+            "reportedTaxRatioNotMarginal": 0.17919,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 0.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 460000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 11609000000.0,
+            "cashAfterSBCProxy": 11149000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 12080964586.846542,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2022-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2024-02-13",
+              "accn": "0001141391-24-000022",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-12",
+              "accn": "0001141391-25-000011",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-12",
+              "accn": "0001141391-25-000011",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "filed": "2025-02-12",
+              "accn": "0001141391-25-000011",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 22237000000.0,
+            "EBIT": 12264000000.0,
+            "netIncome": null,
+            "cashFromOperations": 11195000000.0,
+            "capitalExpenditureCash": 442000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": 471000000.0,
+            "taxExpense": 1802000000.0,
+            "pretaxIncome": 11732000000.0,
+            "reportedTaxRatioNotMarginal": 0.1536,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 313000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 295000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 10753000000.0,
+            "cashAfterSBCProxy": 10458000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 11151655813.160587,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2021-12-31",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-13",
+              "accn": "0001141391-24-000022",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-13",
+              "accn": "0001141391-24-000022",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2021-01-01",
+              "end": "2021-12-31",
+              "filed": "2024-02-13",
+              "accn": "0001141391-24-000022",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 29845000000.0,
+            "EBIT": 10082000000.0,
+            "netIncome": null,
+            "cashFromOperations": 9463000000.0,
+            "capitalExpenditureCash": 407000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": 431000000.0,
+            "taxExpense": 1620000000.0,
+            "pretaxIncome": null,
+            "reportedTaxRatioNotMarginal": null,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 4436000000.0,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 273000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 9056000000.0,
+            "cashAfterSBCProxy": 8783000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "EFFECTIVE_TAX_RATE_NOT_USABLE",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        }
+      ],
+      "verification": {
+        "annualRows": 5,
+        "fullFCFF": 0,
+        "fullFCFE": 0,
+        "pendingSourceEvidence": 23
+      },
+      "method": "GAAP tag-level cash bridge with strict controls; not yet normalized FCFF or FCFE"
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft",
+      "sector": "software",
+      "fiscalAnnualBridges": [
+        {
+          "fiscalYearEnd": "2026-06-30",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2025-07-01",
+              "end": "2026-06-30",
+              "filed": "2026-07-29",
+              "accn": "0001193125-26-323660",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2025-07-01",
+              "end": "2026-06-30",
+              "filed": "2026-07-29",
+              "accn": "0001193125-26-323660",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 331839000000.0,
+            "EBIT": 155237000000.0,
+            "netIncome": 133749000000.0,
+            "cashFromOperations": 182935000000.0,
+            "capitalExpenditureCash": 115948000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 32185000000.0,
+            "pretaxIncome": 165934000000.0,
+            "reportedTaxRatioNotMarginal": 0.19396,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 12405000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 66987000000.0,
+            "cashAfterSBCProxy": 54582000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2025-06-30",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2024-07-01",
+              "end": "2025-06-30",
+              "filed": "2026-07-29",
+              "accn": "0001193125-26-323660",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2024-07-01",
+              "end": "2025-06-30",
+              "filed": "2026-07-29",
+              "accn": "0001193125-26-323660",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 281724000000.0,
+            "EBIT": 128528000000.0,
+            "netIncome": 101832000000.0,
+            "cashFromOperations": 136162000000.0,
+            "capitalExpenditureCash": 64551000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 21795000000.0,
+            "pretaxIncome": 123627000000.0,
+            "reportedTaxRatioNotMarginal": 0.1763,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 11974000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 71611000000.0,
+            "cashAfterSBCProxy": 59637000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2024-06-30",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2023-07-01",
+              "end": "2024-06-30",
+              "filed": "2024-07-30",
+              "accn": "0000950170-24-087843",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2023-07-01",
+              "end": "2024-06-30",
+              "filed": "2026-07-29",
+              "accn": "0001193125-26-323660",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2023-07-01",
+              "end": "2024-06-30",
+              "filed": "2026-07-29",
+              "accn": "0001193125-26-323660",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 245122000000.0,
+            "EBIT": 109433000000.0,
+            "netIncome": 88136000000.0,
+            "cashFromOperations": 118548000000.0,
+            "capitalExpenditureCash": 44477000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": 2935000000.0,
+            "taxExpense": 19651000000.0,
+            "pretaxIncome": 107787000000.0,
+            "reportedTaxRatioNotMarginal": 0.18231,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 10734000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 74071000000.0,
+            "cashAfterSBCProxy": 63337000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 76470910564.35378,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2023-06-30",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2022-07-01",
+              "end": "2023-06-30",
+              "filed": "2024-07-30",
+              "accn": "0000950170-24-087843",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2022-07-01",
+              "end": "2023-06-30",
+              "filed": "2025-07-30",
+              "accn": "0000950170-25-100235",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2022-07-01",
+              "end": "2023-06-30",
+              "filed": "2025-07-30",
+              "accn": "0000950170-25-100235",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 211915000000.0,
+            "EBIT": 88523000000.0,
+            "netIncome": 72361000000.0,
+            "cashFromOperations": 87582000000.0,
+            "capitalExpenditureCash": 28107000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": 1968000000.0,
+            "taxExpense": 16950000000.0,
+            "pretaxIncome": 89311000000.0,
+            "reportedTaxRatioNotMarginal": 0.18979,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 9611000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 59475000000.0,
+            "cashAfterSBCProxy": 49864000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 61069500655.0145,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2022-06-30",
+          "sourceTags": {
+            "interest_expense": {
+              "start": "2021-07-01",
+              "end": "2022-06-30",
+              "filed": "2024-07-30",
+              "accn": "0000950170-24-087843",
+              "form": "10-K"
+            },
+            "income_tax_expense": {
+              "start": "2021-07-01",
+              "end": "2022-06-30",
+              "filed": "2024-07-30",
+              "accn": "0000950170-24-087843",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2021-07-01",
+              "end": "2022-06-30",
+              "filed": "2024-07-30",
+              "accn": "0000950170-24-087843",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 198270000000.0,
+            "EBIT": 83383000000.0,
+            "netIncome": 72738000000.0,
+            "cashFromOperations": 89035000000.0,
+            "capitalExpenditureCash": 23886000000.0,
+            "depreciationAndAmortization": null,
+            "interestExpense": 2063000000.0,
+            "taxExpense": 10978000000.0,
+            "pretaxIncome": 83716000000.0,
+            "reportedTaxRatioNotMarginal": 0.13113,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": null,
+            "unpaidPPE": null,
+            "stockBasedCompensation": 7502000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": null,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": 65149000000.0,
+            "cashAfterSBCProxy": 57647000000.0,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": 66941470901.61976,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "D_AND_A_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "ACQUISITIONS_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED",
+            "CAPEX_ACCRUALS_NOT_QUANTIFIED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        }
+      ],
+      "verification": {
+        "annualRows": 5,
+        "fullFCFF": 0,
+        "fullFCFE": 0,
+        "pendingSourceEvidence": 27
+      },
+      "method": "GAAP tag-level cash bridge with strict controls; not yet normalized FCFF or FCFE"
+    },
+    {
+      "ticker": "V",
+      "name": "Visa",
+      "sector": "payments",
+      "fiscalAnnualBridges": [
+        {
+          "fiscalYearEnd": "2025-09-30",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2024-10-01",
+              "end": "2025-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2024-10-01",
+              "end": "2025-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2024-10-01",
+              "end": "2025-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2024-10-01",
+              "end": "2025-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2024-10-01",
+              "end": "2025-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 40000000000.0,
+            "EBIT": 23994000000.0,
+            "netIncome": 20058000000.0,
+            "cashFromOperations": 23059000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 4136000000.0,
+            "pretaxIncome": 24194000000.0,
+            "reportedTaxRatioNotMarginal": 0.17095,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 887000000.0,
+            "unpaidPPE": 59000000.0,
+            "stockBasedCompensation": 897000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": 0.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2024-09-30",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2023-10-01",
+              "end": "2024-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2023-10-01",
+              "end": "2024-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2023-10-01",
+              "end": "2024-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2023-10-01",
+              "end": "2024-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2023-10-01",
+              "end": "2024-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 35926000000.0,
+            "EBIT": 23595000000.0,
+            "netIncome": 19743000000.0,
+            "cashFromOperations": 19950000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 4173000000.0,
+            "pretaxIncome": 23916000000.0,
+            "reportedTaxRatioNotMarginal": 0.17449,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 915000000.0,
+            "unpaidPPE": 52000000.0,
+            "stockBasedCompensation": 850000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": 0.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2023-09-30",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2022-10-01",
+              "end": "2023-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2022-10-01",
+              "end": "2023-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2022-10-01",
+              "end": "2023-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2022-10-01",
+              "end": "2023-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2022-10-01",
+              "end": "2023-09-30",
+              "filed": "2025-11-06",
+              "accn": "0001403161-25-000089",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 32653000000.0,
+            "EBIT": 21000000000.0,
+            "netIncome": 17273000000.0,
+            "cashFromOperations": 20755000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 3764000000.0,
+            "pretaxIncome": 21037000000.0,
+            "reportedTaxRatioNotMarginal": 0.17892,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 0.0,
+            "unpaidPPE": 96000000.0,
+            "stockBasedCompensation": 765000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": 2250000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2022-09-30",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2021-10-01",
+              "end": "2022-09-30",
+              "filed": "2024-11-13",
+              "accn": "0001403161-24-000058",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2021-10-01",
+              "end": "2022-09-30",
+              "filed": "2024-11-13",
+              "accn": "0001403161-24-000058",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2021-10-01",
+              "end": "2022-09-30",
+              "filed": "2024-11-13",
+              "accn": "0001403161-24-000058",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2021-10-01",
+              "end": "2022-09-30",
+              "filed": "2024-11-13",
+              "accn": "0001403161-24-000058",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2021-10-01",
+              "end": "2022-09-30",
+              "filed": "2024-11-13",
+              "accn": "0001403161-24-000058",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 29310000000.0,
+            "EBIT": 18813000000.0,
+            "netIncome": 14957000000.0,
+            "cashFromOperations": 18849000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 3179000000.0,
+            "pretaxIncome": 18136000000.0,
+            "reportedTaxRatioNotMarginal": 0.17529,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 1948000000.0,
+            "unpaidPPE": 56000000.0,
+            "stockBasedCompensation": 602000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": 1000000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
+          "fiscalYearEnd": "2021-09-30",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2020-10-01",
+              "end": "2021-09-30",
+              "filed": "2023-11-15",
+              "accn": "0001403161-23-000099",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2020-10-01",
+              "end": "2021-09-30",
+              "filed": "2023-11-15",
+              "accn": "0001403161-23-000099",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2020-10-01",
+              "end": "2021-09-30",
+              "filed": "2023-11-15",
+              "accn": "0001403161-23-000099",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2020-10-01",
+              "end": "2021-09-30",
+              "filed": "2023-11-15",
+              "accn": "0001403161-23-000099",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2020-10-01",
+              "end": "2021-09-30",
+              "filed": "2023-11-15",
+              "accn": "0001403161-23-000099",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 24105000000.0,
+            "EBIT": 15804000000.0,
+            "netIncome": 12311000000.0,
+            "cashFromOperations": 15227000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 3752000000.0,
+            "pretaxIncome": 16063000000.0,
+            "reportedTaxRatioNotMarginal": 0.23358,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 75000000.0,
+            "unpaidPPE": 41000000.0,
+            "stockBasedCompensation": 542000000.0,
+            "debtProceedsLongTerm": null,
+            "debtRepaymentsLongTerm": 3000000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        }
+      ],
+      "verification": {
+        "annualRows": 5,
+        "fullFCFF": 0,
+        "fullFCFE": 0,
+        "pendingSourceEvidence": 25
+      },
+      "method": "GAAP tag-level cash bridge with strict controls; not yet normalized FCFF or FCFE"
+    }
+  ],
+  "summary": {
+    "covered": 9,
+    "withCashFlowSimple": 6,
+    "verifiedFCFF": 0,
+    "verifiedFCFE": 0
+  }
+}
