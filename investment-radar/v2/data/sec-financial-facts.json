@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "source": "https://data.sec.gov/api/xbrl/companyfacts/",
+  "interpretation": "As-filed XBRL facts; periods may differ. No automatic FCFE, TTM, ROIC, intrinsic value or investment recommendation.",
+  "retrievedAt": null,
+  "companies": [],
+  "errors": []
+}
