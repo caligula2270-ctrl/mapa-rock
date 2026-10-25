@@ -13,7 +13,7 @@ import time
 ROOT=Path("investment-radar/v2/data")
 OUT=ROOT/"sec-financial-facts.json"
 USER_AGENT=os.environ.get("SEC_USER_AGENT","").strip()
-if "@" not in USER_AGENT: raise SystemExit("Set SEC_USER_AGENT GitHub secret with SEC contact email")
+# Check the SEC contact only when the downloader executes, not during offline tests.
 COMPANIES={
  "MSFT":(789019,"Microsoft"),"ADBE":(796343,"Adobe"),
  "V":(1403161,"Visa"),"MA":(1141391,"Mastercard"),
@@ -119,6 +119,7 @@ def extract(src:dict,tag:tuple[str,str,str])->list[dict]:
    newest[key]=row
  return sorted(newest.values(),key=lambda x:(x["end"],x.get("filed","")),reverse=True)[:120]
 def main():
+ if "@" not in USER_AGENT: raise SystemExit("Set SEC_USER_AGENT GitHub secret with SEC contact email")
  result={"schema":2,"source":"https://data.sec.gov/api/xbrl/companyfacts/","interpretation":"As-filed XBRL facts; periods may differ. No automatic FCFE, TTM, ROIC, intrinsic value or investment recommendation.","companies":[],"errors":[]}
  for ticker,(cik,name) in COMPANIES.items():
   try:
