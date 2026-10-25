@@ -15,6 +15,7 @@ on:
       - 'investment-radar/v2/scripts/cashflow_evidence.py'
       - 'investment-radar/v2/scripts/build_cashflow_evidence.py'
       - 'investment-radar/v2/scripts/test_cashflow_evidence.py'
+      - 'investment-radar/v2/scripts/test_sec_candidates.py'
       - 'investment-radar/v2/scripts/autonomous_analyst.py'
       - 'investment-radar/v2/scripts/build_autonomous_analysis.py'
       - 'investment-radar/v2/scripts/test_autonomous_analyst.py'
@@ -42,6 +43,7 @@ jobs:
           python -m unittest discover -s investment-radar/v2/scripts -p 'test_sector_models.py' -v
           python -m unittest discover -s investment-radar/v2/scripts -p 'test_autonomous_analyst.py' -v
           python -m unittest discover -s investment-radar/v2/scripts -p 'test_cashflow_evidence.py' -v
+          python -m unittest discover -s investment-radar/v2/scripts -p 'test_sec_candidates.py' -v
       - name: Retrieve as-filed XBRL data
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
