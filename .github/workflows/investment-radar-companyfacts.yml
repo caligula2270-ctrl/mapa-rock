@@ -1,0 +1,29 @@
+name: Investment Radar official SEC company financial facts
+on:
+  schedule:
+    - cron: '19 10 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ir-sec-facts
+  cancel-in-progress: false
+jobs:
+  fetch-company-facts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Retrieve as-filed XBRL data
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python investment-radar/v2/scripts/update_sec_companyfacts.py
+      - name: Commit changed SEC facts only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add investment-radar/v2/data/sec-financial-facts.json
+          git diff --cached --quiet || (git commit -m "Investment Radar: refresh SEC XBRL facts" && git push)
