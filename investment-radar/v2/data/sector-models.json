@@ -1,0 +1,416 @@
+{
+  "schema": 1,
+  "engine": "sector-valuation-gated-v1",
+  "retrievedAt": "2026-10-25T13:07:37.071051+00:00",
+  "warning": "SCENARIOS ARE ILLUSTRATIVE DIAGNOSTICS, NOT FAIR VALUES OR BUY PRICES",
+  "modelPolicies": {
+    "software": {
+      "method": "dcf_owner_proxy",
+      "discount": 0.105,
+      "growth": 0.07,
+      "terminal": 0.03,
+      "margin": 0.25
+    },
+    "payments": {
+      "method": "dcf_owner_proxy",
+      "discount": 0.1,
+      "growth": 0.065,
+      "terminal": 0.03,
+      "margin": 0.25
+    },
+    "exchange": {
+      "method": "dcf_owner_proxy",
+      "discount": 0.1,
+      "growth": 0.04,
+      "terminal": 0.025,
+      "margin": 0.3
+    },
+    "digital_platform": {
+      "method": "dcf_owner_proxy",
+      "discount": 0.12,
+      "growth": 0.05,
+      "terminal": 0.025,
+      "margin": 0.35
+    },
+    "distribution": {
+      "method": "dcf_owner_proxy",
+      "discount": 0.115,
+      "growth": 0.035,
+      "terminal": 0.025,
+      "margin": 0.3
+    },
+    "insurance": {
+      "method": "adjusted_book_required",
+      "discount": null,
+      "growth": null,
+      "terminal": null,
+      "margin": 0.3
+    },
+    "industrial": {
+      "method": "sum_of_parts_required",
+      "discount": null,
+      "growth": null,
+      "terminal": null,
+      "margin": 0.3
+    }
+  },
+  "companies": [
+    {
+      "ticker": "ADBE",
+      "category": "software",
+      "model": "dcf_owner_proxy",
+      "status": "not_validated",
+      "decisionReady": false,
+      "priceTarget": null,
+      "purchasePrice": null,
+      "hardGates": [
+        "NET_DEBT_UNRECONCILED",
+        "SBC_BUYBACKS_AND_SHARE_COUNT_RECONCILIATION",
+        "MOAT_EVIDENCE_AND_NORMALIZED_ROIC_REQUIRED",
+        "SCENARIO_ASSUMPTIONS_UNDERWRITING_REQUIRED"
+      ],
+      "scenarios": {
+        "conservative": {
+          "illustrativePricePerShare": 143.59,
+          "normalizedOwnerCashProxy": 4832000000.0,
+          "discountRate": 0.12,
+          "growthAssumption": 0.045,
+          "terminalGrowth": 0.03,
+          "assumedDilutedShares": 427000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        },
+        "central": {
+          "illustrativePricePerShare": 259.81,
+          "normalizedOwnerCashProxy": 6040000000.0,
+          "discountRate": 0.105,
+          "growthAssumption": 0.07,
+          "terminalGrowth": 0.03,
+          "assumedDilutedShares": 427000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        },
+        "optimistic": {
+          "illustrativePricePerShare": 404.88,
+          "normalizedOwnerCashProxy": 6946000000.0,
+          "discountRate": 0.095,
+          "growthAssumption": 0.09,
+          "terminalGrowth": 0.03,
+          "assumedDilutedShares": 427000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        }
+      },
+      "source": "Audited SEC as-filed annual cash flows; no forecast consensus or subjective moat",
+      "assumptions": {
+        "explicitlyIllustrative": true,
+        "years": 10,
+        "baseOwnerCashProxy3FYMedian": 6040000000.0,
+        "sector": "software",
+        "noDebtEquityBridge": true,
+        "noDilutionForecast": true,
+        "noMoatROICProof": true,
+        "terminalSensitivityRisk": "Material: not independently validated"
+      }
+    },
+    {
+      "ticker": "CB",
+      "category": "insurance",
+      "model": "adjusted_book_required",
+      "status": "not_validated",
+      "decisionReady": false,
+      "priceTarget": null,
+      "purchasePrice": null,
+      "hardGates": [
+        "FUNDAMENTAL_DATA_BLOCKED",
+        "OWNER_CASH_PROXY_3FY_MISSING",
+        "NET_DEBT_UNRECONCILED",
+        "INSURANCE_RESERVES_AND_BOOK_BRIDGE_REQUIRED",
+        "MOAT_EVIDENCE_AND_NORMALIZED_ROIC_REQUIRED",
+        "SCENARIO_ASSUMPTIONS_UNDERWRITING_REQUIRED"
+      ],
+      "scenarios": null,
+      "source": "Audited SEC as-filed annual cash flows; no forecast consensus or subjective moat"
+    },
+    {
+      "ticker": "CME",
+      "category": "exchange",
+      "model": "dcf_owner_proxy",
+      "status": "not_validated",
+      "decisionReady": false,
+      "priceTarget": null,
+      "purchasePrice": null,
+      "hardGates": [
+        "NET_DEBT_UNRECONCILED",
+        "CLEARING_ASSETS_NOT_SHAREHOLDER_CASH",
+        "MOAT_EVIDENCE_AND_NORMALIZED_ROIC_REQUIRED",
+        "SCENARIO_ASSUMPTIONS_UNDERWRITING_REQUIRED"
+      ],
+      "scenarios": {
+        "conservative": {
+          "illustrativePricePerShare": 82.8,
+          "normalizedOwnerCashProxy": 2805600000.0,
+          "discountRate": 0.115,
+          "growthAssumption": 0.015,
+          "terminalGrowth": 0.025,
+          "assumedDilutedShares": 360310000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        },
+        "central": {
+          "illustrativePricePerShare": 148.34,
+          "normalizedOwnerCashProxy": 3507000000.0,
+          "discountRate": 0.1,
+          "growthAssumption": 0.04,
+          "terminalGrowth": 0.025,
+          "assumedDilutedShares": 360310000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        },
+        "optimistic": {
+          "illustrativePricePerShare": 229.84,
+          "normalizedOwnerCashProxy": 4033050000.0,
+          "discountRate": 0.09,
+          "growthAssumption": 0.06,
+          "terminalGrowth": 0.025,
+          "assumedDilutedShares": 360310000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        }
+      },
+      "source": "Audited SEC as-filed annual cash flows; no forecast consensus or subjective moat",
+      "assumptions": {
+        "explicitlyIllustrative": true,
+        "years": 10,
+        "baseOwnerCashProxy3FYMedian": 3507000000.0,
+        "sector": "exchange",
+        "noDebtEquityBridge": true,
+        "noDilutionForecast": true,
+        "noMoatROICProof": true,
+        "terminalSensitivityRisk": "Material: not independently validated"
+      }
+    },
+    {
+      "ticker": "DE",
+      "category": "industrial",
+      "model": "sum_of_parts_required",
+      "status": "not_validated",
+      "decisionReady": false,
+      "priceTarget": null,
+      "purchasePrice": null,
+      "hardGates": [
+        "FUNDAMENTAL_DATA_BLOCKED",
+        "NET_DEBT_UNRECONCILED",
+        "INDUSTRIAL_CAPTIVE_FINANCE_SEGMENTS_REQUIRED",
+        "MOAT_EVIDENCE_AND_NORMALIZED_ROIC_REQUIRED",
+        "SCENARIO_ASSUMPTIONS_UNDERWRITING_REQUIRED"
+      ],
+      "scenarios": null,
+      "source": "Audited SEC as-filed annual cash flows; no forecast consensus or subjective moat"
+    },
+    {
+      "ticker": "FERG",
+      "category": "distribution",
+      "model": "dcf_owner_proxy",
+      "status": "not_validated",
+      "decisionReady": false,
+      "priceTarget": null,
+      "purchasePrice": null,
+      "hardGates": [
+        "FUNDAMENTAL_DATA_BLOCKED",
+        "OWNER_CASH_PROXY_3FY_MISSING",
+        "NET_DEBT_UNRECONCILED",
+        "WORKING_CAPITAL_AND_MA_NORMALIZATION",
+        "MOAT_EVIDENCE_AND_NORMALIZED_ROIC_REQUIRED",
+        "SCENARIO_ASSUMPTIONS_UNDERWRITING_REQUIRED"
+      ],
+      "scenarios": null,
+      "source": "Audited SEC as-filed annual cash flows; no forecast consensus or subjective moat"
+    },
+    {
+      "ticker": "GOOGL",
+      "category": "digital_platform",
+      "model": "dcf_owner_proxy",
+      "status": "not_validated",
+      "decisionReady": false,
+      "priceTarget": null,
+      "purchasePrice": null,
+      "hardGates": [
+        "NET_DEBT_UNRECONCILED",
+        "AI_CAPEX_AND_GROWTH_REINVESTMENT_REQUIRED",
+        "MOAT_EVIDENCE_AND_NORMALIZED_ROIC_REQUIRED",
+        "SCENARIO_ASSUMPTIONS_UNDERWRITING_REQUIRED"
+      ],
+      "scenarios": {
+        "conservative": {
+          "illustrativePricePerShare": 29.45,
+          "normalizedOwnerCashProxy": 38650400000.0,
+          "discountRate": 0.135,
+          "growthAssumption": 0.025,
+          "terminalGrowth": 0.025,
+          "assumedDilutedShares": 12230000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        },
+        "central": {
+          "illustrativePricePerShare": 50.53,
+          "normalizedOwnerCashProxy": 48313000000.0,
+          "discountRate": 0.12,
+          "growthAssumption": 0.05,
+          "terminalGrowth": 0.025,
+          "assumedDilutedShares": 12230000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        },
+        "optimistic": {
+          "illustrativePricePerShare": 75.29,
+          "normalizedOwnerCashProxy": 55559950000.0,
+          "discountRate": 0.11,
+          "growthAssumption": 0.07,
+          "terminalGrowth": 0.025,
+          "assumedDilutedShares": 12230000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        }
+      },
+      "source": "Audited SEC as-filed annual cash flows; no forecast consensus or subjective moat",
+      "assumptions": {
+        "explicitlyIllustrative": true,
+        "years": 10,
+        "baseOwnerCashProxy3FYMedian": 48313000000.0,
+        "sector": "digital_platform",
+        "noDebtEquityBridge": true,
+        "noDilutionForecast": true,
+        "noMoatROICProof": true,
+        "terminalSensitivityRisk": "Material: not independently validated"
+      }
+    },
+    {
+      "ticker": "MA",
+      "category": "payments",
+      "model": "dcf_owner_proxy",
+      "status": "not_validated",
+      "decisionReady": false,
+      "priceTarget": null,
+      "purchasePrice": null,
+      "hardGates": [
+        "NET_DEBT_UNRECONCILED",
+        "SBC_BUYBACKS_AND_SHARE_COUNT_RECONCILIATION",
+        "MOAT_EVIDENCE_AND_NORMALIZED_ROIC_REQUIRED",
+        "SCENARIO_ASSUMPTIONS_UNDERWRITING_REQUIRED"
+      ],
+      "scenarios": {
+        "conservative": {
+          "illustrativePricePerShare": 158.12,
+          "normalizedOwnerCashProxy": 11024000000.0,
+          "discountRate": 0.115,
+          "growthAssumption": 0.04,
+          "terminalGrowth": 0.03,
+          "assumedDilutedShares": 906000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        },
+        "central": {
+          "illustrativePricePerShare": 289.83,
+          "normalizedOwnerCashProxy": 13780000000.0,
+          "discountRate": 0.1,
+          "growthAssumption": 0.065,
+          "terminalGrowth": 0.03,
+          "assumedDilutedShares": 906000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        },
+        "optimistic": {
+          "illustrativePricePerShare": 457.33,
+          "normalizedOwnerCashProxy": 15847000000.0,
+          "discountRate": 0.09,
+          "growthAssumption": 0.085,
+          "terminalGrowth": 0.03,
+          "assumedDilutedShares": 906000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        }
+      },
+      "source": "Audited SEC as-filed annual cash flows; no forecast consensus or subjective moat",
+      "assumptions": {
+        "explicitlyIllustrative": true,
+        "years": 10,
+        "baseOwnerCashProxy3FYMedian": 13780000000.0,
+        "sector": "payments",
+        "noDebtEquityBridge": true,
+        "noDilutionForecast": true,
+        "noMoatROICProof": true,
+        "terminalSensitivityRisk": "Material: not independently validated"
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "category": "software",
+      "model": "dcf_owner_proxy",
+      "status": "not_validated",
+      "decisionReady": false,
+      "priceTarget": null,
+      "purchasePrice": null,
+      "hardGates": [
+        "NET_DEBT_UNRECONCILED",
+        "SBC_BUYBACKS_AND_SHARE_COUNT_RECONCILIATION",
+        "MOAT_EVIDENCE_AND_NORMALIZED_ROIC_REQUIRED",
+        "SCENARIO_ASSUMPTIONS_UNDERWRITING_REQUIRED"
+      ],
+      "scenarios": {
+        "conservative": {
+          "illustrativePricePerShare": 81.23,
+          "normalizedOwnerCashProxy": 47709600000.0,
+          "discountRate": 0.12,
+          "growthAssumption": 0.045,
+          "terminalGrowth": 0.03,
+          "assumedDilutedShares": 7453000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        },
+        "central": {
+          "illustrativePricePerShare": 146.97,
+          "normalizedOwnerCashProxy": 59637000000.0,
+          "discountRate": 0.105,
+          "growthAssumption": 0.07,
+          "terminalGrowth": 0.03,
+          "assumedDilutedShares": 7453000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        },
+        "optimistic": {
+          "illustrativePricePerShare": 229.03,
+          "normalizedOwnerCashProxy": 68582550000.0,
+          "discountRate": 0.095,
+          "growthAssumption": 0.09,
+          "terminalGrowth": 0.03,
+          "assumedDilutedShares": 7453000000.0,
+          "classification": "diagnostic_only_not_intrinsic_value"
+        }
+      },
+      "source": "Audited SEC as-filed annual cash flows; no forecast consensus or subjective moat",
+      "assumptions": {
+        "explicitlyIllustrative": true,
+        "years": 10,
+        "baseOwnerCashProxy3FYMedian": 59637000000.0,
+        "sector": "software",
+        "noDebtEquityBridge": true,
+        "noDilutionForecast": true,
+        "noMoatROICProof": true,
+        "terminalSensitivityRisk": "Material: not independently validated"
+      }
+    },
+    {
+      "ticker": "V",
+      "category": "payments",
+      "model": "dcf_owner_proxy",
+      "status": "not_validated",
+      "decisionReady": false,
+      "priceTarget": null,
+      "purchasePrice": null,
+      "hardGates": [
+        "FUNDAMENTAL_DATA_BLOCKED",
+        "OWNER_CASH_PROXY_3FY_MISSING",
+        "NET_DEBT_UNRECONCILED",
+        "DILUTED_SHARE_COUNT_MISSING",
+        "SBC_BUYBACKS_AND_SHARE_COUNT_RECONCILIATION",
+        "MOAT_EVIDENCE_AND_NORMALIZED_ROIC_REQUIRED",
+        "SCENARIO_ASSUMPTIONS_UNDERWRITING_REQUIRED"
+      ],
+      "scenarios": null,
+      "source": "Audited SEC as-filed annual cash flows; no forecast consensus or subjective moat"
+    }
+  ],
+  "summary": {
+    "covered": 9,
+    "modelsWithScenarios": 5,
+    "decisionReady": 0,
+    "closedValuations": 0
+  }
+}
