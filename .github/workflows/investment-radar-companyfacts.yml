@@ -10,6 +10,9 @@ on:
       - 'investment-radar/v2/scripts/sector_valuation.py'
       - 'investment-radar/v2/scripts/build_sector_models.py'
       - 'investment-radar/v2/scripts/test_sector_models.py'
+      - 'investment-radar/v2/scripts/filing_audit.py'
+      - 'investment-radar/v2/scripts/build_filing_audit.py'
+      - 'investment-radar/v2/data/filing-balance-bridges.json'
       - 'investment-radar/v2/scripts/update_sec_companyfacts.py'
       - '.github/workflows/investment-radar-companyfacts.yml'
 permissions:
@@ -39,9 +42,11 @@ jobs:
         run: python investment-radar/v2/scripts/analyze_fundamentals.py
       - name: Normalize statements and run sector valuations with hard gates
         run: python investment-radar/v2/scripts/build_sector_models.py
+      - name: Audit documentary FY net-debt and scenario consistency
+        run: python investment-radar/v2/scripts/build_filing_audit.py
       - name: Commit changed SEC facts only
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add investment-radar/v2/data/sec-financial-facts.json investment-radar/v2/data/fundamental-research.json investment-radar/v2/data/normalized-financials.json investment-radar/v2/data/sector-models.json
+          git add investment-radar/v2/data/sec-financial-facts.json investment-radar/v2/data/fundamental-research.json investment-radar/v2/data/normalized-financials.json investment-radar/v2/data/sector-models.json investment-radar/v2/data/filing-audit.json
           git diff --cached --quiet || (git commit -m "Investment Radar: refresh audited SEC fundamentals" && git push)
