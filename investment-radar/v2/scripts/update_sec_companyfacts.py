@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+"""SEC XBRL facts for public Investment Radar research candidates.
+Facts are reported facts as filed, not normalized annual forecasts, TTM or valuation.
+"""
+from __future__ import annotations
+import datetime as dt
+import json
+import os
+from pathlib import Path
+from urllib.request import Request,urlopen
+import time
+
+ROOT=Path("investment-radar/v2/data")
+OUT=ROOT/"sec-financial-facts.json"
+USER_AGENT=os.environ.get("SEC_USER_AGENT","").strip()
+if "@" not in USER_AGENT: raise SystemExit("Set SEC_USER_AGENT GitHub secret with SEC contact email")
+COMPANIES={"CB":(896159,"Chubb"),"CME":(1156375,"CME Group"),
+           "GOOGL":(1652044,"Alphabet"),"FERG":(2011641,"Ferguson Enterprises")}
+TAGS={
+ "operating_cash_flow":("us-gaap","NetCashProvidedByUsedInOperatingActivities","USD"),
+ "property_capex":("us-gaap","PaymentsToAcquirePropertyPlantAndEquipment","USD"),
+ "net_income":("us-gaap","NetIncomeLoss","USD"),
+ "revenue_contract":("us-gaap","RevenueFromContractWithCustomerExcludingAssessedTax","USD"),
+ "revenue":("us-gaap","Revenues","USD"),
+ "shareholder_equity":("us-gaap","StockholdersEquity","USD"),
+ "assets":("us-gaap","Assets","USD"),
+ "liabilities":("us-gaap","Liabilities","USD"),
+ "operating_income":("us-gaap","OperatingIncomeLoss","USD"),
+ "shares_outstanding":("dei","EntityCommonStockSharesOutstanding","shares")
+}
+HEAD={"User-Agent":USER_AGENT,"Accept":"application/json"}
+def fetch(cik:int)->dict:
+ url=f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json"
+ with urlopen(Request(url,headers=HEAD),timeout=45) as resp: return json.load(resp)
+def extract(src:dict,tag:tuple[str,str,str])->list[dict]:
+ namespace,name,unit=tag
+ entries=src.get("facts",{}).get(namespace,{}).get(name,{}).get("units",{}).get(unit,[])
+ cleaned=[]
+ for f in entries:
+  if f.get("form") not in ("10-K","10-Q") or not f.get("end") or "val" not in f:continue
+  row={k:f[k] for k in ("start","end","val","filed","accn","form","fy","fp","frame") if k in f}
+  cleaned.append(row)
+ # Keep latest amended filing for each period; retain original period lengths.
+ newest={}
+ for row in cleaned:
+  key=(row.get("start"),row["end"],row["form"])
+  if key not in newest or row.get("filed","")>newest[key].get("filed",""):
+   newest[key]=row
+ return sorted(newest.values(),key=lambda x:(x["end"],x.get("filed","")),reverse=True)[:12]
+def main():
+ result={"schema":1,"source":"https://data.sec.gov/api/xbrl/companyfacts/","interpretation":"As-filed XBRL facts; periods may differ. No automatic FCFE, TTM, ROIC, intrinsic value or investment recommendation.","companies":[],"errors":[]}
+ for ticker,(cik,name) in COMPANIES.items():
+  try:
+   source=fetch(cik)
+   facts={key:extract(source,tag) for key,tag in TAGS.items()}
+   result["companies"].append({"ticker":ticker,"name":name,"cik":cik,
+     "factsURL":f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json",
+     "facts":facts,"missing":[k for k,v in facts.items() if not v]})
+  except Exception as e:
+   result["errors"].append({"ticker":ticker,"error":type(e).__name__})
+  time.sleep(.35)
+ if OUT.exists():
+  previous=json.loads(OUT.read_text())
+  comparison={k:v for k,v in previous.items() if k!="retrievedAt"}
+  if comparison==result:
+   print("No changes in source reporting periods or facts")
+   return
+ result["retrievedAt"]=dt.datetime.now(dt.timezone.utc).isoformat()
+ ROOT.mkdir(parents=True,exist_ok=True)
+ OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n")
+ print("Official facts:",len(result["companies"]),"errors:",len(result["errors"]))
+if __name__=="__main__":main()
