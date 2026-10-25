@@ -96,6 +96,19 @@ function render(){
  $('details').innerHTML=rows.map(detail).join('')||'<p>Sin resultados.</p>';
  $('limits').innerHTML=d.limitations.map(x=>'<li>'+esc(x)+'</li>').join('');
 }
+async function loadFCFFFCFE(){
+ try{
+  const res=await fetch('./data/cashflow-evidence.json?'+Date.now(),{cache:'no-store'});
+  if(!res.ok)throw Error('HTTP '+res.status);
+  const d=await res.json();
+  $('cashflowStatus').textContent='Cobertura: '+d.summary.covered+' emisores; '+d.summary.withCashFlowSimple+' con CFO menos CAPEX anual; '+d.summary.verifiedFCFF+' FCFF y '+d.summary.verifiedFCFE+' FCFE totalmente verificados. Los puentes parciales no son valores intrínsecos.';
+  const fmt=n=>typeof n==='number'?num(n/1e6)+' MUSD':'No verificable';
+  $('cashflowRows').innerHTML=d.companies.map(x=>{
+   const latest=x.fiscalAnnualBridges?.[0],v=latest?.reconciliations||{};
+   return '<tr><td><b>'+esc(x.ticker)+'</b></td><td>'+esc(latest?.fiscalYearEnd||'—')+'</td><td>'+fmt(v.cfoMinusPPECapex)+'</td><td>'+fmt(v.fcffFromCFOAndReportedInterestTax)+'</td><td>'+fmt(v.fcfeCashPlusBorrowingProxy)+'</td><td>'+esc(latest?.issues?.length||0)+' pendientes</td></tr>';
+  }).join('');
+ }catch(e){$('cashflowStatus').textContent='Conciliación FCFF/FCFE no disponible: '+e.message}
+}
 async function loadAutoResearch(){
  try{
   const response=await fetch('./data/autonomous-analysis.json?'+Date.now(),{cache:'no-store'});
@@ -146,7 +159,7 @@ async function load(){
   const res=await fetch('./data/fundamental-research.json?'+Date.now(),{cache:'no-store'});
   if(!res.ok)throw Error('La primera ejecución del motor no está disponible: HTTP '+res.status);
   const d=await res.json();if(d.schema!==1||!Array.isArray(d.companies)||!d.summary)throw Error('Archivo de análisis incompatible');
-  dataset=d;render();await loadSectorModels();await loadFilingAudit();await loadAutoResearch();
+  dataset=d;render();await loadSectorModels();await loadFilingAudit();await loadAutoResearch();await loadFCFFFCFE();
  }catch(e){$('notice').textContent='Motor pendiente o no disponible: '+e.message}
 }
 $('search').oninput=()=>dataset&&render();$('filter').onchange=()=>dataset&&render();load();
