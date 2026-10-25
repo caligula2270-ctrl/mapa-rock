@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "currency": "USD",
+  "units": "millions",
+  "scope": "Fiscal year balance sheet only; no claims about more recent quarters, minimum operating cash, lease debt or enterprise-to-equity fair value",
+  "methodology": "Verified FY current debt + noncurrent debt; exclude restricted and client cash. Annual weighted diluted shares are not same as date-specific outstanding shares.",
+  "reviewedAt": "2026-10-25",
+  "bridges": [
+    {
+      "ticker": "MSFT",
+      "date": "2026-06-30",
+      "sourceURL": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "debtCurrent": 9227,
+      "debtNoncurrent": 31067,
+      "otherDebt": 0,
+      "cash": 20935,
+      "liquidInvestments": 55908,
+      "restrictedInvestmentsIncluded": 3800,
+      "weightedDilutedShares": 7453,
+      "pointInTimeShares": 7427,
+      "notes": "3,800 million USD of restricted investments in short-term investments are deducted. Additional 7,500m restricted in noncurrent equity investments never included. Do not add all equity investments as cash."
+    },
+    {
+      "ticker": "ADBE",
+      "date": "2025-11-28",
+      "sourceURL": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+      "debtCurrent": 0,
+      "debtNoncurrent": 6210,
+      "otherDebt": 0,
+      "cash": 5431,
+      "liquidInvestments": 1164,
+      "restrictedInvestmentsIncluded": 0,
+      "weightedDilutedShares": 427,
+      "pointInTimeShares": 413,
+      "notes": "6,210m senior debt carrying value reflects swaps and issuance costs; no commercial paper or revolving credit drawn. Review legal restrictions separately; zero restricted investments denotes none identified in these selected balance lines, not blanket certification."
+    },
+    {
+      "ticker": "MA",
+      "date": "2025-12-31",
+      "sourceURL": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+      "debtCurrent": 749,
+      "debtNoncurrent": 18251,
+      "otherDebt": 0,
+      "cash": 10566,
+      "liquidInvestments": 0,
+      "restrictedInvestmentsIncluded": 0,
+      "weightedDilutedShares": 906,
+      "pointInTimeShares": 894,
+      "notes": "Excluded 561m restricted cash, 2,121m security deposits, 1,626m settlement assets, 332m investments not classified as readily liquid. Point shares=887m A+7m B, not weighted diluted."
+    },
+    {
+      "ticker": "CME",
+      "date": "2025-12-31",
+      "sourceURL": "https://www.sec.gov/Archives/edgar/data/1156375/000115637526000009/cme-20251231.htm",
+      "debtCurrent": 0,
+      "debtNoncurrent": 3422.3,
+      "otherDebt": 0,
+      "cash": 4416.9,
+      "liquidInvestments": 125,
+      "restrictedInvestmentsIncluded": 0,
+      "weightedDilutedShares": 360.31,
+      "pointInTimeShares": null,
+      "notes": "Excluded 159,656.1m performance bonds and guaranty fund contributions (matched liability), restricted cash in other current assets. Marketable securities 125m provisionally included; deployability requires treasury evidence."
+    },
+    {
+      "ticker": "GOOGL",
+      "date": "2025-12-31",
+      "sourceURL": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+      "debtCurrent": 1996,
+      "debtNoncurrent": 46547,
+      "otherDebt": 0,
+      "cash": 30708,
+      "liquidInvestments": 96135,
+      "restrictedInvestmentsIncluded": 0,
+      "weightedDilutedShares": 12230,
+      "pointInTimeShares": null,
+      "notes": "No commercial paper at December 2025. Liquid portfolio includes 6,313m marketable equity securities; risk and restrictions must be assessed before capitalizing full balance. Excluded 68,687m nonmarketable securities."
+    }
+  ],
+  "pending": [
+    {
+      "ticker": "V",
+      "reason": "FY2025 GAAP CAPEX and weighted diluted share units/share-class bridge incomplete; no owner cash valuation"
+    },
+    {
+      "ticker": "FERG",
+      "reason": "Fiscal July 2025 CAPEX tag unavailable; reconcile company FY reporting versus calendar 2025 and working capital/acquisitions"
+    },
+    {
+      "ticker": "CB",
+      "reason": "Insurance liabilities, technical reserves, adjusted tangible book, investment portfolio and core ROE require insurance-specific notes; CFO-capex excluded"
+    },
+    {
+      "ticker": "DE",
+      "reason": "Separate equipment operations and financial services: non-recourse loan book, interest, loan losses, industrial free cash flow and distinct leverage"
+    }
+  ]
+}
