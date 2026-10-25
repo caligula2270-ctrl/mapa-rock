@@ -96,12 +96,26 @@ function render(){
  $('details').innerHTML=rows.map(detail).join('')||'<p>Sin resultados.</p>';
  $('limits').innerHTML=d.limitations.map(x=>'<li>'+esc(x)+'</li>').join('');
 }
+async function loadSectorModels(){
+ try{
+  const [a,b]=await Promise.all(['sector-models.json','normalized-financials.json'].map(async n=>{const r=await fetch('./data/'+n+'?'+Date.now(),{cache:'no-store'});if(!r.ok)throw Error(n+' HTTP '+r.status);return r.json()}));
+  const index=Object.fromEntries(b.financials.map(x=>[x.ticker,x]));
+  $('sectorStatus').textContent='9 modelos sectoriales, '+a.summary.modelsWithScenarios+' con escenarios orientativos; '+a.summary.closedValuations+' valoraciones aprobadas. La deuda neta y el puente de caja al accionista siguen bloqueados mientras no estén conciliados.';
+  $('sectorModels').innerHTML=a.companies.map(m=>{
+   const f=index[m.ticker],coverage=f?.coverage||{};
+   const price=x=>typeof x==='number'?num(x)+' USD':'—';
+   const scenarios=m.scenarios||{};
+   const label=m.model==='adjusted_book_required'?'Valor contable ajustado (pendiente)':m.model==='sum_of_parts_required'?'Suma de partes (pendiente)':'Descuento de proxy de caja (NO DCF validado)';
+   return '<tr><td><b>'+esc(m.ticker)+'</b></td><td>'+esc(label)+'</td><td>'+price(scenarios.conservative?.illustrativePricePerShare)+'</td><td>'+price(scenarios.central?.illustrativePricePerShare)+'</td><td>'+price(scenarios.optimistic?.illustrativePricePerShare)+'</td><td><small>Deuda: '+(coverage.debtFullyReconciled?'conciliada':'SIN CONCILIAR')+'; acciones: '+(coverage.dilutedSharesLatest?'identificadas':'pendientes')+'; incidencias: '+m.hardGates.length+'</small></td><td><b class="bad">No homologado</b></td></tr>'
+  }).join('');
+ }catch(e){$('sectorStatus').textContent='Información sectorial pendiente: '+e.message}
+}
 async function load(){
  try{
   const res=await fetch('./data/fundamental-research.json?'+Date.now(),{cache:'no-store'});
   if(!res.ok)throw Error('La primera ejecución del motor no está disponible: HTTP '+res.status);
   const d=await res.json();if(d.schema!==1||!Array.isArray(d.companies)||!d.summary)throw Error('Archivo de análisis incompatible');
-  dataset=d;render();
+  dataset=d;render();await loadSectorModels();
  }catch(e){$('notice').textContent='Motor pendiente o no disponible: '+e.message}
 }
 $('search').oninput=()=>dataset&&render();$('filter').onchange=()=>dataset&&render();load();
