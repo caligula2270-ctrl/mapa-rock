@@ -96,6 +96,19 @@ function render(){
  $('details').innerHTML=rows.map(detail).join('')||'<p>Sin resultados.</p>';
  $('limits').innerHTML=d.limitations.map(x=>'<li>'+esc(x)+'</li>').join('');
 }
+async function loadFilingAudit(){
+ try{
+ const r=await fetch('./data/filing-audit.json?'+Date.now(),{cache:'no-store'});
+ if(!r.ok)throw Error('HTTP '+r.status);
+ const audit=await r.json();
+ $('filingStatus').textContent=audit.summary.reconciledFY+' conciliaciones de cierre fiscal; '+audit.summary.closedValuations+' valoraciones homologadas. Liquidez restringida y datos interinos sujetos a revisión adicional.';
+ const fmt=n=>typeof n==='number'?num(n)+' USD':'—';
+ $('filingRows').innerHTML=audit.companies.map(c=>{
+ const b=c.balance,range=c.sensitivity?.range;
+ return '<tr><td><b>'+esc(c.ticker)+'</b></td><td>'+ (b?num(b.netDebtMillions)+' MUSD':'Pendiente')+'</td><td>'+fmt(range?.low)+'</td><td>'+fmt(range?.central)+'</td><td>'+fmt(range?.high)+'</td><td>'+(typeof c.sensitivity?.spreadPct==='number'?num(c.sensitivity.spreadPct)+'%':'—')+'</td><td><span class="bad">'+esc(c.auditVerdict)+'</span>'+(b?'<small><a href="'+esc(b.sourceURL)+'" target="_blank" rel="noopener">Fuente SEC</a></small>':'')+'</td></tr>'
+ }).join('');
+ }catch(e){$('filingStatus').textContent='Conciliaciones todavía no disponibles: '+e.message}
+}
 async function loadSectorModels(){
  try{
   const [a,b]=await Promise.all(['sector-models.json','normalized-financials.json'].map(async n=>{const r=await fetch('./data/'+n+'?'+Date.now(),{cache:'no-store'});if(!r.ok)throw Error(n+' HTTP '+r.status);return r.json()}));
@@ -115,7 +128,7 @@ async function load(){
   const res=await fetch('./data/fundamental-research.json?'+Date.now(),{cache:'no-store'});
   if(!res.ok)throw Error('La primera ejecución del motor no está disponible: HTTP '+res.status);
   const d=await res.json();if(d.schema!==1||!Array.isArray(d.companies)||!d.summary)throw Error('Archivo de análisis incompatible');
-  dataset=d;render();await loadSectorModels();
+  dataset=d;render();await loadSectorModels();await loadFilingAudit();
  }catch(e){$('notice').textContent='Motor pendiente o no disponible: '+e.message}
 }
 $('search').oninput=()=>dataset&&render();$('filter').onchange=()=>dataset&&render();load();
