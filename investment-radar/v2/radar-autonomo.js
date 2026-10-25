@@ -23,6 +23,23 @@ async function api(path,method='GET',data){
  if(r.status===204)return [];
  return r.json();
 }
+async function loadFacts(){
+ try{
+  const response=await fetch('./data/sec-financial-facts.json?'+Date.now(),{cache:'no-store'});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  const d=await response.json();
+  if(!Array.isArray(d.companies)||!d.companies.length){
+   $('factsHealth').textContent='La descarga XBRL SEC está programada; primera ejecución todavía pendiente.';
+   return;
+  }
+  $('factsHealth').textContent='Datos SEC recibidos: '+d.companies.length+' emisores · Fecha de captura: '+String(d.retrievedAt||'desconocida').slice(0,19)+' UTC. No son previsiones.';
+  const show=(rows)=>{const x=rows?.[0];return x?Number(x.val).toLocaleString('es-ES')+' USD <small>'+esc([x.start||'instante',x.end].join(' → '))+' · '+esc(x.form||'')+'</small>':'No disponible';};
+  $('officialFacts').innerHTML=d.companies.map(c=>{
+   const op=show(c.facts?.operating_cash_flow),cap=show(c.facts?.property_capex);
+   return '<tr><td><b>'+esc(c.name)+'</b><small>'+esc(c.ticker)+'</small></td><td>'+op+'</td><td>'+cap+'</td><td><a target="_blank" rel="noopener" href="'+esc(c.factsURL)+'">SEC XBRL · fuente oficial</a></td></tr>';
+  }).join('');
+ }catch(e){$('factsHealth').textContent='No se ha podido consultar la información SEC: '+e.message}
+}
 function draw(){
  const by=Object.fromEntries(market.map(x=>[x.ticker,x])),w=Object.fromEntries(watch.map(x=>[x.ticker,x]));
  const search=$('search').value.toLowerCase(),filter=$('filter').value;
@@ -69,5 +86,5 @@ async function save(){
  try{await api('investment_radar_watch_rules?on_conflict=user_id,ticker','POST',{user_id:sess().user.id,ticker,watch_price:price,enabled:$('ruleEnabled').checked,is_validated:false,note:'Umbral preliminar de vigilancia',updated_at:new Date().toISOString()});$('ruleStatus').textContent='Guardado en tu espacio privado.';await load()}catch(e){$('ruleStatus').textContent='Error de guardado: '+e.message}
 }
 $('refresh').onclick=load;$('search').oninput=draw;$('filter').onchange=draw;$('ruleTicker').onchange=fillRule;$('ruleSave').onclick=save;
-load();setInterval(()=>{if(!document.hidden)load()},300000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)load()});
+load();loadFacts();setInterval(()=>{if(!document.hidden)load()},300000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)load()});
 })();
