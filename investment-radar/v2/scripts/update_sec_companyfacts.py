@@ -43,7 +43,25 @@ TAGS={
  "common_shares":("us-gaap","CommonStockSharesOutstanding","shares"),
  "gross_profit":("us-gaap","GrossProfit","USD"),
  "taxes":("us-gaap","IncomeTaxExpenseBenefit","USD"),
- "interest_expense":("us-gaap","InterestExpense","USD")
+ "interest_expense":("us-gaap","InterestExpense","USD"),
+ "cash_interest_paid":("us-gaap","InterestPaid","USD"),
+ "income_tax_expense":("us-gaap","IncomeTaxExpenseBenefit","USD"),
+ "pretax_income":("us-gaap","IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest","USD"),
+ "depreciation_and_amortization":("us-gaap","DepreciationDepletionAndAmortization","USD"),
+ "depreciation_pp_e":("us-gaap","DepreciationDepletionAndAmortizationPropertyPlantAndEquipment","USD"),
+ "depreciation_amortization_cf":("us-gaap","DepreciationDepletionAndAmortizationAcquiredInProcessResearchAndDevelopment","USD"),
+ "proceeds_long_term_debt":("us-gaap","ProceedsFromIssuanceOfLongTermDebt","USD"),
+ "repayments_long_term_debt":("us-gaap","RepaymentsOfLongTermDebt","USD"),
+ "proceeds_debt":("us-gaap","ProceedsFromBorrowings","USD"),
+ "payments_debt":("us-gaap","RepaymentsOfBorrowings","USD"),
+ "operating_working_capital_change":("us-gaap","IncreaseDecreaseInOperatingCapital","USD"),
+ "purchase_businesses_net_cash":("us-gaap","PaymentsToAcquireBusinessesNetOfCashAcquired","USD"),
+ "purchase_intangibles":("us-gaap","PaymentsToAcquireIntangibleAssets","USD"),
+ "cash_dividends":("us-gaap","PaymentsOfDividends","USD"),
+ "ppe_accrued":("us-gaap","CapitalExpendituresIncurredButNotYetPaid","USD"),
+ "finance_lease_ppe":("us-gaap","PropertyPlantAndEquipmentObtainedInExchangeForFinanceLeaseLiabilities","USD"),
+ "operating_lease_liabilities":("us-gaap","OperatingLeaseLiabilityNoncurrent","USD"),
+ "finance_lease_liabilities":("us-gaap","FinanceLeaseLiabilityNoncurrent","USD")
 }
 HEAD={"User-Agent":USER_AGENT,"Accept":"application/json"}
 def fetch(cik:int)->dict:
@@ -63,7 +81,7 @@ def extract(src:dict,tag:tuple[str,str,str])->list[dict]:
   key=(row.get("start"),row["end"],row["form"])
   if key not in newest or row.get("filed","")>newest[key].get("filed",""):
    newest[key]=row
- return sorted(newest.values(),key=lambda x:(x["end"],x.get("filed","")),reverse=True)[:80]
+ return sorted(newest.values(),key=lambda x:(x["end"],x.get("filed","")),reverse=True)[:120]
 def main():
  result={"schema":2,"source":"https://data.sec.gov/api/xbrl/companyfacts/","interpretation":"As-filed XBRL facts; periods may differ. No automatic FCFE, TTM, ROIC, intrinsic value or investment recommendation.","companies":[],"errors":[]}
  for ticker,(cik,name) in COMPANIES.items():
