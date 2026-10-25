@@ -19,6 +19,12 @@ const issueNames={
  REVENUE_TAG_CONFLICT:'Etiquetas de ingresos discordantes',
  BALANCE_MISMATCH:'Balance contable requiere conciliación',
  NEGATIVE_FCF:'FCF simple negativo',DILUTION_15PCT:'Incremento importante de acciones diluidas',
+ INTERIM_FCF_NOT_COMPARABLE:'Flujo de caja interino incompleto o períodos no comparables',
+ INTERIM_PERIOD_NOT_IN_FY_SCREEN:'Existe información 10-Q reciente fuera del último ejercicio anual',
+ OPERATING_CASH_COLLAPSE:'Caída de caja operativa superior al 30% interanual',
+ FCF_DROP_40PCT:'FCF simple cae más del 40% interanual',
+ OPERATING_MARGIN_DROP:'Caída del margen operativo superior a 5 puntos',
+ HIGH_STOCK_COMP:'Remuneración en acciones >30% de caja operativa',
  SEC_DOWNLOAD_MISSING:'Falta descarga oficial SEC'
 };
 function url(x){return typeof x==='string'&&x.startsWith('https://data.sec.gov/')?x:null}
@@ -44,6 +50,14 @@ function sources(c){
  fields.filter(k=>a.sources?.[k]).map(k=>{const x=a.sources[k];return '<tr><td>'+esc(k)+'</td><td>'+esc(x.start||'instant')+' a '+esc(x.end)+'</td><td>'+esc(x.filed)+'</td><td>'+esc(x.accession)+' · '+esc(x.unit)+'</td></tr>'}).join('')+
  '</tbody></table></div>';
 }
+function interim(c){
+ const y=c.interimYTD;
+ if(!y)return '<p class="fine">No consta un 10-Q interino posterior al último ejercicio 10-K con flujo operativo anual acumulado identificable.</p>';
+ const m=y.metrics||{};
+ return '<div class="banner"><h3>Datos posteriores al ejercicio · 10-Q original</h3><p><b>Período interino YTD, no anualizado:</b> '+esc(y.start)+' a '+esc(y.end)+' · presentación '+esc(y.filed)+'</p>'+
+ '<p>Caja operativa '+money(m.operatingCashFlow)+'; CAPEX '+money(m.capex)+'; FCF simple interino '+money(m.freeCashFlowSimple)+'.</p>'+
+ '<p class="fine">Estas cifras trimestrales/acumuladas no se convierten automáticamente en TTM ni se extrapolan: la estacionalidad y el CAPEX pueden ser importantes.</p></div>';
+}
 function screening(c){
  const s=c.screening;if(!s)return '<p class="bad">No se calcula siquiera un cribado de FCF por falta de datos suficientes o por incompatibilidad sectorial.</p>';
  const ys=s.illustrativeAtYields;
@@ -57,7 +71,7 @@ function detail(c){
  const link=url(c.sourceURL);
  return '<details>'+head+'<p><span class="tag">'+esc(CATEGORY[c.category]||c.category||'Sector no cubierto')+'</span> · último ejercicio: '+esc(c.latestFiscalYearEnd||'sin fecha')+
  ' · '+esc(c.fiscalAgeDays)+' días desde cierre · estado: '+esc(c.status)+'</p>'+
- metrics(c)+screening(c)+sources(c)+(link?'<p><a href="'+esc(link)+'" target="_blank" rel="noopener">Consultar datos originales SEC XBRL</a></p>':'')+
+ metrics(c)+interim(c)+screening(c)+sources(c)+(link?'<p><a href="'+esc(link)+'" target="_blank" rel="noopener">Consultar datos originales SEC XBRL</a></p>':'')+
  '<p class="bad">Estado de inversión: BLOQUEADO. La nota integral y el precio de compra no se generan automáticamente.</p></details>';
 }
 function render(){
