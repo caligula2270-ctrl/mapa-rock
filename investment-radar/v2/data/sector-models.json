@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "engine": "sector-valuation-gated-v1",
-  "retrievedAt": "2026-10-25T13:07:37.071051+00:00",
+  "retrievedAt": "2026-10-25T19:57:22.728576+00:00",
   "warning": "SCENARIOS ARE ILLUSTRATIVE DIAGNOSTICS, NOT FAIR VALUES OR BUY PRICES",
   "modelPolicies": {
     "software": {

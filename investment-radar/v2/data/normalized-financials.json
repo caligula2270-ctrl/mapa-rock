@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "engine": "SEC-annual-statement-normalizer-v1",
-  "sourceRetrievedAt": "2026-10-25T13:07:37.071051+00:00",
+  "sourceRetrievedAt": "2026-10-25T19:57:22.728576+00:00",
   "periodConvention": "10-K full fiscal periods: do NOT annualize quarters or combine incompatible fiscal periods",
   "financials": [
     {
