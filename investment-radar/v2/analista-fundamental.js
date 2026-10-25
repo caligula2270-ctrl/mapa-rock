@@ -77,8 +77,15 @@ function detail(c){
 function render(){
  const d=dataset;
  $('loaded').hidden=false;
- $('notice').innerHTML='<b>Motor ejecutado:</b> '+esc(d.engine)+' · Datos recuperados '+esc(d.sourceRetrievedAt||'fecha no disponible')+
- ' · '+d.summary.withAnnualFacts+' empresas con datos anuales. <b>0 recomendaciones automáticas.</b>';
+ const cutoff=Date.parse(d.sourceRetrievedAt||'');
+ const ageDays=Number.isFinite(cutoff)?Math.floor((Date.now()-cutoff)/86400000):Infinity;
+ const stale=!Number.isFinite(ageDays)||ageDays>7;
+ const failures=Number(d.summary.sourceErrors||0);
+ $('notice').innerHTML=(stale?'<b class="bad">DATOS OBSOLETOS: última ejecución comprobable hace '+ageDays+' días.</b><p>No utilices resultados de cribado hasta que se restaure la actualización automática.</p>':'<b class="ok">Datos oficiales recientes.</b> ')+
+ '<br>Motor: '+esc(d.engine)+' · Recuperados '+esc(d.sourceRetrievedAt||'fecha no disponible')+
+ ' · '+d.summary.withAnnualFacts+' empresas con ejercicio anual.'+
+ (failures?'<p class="bad">'+failures+' errores de descarga SEC: cifras incompletas.</p>':'')+
+ '<p><strong>Ninguna recomendación ni precio de compra automático.</strong></p>';
  $('tracked').textContent=d.summary.tracked;
  $('annual').textContent=d.summary.withAnnualFacts;
  $('blocked').textContent=d.summary.blocked;
