@@ -14,8 +14,13 @@ ROOT=Path("investment-radar/v2/data")
 OUT=ROOT/"sec-financial-facts.json"
 USER_AGENT=os.environ.get("SEC_USER_AGENT","").strip()
 if "@" not in USER_AGENT: raise SystemExit("Set SEC_USER_AGENT GitHub secret with SEC contact email")
-COMPANIES={"CB":(896159,"Chubb"),"CME":(1156375,"CME Group"),
-           "GOOGL":(1652044,"Alphabet"),"FERG":(2011641,"Ferguson Enterprises")}
+COMPANIES={
+ "MSFT":(789019,"Microsoft"),"ADBE":(796343,"Adobe"),
+ "V":(1403161,"Visa"),"MA":(1141391,"Mastercard"),
+ "CB":(896159,"Chubb"),"CME":(1156375,"CME Group"),
+ "GOOGL":(1652044,"Alphabet"),"FERG":(2011641,"Ferguson Enterprises"),
+ "DE":(315189,"Deere")
+}
 TAGS={
  "operating_cash_flow":("us-gaap","NetCashProvidedByUsedInOperatingActivities","USD"),
  "property_capex":("us-gaap","PaymentsToAcquirePropertyPlantAndEquipment","USD"),
@@ -26,7 +31,19 @@ TAGS={
  "assets":("us-gaap","Assets","USD"),
  "liabilities":("us-gaap","Liabilities","USD"),
  "operating_income":("us-gaap","OperatingIncomeLoss","USD"),
- "shares_outstanding":("dei","EntityCommonStockSharesOutstanding","shares")
+ "shares_outstanding":("dei","EntityCommonStockSharesOutstanding","shares"),
+ "diluted_weighted_shares":("us-gaap","WeightedAverageNumberOfDilutedSharesOutstanding","shares"),
+ "cash":("us-gaap","CashAndCashEquivalentsAtCarryingValue","USD"),
+ "short_term_debt":("us-gaap","ShortTermBorrowings","USD"),
+ "long_term_debt":("us-gaap","LongTermDebtNoncurrent","USD"),
+ "current_debt":("us-gaap","LongTermDebtCurrent","USD"),
+ "capital_returns_dividends":("us-gaap","PaymentsOfDividends","USD"),
+ "capital_returns_repurchases":("us-gaap","PaymentsForRepurchaseOfCommonStock","USD"),
+ "stock_compensation":("us-gaap","ShareBasedCompensation","USD"),
+ "common_shares":("us-gaap","CommonStockSharesOutstanding","shares"),
+ "gross_profit":("us-gaap","GrossProfit","USD"),
+ "taxes":("us-gaap","IncomeTaxExpenseBenefit","USD"),
+ "interest_expense":("us-gaap","InterestExpense","USD")
 }
 HEAD={"User-Agent":USER_AGENT,"Accept":"application/json"}
 def fetch(cik:int)->dict:
@@ -46,9 +63,9 @@ def extract(src:dict,tag:tuple[str,str,str])->list[dict]:
   key=(row.get("start"),row["end"],row["form"])
   if key not in newest or row.get("filed","")>newest[key].get("filed",""):
    newest[key]=row
- return sorted(newest.values(),key=lambda x:(x["end"],x.get("filed","")),reverse=True)[:12]
+ return sorted(newest.values(),key=lambda x:(x["end"],x.get("filed","")),reverse=True)[:80]
 def main():
- result={"schema":1,"source":"https://data.sec.gov/api/xbrl/companyfacts/","interpretation":"As-filed XBRL facts; periods may differ. No automatic FCFE, TTM, ROIC, intrinsic value or investment recommendation.","companies":[],"errors":[]}
+ result={"schema":2,"source":"https://data.sec.gov/api/xbrl/companyfacts/","interpretation":"As-filed XBRL facts; periods may differ. No automatic FCFE, TTM, ROIC, intrinsic value or investment recommendation.","companies":[],"errors":[]}
  for ticker,(cik,name) in COMPANIES.items():
   try:
    source=fetch(cik)
