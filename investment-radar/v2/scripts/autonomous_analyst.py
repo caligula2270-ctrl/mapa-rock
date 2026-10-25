@@ -60,9 +60,6 @@ def analyze(fin,source,bridge,asof:date):
     gate("NET_DEBT_DOCUMENTED",bool(bridge and bridge.get("balance") and bridge["balance"]["date"]==fy["fiscalYearEnd"]))
     if bridge and bridge.get("balance"):
         b=bridge["balance"]
-        gate("CASH_FACT_BRIDGE",fy["balanceSheet"]["cash"] is not None and abs(b["availableLiquidAssetsBeforeOperatingReserveMillions"]-fy["balanceSheet"]["cash"]/1e6-b["availableLiquidAssetsBeforeOperatingReserveMillions"]+b["availableLiquidAssetsBeforeOperatingReserveMillions"])<1e-8) if False else None
-        # The restricted/marketable investment bridge differs from the cash GAAP tag.
-        # Require only the raw CASH line in the bridge to tie; other liquidity is separately sourced.
     yr_cash=fy["balanceSheet"]["cash"]
     raw_bridge_cash=(bridge or {}).get("balance",{}).get("cashRawMillions")
     if raw_bridge_cash is not None and yr_cash is not None:
