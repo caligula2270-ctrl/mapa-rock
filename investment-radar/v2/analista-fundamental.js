@@ -96,6 +96,19 @@ function render(){
  $('details').innerHTML=rows.map(detail).join('')||'<p>Sin resultados.</p>';
  $('limits').innerHTML=d.limitations.map(x=>'<li>'+esc(x)+'</li>').join('');
 }
+async function loadSECtagCandidates(){
+ try{
+  const res=await fetch('./data/cashflow-evidence.json?'+Date.now(),{cache:'no-store'});
+  if(!res.ok)throw Error('HTTP '+res.status);
+  const d=await res.json(),audit=d.tagReview||[];
+  $('tagStatus').textContent=audit.length+' emisores revisados; '+(d.summary.candidateFamiliesFound||0)+' familias con etiquetas documentales alternativas. Ningún candidato se sustituye automáticamente.';
+  $('tagReview').innerHTML=audit.map(c=>{
+   const families=Object.entries(c.candidates||{}).filter(([k,v])=>v.length);
+   return '<details><summary>'+esc(c.ticker)+' · '+families.length+' familias detectadas</summary>'+
+     families.map(([group,items])=>'<p><b>'+esc(group)+':</b> '+items.map(item=>esc(item.taxonomy+':'+item.tag)+' ('+esc(item.latest?.end||'?')+', '+esc(item.latest?.form||'?')+')').join(' · ')+'</p>').join('')+'</details>';
+  }).join('');
+ }catch(e){$('tagStatus').textContent='Etiquetas pendientes: '+e.message}
+}
 async function loadFCFFFCFE(){
  try{
   const res=await fetch('./data/cashflow-evidence.json?'+Date.now(),{cache:'no-store'});
@@ -159,7 +172,7 @@ async function load(){
   const res=await fetch('./data/fundamental-research.json?'+Date.now(),{cache:'no-store'});
   if(!res.ok)throw Error('La primera ejecución del motor no está disponible: HTTP '+res.status);
   const d=await res.json();if(d.schema!==1||!Array.isArray(d.companies)||!d.summary)throw Error('Archivo de análisis incompatible');
-  dataset=d;render();await loadSectorModels();await loadFilingAudit();await loadAutoResearch();await loadFCFFFCFE();
+  dataset=d;render();await loadSectorModels();await loadFilingAudit();await loadAutoResearch();await loadFCFFFCFE();await loadSECtagCandidates();
  }catch(e){$('notice').textContent='Motor pendiente o no disponible: '+e.message}
 }
 $('search').oninput=()=>dataset&&render();$('filter').onchange=()=>dataset&&render();load();
