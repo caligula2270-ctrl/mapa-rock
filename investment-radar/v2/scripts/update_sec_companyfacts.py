@@ -63,6 +63,42 @@ TAGS={
  "operating_lease_liabilities":("us-gaap","OperatingLeaseLiabilityNoncurrent","USD"),
  "finance_lease_liabilities":("us-gaap","FinanceLeaseLiabilityNoncurrent","USD")
 }
+# These are candidates for documentary review, not mechanically fungible GAAP synonyms.
+# A match is never inserted into normalized financials automatically.
+REVIEW_FAMILIES={
+ "capex":["PaymentsToAcquirePropertyPlantAndEquipment","PaymentsToAcquireOtherProductiveAssets","PaymentsToAcquireOtherPropertyPlantAndEquipment","CapitalExpenditures"],
+ "depreciation":["DepreciationDepletionAndAmortization","DepreciationAmortizationAndAccretionNet","DepreciationAmortizationAndAccretion","Depreciation","AmortizationOfIntangibleAssets"],
+ "interest":["InterestExpense","InterestExpenseNonOperating","InterestAndDebtExpense","InterestExpenseDebt"],
+ "debt_proceeds":["ProceedsFromIssuanceOfLongTermDebt","ProceedsFromIssuanceOfDebt","ProceedsFromBorrowings","ProceedsFromDebtNetOfIssuanceCosts"],
+ "debt_repayments":["RepaymentsOfLongTermDebt","RepaymentsOfDebt","RepaymentsOfBorrowings","RepaymentsOfOtherDebt"],
+ "diluted_shares":["WeightedAverageNumberOfDilutedSharesOutstanding","WeightedAverageNumberOfSharesOutstandingDiluted","WeightedAverageNumberOfShareOutstandingBasicAndDiluted"],
+ "income_tax":["IncomeTaxExpenseBenefit","IncomeTaxesPaidNet"],
+ "working_capital":["IncreaseDecreaseInOperatingCapital","IncreaseDecreaseInAccountsReceivable","IncreaseDecreaseInInventory","IncreaseDecreaseInAccountsPayable"],
+}
+def evidence_candidates(src:dict)->dict:
+ """Report exact SEC concepts with filing identity; no auto substitution."""
+ namespaces=src.get("facts",{})
+ result={}
+ for family,aliases in REVIEW_FAMILIES.items():
+  matches=[]
+  for namespace in ("us-gaap","ifrs-full"):
+   entries=namespaces.get(namespace,{})
+   for tag in aliases:
+    v=entries.get(tag)
+    if not v:continue
+    rows=v.get("units",{}).get("shares" if family=="diluted_shares" else "USD",[])
+    valid=[]
+    for a in rows:
+     if a.get("form") not in ("10-K","10-Q") or not a.get("filed") or not a.get("end"):continue
+     valid.append({k:a[k] for k in ("start","end","filed","form","accn","val") if k in a})
+    valid.sort(key=lambda x:(x.get("end",""),x["filed"]),reverse=True)
+    if valid:
+     matches.append({"taxonomy":namespace,"tag":tag,"label":v.get("label",tag),
+      "definition":v.get("description","")[:280],
+      "latest":valid[0],"otherRecent":valid[1:3]})
+  result[family]=matches
+ return result
+
 HEAD={"User-Agent":USER_AGENT,"Accept":"application/json"}
 def fetch(cik:int)->dict:
  url=f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json"
@@ -90,7 +126,7 @@ def main():
    facts={key:extract(source,tag) for key,tag in TAGS.items()}
    result["companies"].append({"ticker":ticker,"name":name,"cik":cik,
      "factsURL":f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json",
-     "facts":facts,"missing":[k for k,v in facts.items() if not v]})
+     "facts":facts,"tagCandidateEvidence":evidence_candidates(source),"missing":[k for k,v in facts.items() if not v]})
   except Exception as e:
    result["errors"].append({"ticker":ticker,"error":type(e).__name__})
   time.sleep(.35)
