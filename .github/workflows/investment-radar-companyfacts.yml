@@ -12,6 +12,9 @@ on:
       - 'investment-radar/v2/scripts/test_sector_models.py'
       - 'investment-radar/v2/scripts/filing_audit.py'
       - 'investment-radar/v2/scripts/build_filing_audit.py'
+      - 'investment-radar/v2/scripts/autonomous_analyst.py'
+      - 'investment-radar/v2/scripts/build_autonomous_analysis.py'
+      - 'investment-radar/v2/scripts/test_autonomous_analyst.py'
       - 'investment-radar/v2/data/filing-balance-bridges.json'
       - 'investment-radar/v2/scripts/update_sec_companyfacts.py'
       - '.github/workflows/investment-radar-companyfacts.yml'
@@ -34,6 +37,7 @@ jobs:
           python -m compileall -q investment-radar/v2/scripts
           python -m unittest discover -s investment-radar/v2/scripts -p 'test_fundamental_core.py' -v
           python -m unittest discover -s investment-radar/v2/scripts -p 'test_sector_models.py' -v
+          python -m unittest discover -s investment-radar/v2/scripts -p 'test_autonomous_analyst.py' -v
       - name: Retrieve as-filed XBRL data
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
@@ -44,9 +48,11 @@ jobs:
         run: python investment-radar/v2/scripts/build_sector_models.py
       - name: Audit documentary FY net-debt and scenario consistency
         run: python investment-radar/v2/scripts/build_filing_audit.py
+      - name: Update autonomous equity research and scenario audits
+        run: python investment-radar/v2/scripts/build_autonomous_analysis.py
       - name: Commit changed SEC facts only
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add investment-radar/v2/data/sec-financial-facts.json investment-radar/v2/data/fundamental-research.json investment-radar/v2/data/normalized-financials.json investment-radar/v2/data/sector-models.json investment-radar/v2/data/filing-audit.json
+          git add investment-radar/v2/data/sec-financial-facts.json investment-radar/v2/data/fundamental-research.json investment-radar/v2/data/normalized-financials.json investment-radar/v2/data/sector-models.json investment-radar/v2/data/filing-audit.json investment-radar/v2/data/autonomous-analysis.json
           git diff --cached --quiet || (git commit -m "Investment Radar: refresh audited SEC fundamentals" && git push)
