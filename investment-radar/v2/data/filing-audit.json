@@ -1,0 +1,273 @@
+{
+  "schema": 1,
+  "method": "documentary_fiscal_balance_reconciliation_v1",
+  "notes": "FY reconciliations do not substitute for latest interim notes, FCFE/FCFF modeling or analyst approval.",
+  "companies": [
+    {
+      "ticker": "ADBE",
+      "balance": {
+        "ticker": "ADBE",
+        "date": "2025-11-28",
+        "debtMillions": 6210.0,
+        "availableLiquidAssetsBeforeOperatingReserveMillions": 6595.0,
+        "netDebtMillions": -385.0,
+        "weightedDilutedSharesMillions": 427.0,
+        "pointInTimeSharesMillions": 413,
+        "sourceURL": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+        "notes": "6,210m senior debt carrying value reflects swaps and issuance costs; no commercial paper or revolving credit drawn. Review legal restrictions separately; zero restricted investments denotes none identified in these selected balance lines, not blanket certification.",
+        "status": "balance_filed_reconciled_only"
+      },
+      "sensitivity": {
+        "range": {
+          "low": 143.59,
+          "central": 259.81,
+          "high": 404.88
+        },
+        "spreadPct": 100.57,
+        "netDebtPerWeightedDilutedShare": -0.9,
+        "checks": [
+          "SCENARIO_ORDER_OK",
+          "NET_DEBT_RECONCILED_AT_FY_DATE",
+          "EQUITY_VALUE_NOT_DERIVABLE_FROM_OWNER_CASH_PROXY",
+          "SBC_ALREADY_DEDUCTED_PROVISIONALLY",
+          "NO_OPERATING_CASH_RESERVE",
+          "NO_DILUTION_FORECAST",
+          "NO_COST_OF_CAPITAL_MARKET_CALIBRATION"
+        ],
+        "status": "not_decision_ready"
+      },
+      "auditVerdict": "Not ready",
+      "criticalOpenIssues": [
+        "CURRENT_INTERIM_DEBT_BRIDGE",
+        "MINIMUM_OPERATING_CASH",
+        "DILUTION_SHARE_COUNT",
+        "CASH_FLOW_NORMALIZATION",
+        "SECTOR_UNDERWRITING",
+        "MOAT_ROIC_EVIDENCE",
+        "DISCOUNT_RATE_CREDIBILITY"
+      ]
+    },
+    {
+      "ticker": "CB",
+      "auditVerdict": "Not assessable",
+      "criticalOpenIssues": [
+        "FISCAL_BALANCE_BRIDGE_MISSING"
+      ],
+      "sensitivity": {
+        "status": "blocked"
+      }
+    },
+    {
+      "ticker": "CME",
+      "balance": {
+        "ticker": "CME",
+        "date": "2025-12-31",
+        "debtMillions": 3422.3,
+        "availableLiquidAssetsBeforeOperatingReserveMillions": 4541.9,
+        "netDebtMillions": -1119.6,
+        "weightedDilutedSharesMillions": 360.31,
+        "pointInTimeSharesMillions": null,
+        "sourceURL": "https://www.sec.gov/Archives/edgar/data/1156375/000115637526000009/cme-20251231.htm",
+        "notes": "Excluded 159,656.1m performance bonds and guaranty fund contributions (matched liability), restricted cash in other current assets. Marketable securities 125m provisionally included; deployability requires treasury evidence.",
+        "status": "balance_filed_reconciled_only"
+      },
+      "sensitivity": {
+        "range": {
+          "low": 82.8,
+          "central": 148.34,
+          "high": 229.84
+        },
+        "spreadPct": 99.12,
+        "netDebtPerWeightedDilutedShare": -3.11,
+        "checks": [
+          "SCENARIO_ORDER_OK",
+          "NET_DEBT_RECONCILED_AT_FY_DATE",
+          "EQUITY_VALUE_NOT_DERIVABLE_FROM_OWNER_CASH_PROXY",
+          "SBC_ALREADY_DEDUCTED_PROVISIONALLY",
+          "NO_OPERATING_CASH_RESERVE",
+          "NO_DILUTION_FORECAST",
+          "NO_COST_OF_CAPITAL_MARKET_CALIBRATION"
+        ],
+        "status": "not_decision_ready"
+      },
+      "auditVerdict": "Not ready",
+      "criticalOpenIssues": [
+        "CURRENT_INTERIM_DEBT_BRIDGE",
+        "MINIMUM_OPERATING_CASH",
+        "DILUTION_SHARE_COUNT",
+        "CASH_FLOW_NORMALIZATION",
+        "SECTOR_UNDERWRITING",
+        "MOAT_ROIC_EVIDENCE",
+        "DISCOUNT_RATE_CREDIBILITY"
+      ]
+    },
+    {
+      "ticker": "DE",
+      "auditVerdict": "Not assessable",
+      "criticalOpenIssues": [
+        "FISCAL_BALANCE_BRIDGE_MISSING"
+      ],
+      "sensitivity": {
+        "status": "blocked"
+      }
+    },
+    {
+      "ticker": "FERG",
+      "auditVerdict": "Not assessable",
+      "criticalOpenIssues": [
+        "FISCAL_BALANCE_BRIDGE_MISSING"
+      ],
+      "sensitivity": {
+        "status": "blocked"
+      }
+    },
+    {
+      "ticker": "GOOGL",
+      "balance": {
+        "ticker": "GOOGL",
+        "date": "2025-12-31",
+        "debtMillions": 48543.0,
+        "availableLiquidAssetsBeforeOperatingReserveMillions": 126843.0,
+        "netDebtMillions": -78300.0,
+        "weightedDilutedSharesMillions": 12230.0,
+        "pointInTimeSharesMillions": null,
+        "sourceURL": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "notes": "No commercial paper at December 2025. Liquid portfolio includes 6,313m marketable equity securities; risk and restrictions must be assessed before capitalizing full balance. Excluded 68,687m nonmarketable securities.",
+        "status": "balance_filed_reconciled_only"
+      },
+      "sensitivity": {
+        "range": {
+          "low": 29.45,
+          "central": 50.53,
+          "high": 75.29
+        },
+        "spreadPct": 90.72,
+        "netDebtPerWeightedDilutedShare": -6.4,
+        "checks": [
+          "SCENARIO_ORDER_OK",
+          "NET_DEBT_RECONCILED_AT_FY_DATE",
+          "EQUITY_VALUE_NOT_DERIVABLE_FROM_OWNER_CASH_PROXY",
+          "SBC_ALREADY_DEDUCTED_PROVISIONALLY",
+          "NO_OPERATING_CASH_RESERVE",
+          "NO_DILUTION_FORECAST",
+          "NO_COST_OF_CAPITAL_MARKET_CALIBRATION"
+        ],
+        "status": "not_decision_ready"
+      },
+      "auditVerdict": "Not ready",
+      "criticalOpenIssues": [
+        "CURRENT_INTERIM_DEBT_BRIDGE",
+        "MINIMUM_OPERATING_CASH",
+        "DILUTION_SHARE_COUNT",
+        "CASH_FLOW_NORMALIZATION",
+        "SECTOR_UNDERWRITING",
+        "MOAT_ROIC_EVIDENCE",
+        "DISCOUNT_RATE_CREDIBILITY"
+      ]
+    },
+    {
+      "ticker": "MA",
+      "balance": {
+        "ticker": "MA",
+        "date": "2025-12-31",
+        "debtMillions": 19000.0,
+        "availableLiquidAssetsBeforeOperatingReserveMillions": 10566.0,
+        "netDebtMillions": 8434.0,
+        "weightedDilutedSharesMillions": 906.0,
+        "pointInTimeSharesMillions": 894,
+        "sourceURL": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+        "notes": "Excluded 561m restricted cash, 2,121m security deposits, 1,626m settlement assets, 332m investments not classified as readily liquid. Point shares=887m A+7m B, not weighted diluted.",
+        "status": "balance_filed_reconciled_only"
+      },
+      "sensitivity": {
+        "range": {
+          "low": 158.12,
+          "central": 289.83,
+          "high": 457.33
+        },
+        "spreadPct": 103.24,
+        "netDebtPerWeightedDilutedShare": 9.31,
+        "checks": [
+          "SCENARIO_ORDER_OK",
+          "NET_DEBT_RECONCILED_AT_FY_DATE",
+          "EQUITY_VALUE_NOT_DERIVABLE_FROM_OWNER_CASH_PROXY",
+          "SBC_ALREADY_DEDUCTED_PROVISIONALLY",
+          "NO_OPERATING_CASH_RESERVE",
+          "NO_DILUTION_FORECAST",
+          "NO_COST_OF_CAPITAL_MARKET_CALIBRATION"
+        ],
+        "status": "not_decision_ready"
+      },
+      "auditVerdict": "Not ready",
+      "criticalOpenIssues": [
+        "CURRENT_INTERIM_DEBT_BRIDGE",
+        "MINIMUM_OPERATING_CASH",
+        "DILUTION_SHARE_COUNT",
+        "CASH_FLOW_NORMALIZATION",
+        "SECTOR_UNDERWRITING",
+        "MOAT_ROIC_EVIDENCE",
+        "DISCOUNT_RATE_CREDIBILITY"
+      ]
+    },
+    {
+      "ticker": "MSFT",
+      "balance": {
+        "ticker": "MSFT",
+        "date": "2026-06-30",
+        "debtMillions": 40294.0,
+        "availableLiquidAssetsBeforeOperatingReserveMillions": 73043.0,
+        "netDebtMillions": -32749.0,
+        "weightedDilutedSharesMillions": 7453.0,
+        "pointInTimeSharesMillions": 7427,
+        "sourceURL": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+        "notes": "3,800 million USD of restricted investments in short-term investments are deducted. Additional 7,500m restricted in noncurrent equity investments never included. Do not add all equity investments as cash.",
+        "status": "balance_filed_reconciled_only"
+      },
+      "sensitivity": {
+        "range": {
+          "low": 81.23,
+          "central": 146.97,
+          "high": 229.03
+        },
+        "spreadPct": 100.56,
+        "netDebtPerWeightedDilutedShare": -4.39,
+        "checks": [
+          "SCENARIO_ORDER_OK",
+          "NET_DEBT_RECONCILED_AT_FY_DATE",
+          "EQUITY_VALUE_NOT_DERIVABLE_FROM_OWNER_CASH_PROXY",
+          "SBC_ALREADY_DEDUCTED_PROVISIONALLY",
+          "NO_OPERATING_CASH_RESERVE",
+          "NO_DILUTION_FORECAST",
+          "NO_COST_OF_CAPITAL_MARKET_CALIBRATION"
+        ],
+        "status": "not_decision_ready"
+      },
+      "auditVerdict": "Not ready",
+      "criticalOpenIssues": [
+        "CURRENT_INTERIM_DEBT_BRIDGE",
+        "MINIMUM_OPERATING_CASH",
+        "DILUTION_SHARE_COUNT",
+        "CASH_FLOW_NORMALIZATION",
+        "SECTOR_UNDERWRITING",
+        "MOAT_ROIC_EVIDENCE",
+        "DISCOUNT_RATE_CREDIBILITY"
+      ]
+    },
+    {
+      "ticker": "V",
+      "auditVerdict": "Not assessable",
+      "criticalOpenIssues": [
+        "FISCAL_BALANCE_BRIDGE_MISSING"
+      ],
+      "sensitivity": {
+        "status": "blocked"
+      }
+    }
+  ],
+  "summary": {
+    "reconciledFY": 5,
+    "modeled": 9,
+    "decisionReady": 0,
+    "closedValuations": 0
+  }
+}
