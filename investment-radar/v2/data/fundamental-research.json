@@ -2,7 +2,7 @@
   "schema": 1,
   "engine": "deterministic-sec-fundamentals-v1",
   "analysisDate": "2026-10-25",
-  "sourceRetrievedAt": "2026-10-25T19:57:22.728576+00:00",
+  "sourceRetrievedAt": "2026-10-25T20:22:38.756372+00:00",
   "sources": {
     "official": "https://data.sec.gov/api/xbrl/companyfacts/",
     "filingForms": [
