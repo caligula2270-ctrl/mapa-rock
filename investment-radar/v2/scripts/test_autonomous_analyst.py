@@ -14,7 +14,7 @@ class TestAutonomous(unittest.TestCase):
   h=[]
   for year in [2025,2024,2023,2022]:
    h.append({"fiscalYearEnd":f"{year}-12-31","incomeStatement":{"revenue":1000-(2025-year)*90},
-    "shareCapital":{"weightedDilutedShares":100},"cashFlow":{"ownerCashProxyAfterSBC":300},
+    "shareCapital":{"weightedDilutedShares":100},"cashFlow":{"ownerCashProxyAfterSBC":300,"propertyCapex":50},
     "balanceSheet":{"cash":100},"sourceIndex":{"operating_cash_flow":{"accession":"ACC"}}})
   fin={"ticker":"ADBE","name":"Adobe","category":"software","fiscalHistory":h,"issues":[],
        "coverage":{"ownerCashProxy3FY":True,"dilutedSharesLatest":True}}
