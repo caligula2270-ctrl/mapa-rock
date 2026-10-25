@@ -608,6 +608,36 @@
           }
         }
       ],
+      "interimYTD": {
+        "type": "as_file_ytd_10q_not_annualized",
+        "start": "2025-11-29",
+        "end": "2026-08-28",
+        "filed": "2026-09-22",
+        "metrics": {
+          "operatingCashFlow": 7646000000.0,
+          "capex": 180000000.0,
+          "revenue": null,
+          "netIncome": 5428000000.0,
+          "freeCashFlowSimple": 7466000000.0
+        },
+        "sources": {
+          "operatingCashFlow": {
+            "accn": "0000796343-26-000156",
+            "filed": "2026-09-22",
+            "unit": "USD"
+          },
+          "capex": {
+            "accn": "0000796343-26-000156",
+            "filed": "2026-09-22",
+            "unit": "USD"
+          },
+          "netIncome": {
+            "accn": "0000796343-26-000156",
+            "filed": "2026-09-22",
+            "unit": "USD"
+          }
+        }
+      },
       "partialScore": {
         "moat": null,
         "returns": null,
@@ -634,6 +664,12 @@
           "severity": "review",
           "code": "STOCK_COMP_AND_DEBT",
           "detail": "Reconcile stock compensation, buybacks, net borrowing and fully diluted shares"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
+          "period": "2026-08-28",
+          "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
       "investmentSignal": "disabled",
@@ -1106,6 +1142,31 @@
           }
         }
       ],
+      "interimYTD": {
+        "type": "as_file_ytd_10q_not_annualized",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "filed": "2026-04-28",
+        "metrics": {
+          "operatingCashFlow": 3947000000.0,
+          "capex": null,
+          "revenue": null,
+          "netIncome": 2320000000.0,
+          "freeCashFlowSimple": null
+        },
+        "sources": {
+          "operatingCashFlow": {
+            "accn": "0000896159-26-000011",
+            "filed": "2026-04-28",
+            "unit": "USD"
+          },
+          "netIncome": {
+            "accn": "0000896159-26-000011",
+            "filed": "2026-04-28",
+            "unit": "USD"
+          }
+        }
+      },
       "partialScore": {
         "moat": null,
         "returns": null,
@@ -1131,6 +1192,18 @@
           "severity": "block",
           "code": "SECTOR_INSURANCE_MODEL",
           "detail": "CFO minus capex is not insurance distributable owner earnings; use reserves and adjusted book valuation"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_FCF_NOT_COMPARABLE",
+          "period": "2026-03-31",
+          "detail": "10-Q YTD CFO and CAPEX do not match or capex is missing"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
+          "period": "2026-03-31",
+          "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
       "investmentSignal": "disabled",
@@ -1747,6 +1820,36 @@
           }
         }
       ],
+      "interimYTD": {
+        "type": "as_file_ytd_10q_not_annualized",
+        "start": "2026-01-01",
+        "end": "2026-09-30",
+        "filed": "2026-10-23",
+        "metrics": {
+          "operatingCashFlow": 3292900000.0,
+          "capex": 61200000.0,
+          "revenue": null,
+          "netIncome": 3233000000.0,
+          "freeCashFlowSimple": 3231700000.0
+        },
+        "sources": {
+          "operatingCashFlow": {
+            "accn": "0001156375-26-000068",
+            "filed": "2026-10-23",
+            "unit": "USD"
+          },
+          "capex": {
+            "accn": "0001156375-26-000068",
+            "filed": "2026-10-23",
+            "unit": "USD"
+          },
+          "netIncome": {
+            "accn": "0001156375-26-000068",
+            "filed": "2026-10-23",
+            "unit": "USD"
+          }
+        }
+      },
       "partialScore": {
         "moat": null,
         "returns": null,
@@ -1773,6 +1876,12 @@
           "severity": "review",
           "code": "CLEARING_CLIENT_ASSETS",
           "detail": "Clearing collateral is not shareholder cash"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
+          "period": "2026-09-30",
+          "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
       "investmentSignal": "disabled",
@@ -2349,6 +2458,36 @@
           }
         }
       ],
+      "interimYTD": {
+        "type": "as_file_ytd_10q_not_annualized",
+        "start": "2025-11-03",
+        "end": "2026-08-02",
+        "filed": "2026-08-27",
+        "metrics": {
+          "operatingCashFlow": 3250000000.0,
+          "capex": 716000000.0,
+          "revenue": null,
+          "netIncome": 3808000000.0,
+          "freeCashFlowSimple": 2534000000.0
+        },
+        "sources": {
+          "operatingCashFlow": {
+            "accn": "0001104659-26-102213",
+            "filed": "2026-08-27",
+            "unit": "USD"
+          },
+          "capex": {
+            "accn": "0001104659-26-102213",
+            "filed": "2026-08-27",
+            "unit": "USD"
+          },
+          "netIncome": {
+            "accn": "0001104659-26-102213",
+            "filed": "2026-08-27",
+            "unit": "USD"
+          }
+        }
+      },
       "partialScore": {
         "moat": null,
         "returns": null,
@@ -2364,6 +2503,12 @@
           "severity": "block",
           "code": "FINANCE_ARM_SEGMENT",
           "detail": "Industrial and captive finance cash flows must be separated before valuation"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
+          "period": "2026-08-02",
+          "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
       "investmentSignal": "disabled",
@@ -2828,6 +2973,31 @@
           }
         }
       ],
+      "interimYTD": {
+        "type": "as_file_ytd_10q_not_annualized",
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "filed": "2025-12-09",
+        "metrics": {
+          "operatingCashFlow": 430000000.0,
+          "capex": null,
+          "revenue": null,
+          "netIncome": 570000000.0,
+          "freeCashFlowSimple": null
+        },
+        "sources": {
+          "operatingCashFlow": {
+            "accn": "0002011641-25-000059",
+            "filed": "2025-12-09",
+            "unit": "USD"
+          },
+          "netIncome": {
+            "accn": "0002011641-25-000059",
+            "filed": "2025-12-09",
+            "unit": "USD"
+          }
+        }
+      },
       "partialScore": {
         "moat": null,
         "returns": null,
@@ -2853,6 +3023,18 @@
           "severity": "review",
           "code": "WORKING_CAPITAL_CYCLE",
           "detail": "Normalize inventories, receivables, seasonality and M&A"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_FCF_NOT_COMPARABLE",
+          "period": "2025-10-31",
+          "detail": "10-Q YTD CFO and CAPEX do not match or capex is missing"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
+          "period": "2025-10-31",
+          "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
       "investmentSignal": "disabled",
@@ -3509,6 +3691,36 @@
           }
         }
       ],
+      "interimYTD": {
+        "type": "as_file_ytd_10q_not_annualized",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "filed": "2026-07-23",
+        "metrics": {
+          "operatingCashFlow": 84859000000.0,
+          "capex": 80598000000.0,
+          "revenue": null,
+          "netIncome": 174771000000.0,
+          "freeCashFlowSimple": 4261000000.0
+        },
+        "sources": {
+          "operatingCashFlow": {
+            "accn": "0001652044-26-000071",
+            "filed": "2026-07-23",
+            "unit": "USD"
+          },
+          "capex": {
+            "accn": "0001652044-26-000071",
+            "filed": "2026-07-23",
+            "unit": "USD"
+          },
+          "netIncome": {
+            "accn": "0001652044-26-000071",
+            "filed": "2026-07-23",
+            "unit": "USD"
+          }
+        }
+      },
       "partialScore": {
         "moat": null,
         "returns": null,
@@ -3535,6 +3747,12 @@
           "severity": "review",
           "code": "AI_CAPEX_NORMALIZATION",
           "detail": "Forecast capital expenditure and financing must be separated from reported simple FCF"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
+          "period": "2026-06-30",
+          "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
       "investmentSignal": "disabled",
@@ -4159,6 +4377,31 @@
           }
         }
       ],
+      "interimYTD": {
+        "type": "as_file_ytd_10q_not_annualized",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "filed": "2026-07-30",
+        "metrics": {
+          "operatingCashFlow": 6772000000.0,
+          "capex": 445000000.0,
+          "revenue": null,
+          "netIncome": null,
+          "freeCashFlowSimple": 6327000000.0
+        },
+        "sources": {
+          "operatingCashFlow": {
+            "accn": "0001141391-26-000083",
+            "filed": "2026-07-30",
+            "unit": "USD"
+          },
+          "capex": {
+            "accn": "0001141391-26-000083",
+            "filed": "2026-07-30",
+            "unit": "USD"
+          }
+        }
+      },
       "partialScore": {
         "moat": null,
         "returns": null,
@@ -4191,6 +4434,12 @@
           "severity": "review",
           "code": "STOCK_COMP_AND_DEBT",
           "detail": "Reconcile stock compensation, buybacks, net borrowing and fully diluted shares"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
+          "period": "2026-06-30",
+          "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
       "investmentSignal": "disabled",
@@ -4847,6 +5096,7 @@
           }
         }
       ],
+      "interimYTD": null,
       "partialScore": {
         "moat": null,
         "returns": null,
@@ -5409,6 +5659,36 @@
           }
         }
       ],
+      "interimYTD": {
+        "type": "as_file_ytd_10q_not_annualized",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "filed": "2026-04-29",
+        "metrics": {
+          "operatingCashFlow": 9788000000.0,
+          "capex": null,
+          "revenue": 22131000000.0,
+          "netIncome": 11874000000.0,
+          "freeCashFlowSimple": null
+        },
+        "sources": {
+          "operatingCashFlow": {
+            "accn": "0001403161-26-000079",
+            "filed": "2026-04-29",
+            "unit": "USD"
+          },
+          "revenue": {
+            "accn": "0001403161-26-000079",
+            "filed": "2026-04-29",
+            "unit": "USD"
+          },
+          "netIncome": {
+            "accn": "0001403161-26-000079",
+            "filed": "2026-04-29",
+            "unit": "USD"
+          }
+        }
+      },
       "partialScore": {
         "moat": null,
         "returns": null,
@@ -5439,6 +5719,18 @@
           "severity": "review",
           "code": "STOCK_COMP_AND_DEBT",
           "detail": "Reconcile stock compensation, buybacks, net borrowing and fully diluted shares"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_FCF_NOT_COMPARABLE",
+          "period": "2026-03-31",
+          "detail": "10-Q YTD CFO and CAPEX do not match or capex is missing"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
+          "period": "2026-03-31",
+          "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
       "investmentSignal": "disabled",
