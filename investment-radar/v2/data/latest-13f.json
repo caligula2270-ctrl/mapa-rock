@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "generatedAt": "2026-10-25T07:54:46.628111+00:00",
+  "generatedAt": "2026-10-26T08:11:42.913318+00:00",
   "method": "Official SEC EDGAR 13F-HR XML. Raw line items are separate from aggregated SH/CUSIP change indicators. Amendments not merged, tickers/weights not inferred.",
   "filings": [
     {
