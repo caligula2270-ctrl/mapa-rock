@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "engine": "deterministic-sec-fundamentals-v1",
-  "analysisDate": "2026-10-27",
+  "analysisDate": "2026-10-28",
   "sourceRetrievedAt": "2026-10-25T20:22:38.756372+00:00",
   "sources": {
     "official": "https://data.sec.gov/api/xbrl/companyfacts/",
@@ -28,7 +28,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
       "category": "software",
       "latestFiscalYearEnd": "2025-11-28",
-      "fiscalAgeDays": 333,
+      "fiscalAgeDays": 334,
       "status": "review_required",
       "annual": [
         {
@@ -682,7 +682,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json",
       "category": "insurance",
       "latestFiscalYearEnd": "2025-12-31",
-      "fiscalAgeDays": 300,
+      "fiscalAgeDays": 301,
       "status": "blocked",
       "annual": [
         {
@@ -1216,7 +1216,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001156375.json",
       "category": "exchange",
       "latestFiscalYearEnd": "2025-12-31",
-      "fiscalAgeDays": 300,
+      "fiscalAgeDays": 301,
       "status": "review_required",
       "annual": [
         {
@@ -1894,7 +1894,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000315189.json",
       "category": "industrial",
       "latestFiscalYearEnd": "2025-11-02",
-      "fiscalAgeDays": 359,
+      "fiscalAgeDays": 360,
       "status": "blocked",
       "annual": [
         {
@@ -2521,7 +2521,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002011641.json",
       "category": "distribution",
       "latestFiscalYearEnd": "2025-07-31",
-      "fiscalAgeDays": 453,
+      "fiscalAgeDays": 454,
       "status": "blocked",
       "annual": [
         {
@@ -3047,7 +3047,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
       "category": "digital_platform",
       "latestFiscalYearEnd": "2025-12-31",
-      "fiscalAgeDays": 300,
+      "fiscalAgeDays": 301,
       "status": "review_required",
       "annual": [
         {
@@ -3765,7 +3765,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001141391.json",
       "category": "payments",
       "latestFiscalYearEnd": "2025-12-31",
-      "fiscalAgeDays": 300,
+      "fiscalAgeDays": 301,
       "status": "review_required",
       "annual": [
         {
@@ -4452,7 +4452,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
       "category": "software",
       "latestFiscalYearEnd": "2026-06-30",
-      "fiscalAgeDays": 119,
+      "fiscalAgeDays": 120,
       "status": "review_required",
       "annual": [
         {
@@ -5135,7 +5135,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001403161.json",
       "category": "payments",
       "latestFiscalYearEnd": "2025-09-30",
-      "fiscalAgeDays": 392,
+      "fiscalAgeDays": 393,
       "status": "blocked",
       "annual": [
         {
