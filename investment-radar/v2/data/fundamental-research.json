@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "engine": "deterministic-sec-fundamentals-v1",
-  "analysisDate": "2026-10-28",
-  "sourceRetrievedAt": "2026-10-25T20:22:38.756372+00:00",
+  "analysisDate": "2026-10-29",
+  "sourceRetrievedAt": "2026-10-29T11:05:07.344058+00:00",
   "sources": {
     "official": "https://data.sec.gov/api/xbrl/companyfacts/",
     "filingForms": [
@@ -28,7 +28,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
       "category": "software",
       "latestFiscalYearEnd": "2025-11-28",
-      "fiscalAgeDays": 334,
+      "fiscalAgeDays": 335,
       "status": "review_required",
       "annual": [
         {
@@ -682,7 +682,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json",
       "category": "insurance",
       "latestFiscalYearEnd": "2025-12-31",
-      "fiscalAgeDays": 301,
+      "fiscalAgeDays": 302,
       "status": "blocked",
       "annual": [
         {
@@ -1145,24 +1145,24 @@
       "interimYTD": {
         "type": "as_file_ytd_10q_not_annualized",
         "start": "2026-01-01",
-        "end": "2026-03-31",
-        "filed": "2026-04-28",
+        "end": "2026-09-30",
+        "filed": "2026-10-28",
         "metrics": {
-          "operatingCashFlow": 3947000000.0,
+          "operatingCashFlow": 13748000000.0,
           "capex": null,
           "revenue": null,
-          "netIncome": 2320000000.0,
+          "netIncome": 8018000000.0,
           "freeCashFlowSimple": null
         },
         "sources": {
           "operatingCashFlow": {
-            "accn": "0000896159-26-000011",
-            "filed": "2026-04-28",
+            "accn": "0000896159-26-000021",
+            "filed": "2026-10-28",
             "unit": "USD"
           },
           "netIncome": {
-            "accn": "0000896159-26-000011",
-            "filed": "2026-04-28",
+            "accn": "0000896159-26-000021",
+            "filed": "2026-10-28",
             "unit": "USD"
           }
         }
@@ -1196,13 +1196,13 @@
         {
           "severity": "review",
           "code": "INTERIM_FCF_NOT_COMPARABLE",
-          "period": "2026-03-31",
+          "period": "2026-09-30",
           "detail": "10-Q YTD CFO and CAPEX do not match or capex is missing"
         },
         {
           "severity": "review",
           "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
-          "period": "2026-03-31",
+          "period": "2026-09-30",
           "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
@@ -1216,7 +1216,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001156375.json",
       "category": "exchange",
       "latestFiscalYearEnd": "2025-12-31",
-      "fiscalAgeDays": 301,
+      "fiscalAgeDays": 302,
       "status": "review_required",
       "annual": [
         {
@@ -1894,7 +1894,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000315189.json",
       "category": "industrial",
       "latestFiscalYearEnd": "2025-11-02",
-      "fiscalAgeDays": 360,
+      "fiscalAgeDays": 361,
       "status": "blocked",
       "annual": [
         {
@@ -2521,7 +2521,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002011641.json",
       "category": "distribution",
       "latestFiscalYearEnd": "2025-07-31",
-      "fiscalAgeDays": 454,
+      "fiscalAgeDays": 455,
       "status": "blocked",
       "annual": [
         {
@@ -3047,7 +3047,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
       "category": "digital_platform",
       "latestFiscalYearEnd": "2025-12-31",
-      "fiscalAgeDays": 301,
+      "fiscalAgeDays": 302,
       "status": "review_required",
       "annual": [
         {
@@ -3694,29 +3694,29 @@
       "interimYTD": {
         "type": "as_file_ytd_10q_not_annualized",
         "start": "2026-01-01",
-        "end": "2026-06-30",
-        "filed": "2026-07-23",
+        "end": "2026-09-30",
+        "filed": "2026-10-29",
         "metrics": {
-          "operatingCashFlow": 84859000000.0,
-          "capex": 80598000000.0,
+          "operatingCashFlow": 127149000000.0,
+          "capex": 131953000000.0,
           "revenue": null,
-          "netIncome": 174771000000.0,
-          "freeCashFlowSimple": 4261000000.0
+          "netIncome": 201239000000.0,
+          "freeCashFlowSimple": -4804000000.0
         },
         "sources": {
           "operatingCashFlow": {
-            "accn": "0001652044-26-000071",
-            "filed": "2026-07-23",
+            "accn": "0001652044-26-000084",
+            "filed": "2026-10-29",
             "unit": "USD"
           },
           "capex": {
-            "accn": "0001652044-26-000071",
-            "filed": "2026-07-23",
+            "accn": "0001652044-26-000084",
+            "filed": "2026-10-29",
             "unit": "USD"
           },
           "netIncome": {
-            "accn": "0001652044-26-000071",
-            "filed": "2026-07-23",
+            "accn": "0001652044-26-000084",
+            "filed": "2026-10-29",
             "unit": "USD"
           }
         }
@@ -3751,7 +3751,7 @@
         {
           "severity": "review",
           "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
-          "period": "2026-06-30",
+          "period": "2026-09-30",
           "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
@@ -3765,7 +3765,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001141391.json",
       "category": "payments",
       "latestFiscalYearEnd": "2025-12-31",
-      "fiscalAgeDays": 301,
+      "fiscalAgeDays": 302,
       "status": "review_required",
       "annual": [
         {
@@ -4452,7 +4452,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
       "category": "software",
       "latestFiscalYearEnd": "2026-06-30",
-      "fiscalAgeDays": 120,
+      "fiscalAgeDays": 121,
       "status": "review_required",
       "annual": [
         {
@@ -5096,7 +5096,41 @@
           }
         }
       ],
-      "interimYTD": null,
+      "interimYTD": {
+        "type": "as_file_ytd_10q_not_annualized",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "filed": "2026-10-28",
+        "metrics": {
+          "operatingCashFlow": 58000000000.0,
+          "capex": 39367000000.0,
+          "revenue": 92279000000.0,
+          "netIncome": 36629000000.0,
+          "freeCashFlowSimple": 18633000000.0
+        },
+        "sources": {
+          "operatingCashFlow": {
+            "accn": "0001193125-26-436133",
+            "filed": "2026-10-28",
+            "unit": "USD"
+          },
+          "capex": {
+            "accn": "0001193125-26-436133",
+            "filed": "2026-10-28",
+            "unit": "USD"
+          },
+          "revenue": {
+            "accn": "0001193125-26-436133",
+            "filed": "2026-10-28",
+            "unit": "USD"
+          },
+          "netIncome": {
+            "accn": "0001193125-26-436133",
+            "filed": "2026-10-28",
+            "unit": "USD"
+          }
+        }
+      },
       "partialScore": {
         "moat": null,
         "returns": null,
@@ -5123,6 +5157,12 @@
           "severity": "review",
           "code": "STOCK_COMP_AND_DEBT",
           "detail": "Reconcile stock compensation, buybacks, net borrowing and fully diluted shares"
+        },
+        {
+          "severity": "review",
+          "code": "INTERIM_PERIOD_NOT_IN_FY_SCREEN",
+          "period": "2026-09-30",
+          "detail": "Newer interim YTD information exists; prior fiscal-year screen excludes it"
         }
       ],
       "investmentSignal": "disabled",
@@ -5135,7 +5175,7 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001403161.json",
       "category": "payments",
       "latestFiscalYearEnd": "2025-09-30",
-      "fiscalAgeDays": 393,
+      "fiscalAgeDays": 394,
       "status": "blocked",
       "annual": [
         {

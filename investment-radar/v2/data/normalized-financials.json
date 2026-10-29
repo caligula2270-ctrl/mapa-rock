@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "engine": "SEC-annual-statement-normalizer-v1",
-  "sourceRetrievedAt": "2026-10-25T20:22:38.756372+00:00",
+  "sourceRetrievedAt": "2026-10-29T11:05:07.344058+00:00",
   "periodConvention": "10-K full fiscal periods: do NOT annualize quarters or combine incompatible fiscal periods",
   "financials": [
     {
@@ -1412,24 +1412,24 @@
       "interimYTD": {
         "type": "as_file_ytd_10q_not_annualized",
         "start": "2026-01-01",
-        "end": "2026-03-31",
-        "filed": "2026-04-28",
+        "end": "2026-09-30",
+        "filed": "2026-10-28",
         "metrics": {
-          "operatingCashFlow": 3947000000.0,
+          "operatingCashFlow": 13748000000.0,
           "capex": null,
           "revenue": null,
-          "netIncome": 2320000000.0,
+          "netIncome": 8018000000.0,
           "freeCashFlowSimple": null
         },
         "sources": {
           "operatingCashFlow": {
-            "accn": "0000896159-26-000011",
-            "filed": "2026-04-28",
+            "accn": "0000896159-26-000021",
+            "filed": "2026-10-28",
             "unit": "USD"
           },
           "netIncome": {
-            "accn": "0000896159-26-000011",
-            "filed": "2026-04-28",
+            "accn": "0000896159-26-000021",
+            "filed": "2026-10-28",
             "unit": "USD"
           }
         }
@@ -4445,29 +4445,29 @@
       "interimYTD": {
         "type": "as_file_ytd_10q_not_annualized",
         "start": "2026-01-01",
-        "end": "2026-06-30",
-        "filed": "2026-07-23",
+        "end": "2026-09-30",
+        "filed": "2026-10-29",
         "metrics": {
-          "operatingCashFlow": 84859000000.0,
-          "capex": 80598000000.0,
+          "operatingCashFlow": 127149000000.0,
+          "capex": 131953000000.0,
           "revenue": null,
-          "netIncome": 174771000000.0,
-          "freeCashFlowSimple": 4261000000.0
+          "netIncome": 201239000000.0,
+          "freeCashFlowSimple": -4804000000.0
         },
         "sources": {
           "operatingCashFlow": {
-            "accn": "0001652044-26-000071",
-            "filed": "2026-07-23",
+            "accn": "0001652044-26-000084",
+            "filed": "2026-10-29",
             "unit": "USD"
           },
           "capex": {
-            "accn": "0001652044-26-000071",
-            "filed": "2026-07-23",
+            "accn": "0001652044-26-000084",
+            "filed": "2026-10-29",
             "unit": "USD"
           },
           "netIncome": {
-            "accn": "0001652044-26-000071",
-            "filed": "2026-07-23",
+            "accn": "0001652044-26-000084",
+            "filed": "2026-10-29",
             "unit": "USD"
           }
         }
@@ -6053,7 +6053,41 @@
           "detail": "One or more debt categories have no SEC tag; net debt cannot be asserted"
         }
       ],
-      "interimYTD": null,
+      "interimYTD": {
+        "type": "as_file_ytd_10q_not_annualized",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "filed": "2026-10-28",
+        "metrics": {
+          "operatingCashFlow": 58000000000.0,
+          "capex": 39367000000.0,
+          "revenue": 92279000000.0,
+          "netIncome": 36629000000.0,
+          "freeCashFlowSimple": 18633000000.0
+        },
+        "sources": {
+          "operatingCashFlow": {
+            "accn": "0001193125-26-436133",
+            "filed": "2026-10-28",
+            "unit": "USD"
+          },
+          "capex": {
+            "accn": "0001193125-26-436133",
+            "filed": "2026-10-28",
+            "unit": "USD"
+          },
+          "revenue": {
+            "accn": "0001193125-26-436133",
+            "filed": "2026-10-28",
+            "unit": "USD"
+          },
+          "netIncome": {
+            "accn": "0001193125-26-436133",
+            "filed": "2026-10-28",
+            "unit": "USD"
+          }
+        }
+      },
       "coverage": {
         "annualPeriods": 5,
         "ownerCashProxy3FY": true,
