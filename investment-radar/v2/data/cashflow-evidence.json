@@ -4363,13 +4363,21 @@
             "definition": "The cash outflow associated with the acquisition of long-lived, physical assets that are used in the normal conduct of business to produce goods and services and not intended for resale; includes cash outflows to pay for construction of self-constructed assets.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-07-30",
+              "end": "2026-09-30",
+              "filed": "2026-10-29",
               "form": "10-Q",
-              "accn": "0001141391-26-000083",
-              "val": 445000000
+              "accn": "0001141391-26-000124",
+              "val": 667000000
             },
             "otherRecent": [
+              {
+                "start": "2026-01-01",
+                "end": "2026-06-30",
+                "filed": "2026-07-30",
+                "form": "10-Q",
+                "accn": "0001141391-26-000083",
+                "val": 445000000
+              },
               {
                 "start": "2026-01-01",
                 "end": "2026-03-31",
@@ -4377,14 +4385,6 @@
                 "form": "10-Q",
                 "accn": "0001141391-26-000031",
                 "val": 154000000
-              },
-              {
-                "start": "2025-01-01",
-                "end": "2025-12-31",
-                "filed": "2026-02-11",
-                "form": "10-K",
-                "accn": "0001141391-26-000013",
-                "val": 489000000
               }
             ]
           }
@@ -4397,13 +4397,21 @@
             "definition": "The aggregate net amount of depreciation, amortization, and accretion recognized during an accounting period. As a noncash item, the net amount is added back to net income when calculating cash provided by or used in operations using the indirect method.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-07-30",
+              "end": "2026-09-30",
+              "filed": "2026-10-29",
               "form": "10-Q",
-              "accn": "0001141391-26-000083",
-              "val": 608000000
+              "accn": "0001141391-26-000124",
+              "val": 934000000
             },
             "otherRecent": [
+              {
+                "start": "2026-01-01",
+                "end": "2026-06-30",
+                "filed": "2026-07-30",
+                "form": "10-Q",
+                "accn": "0001141391-26-000083",
+                "val": 608000000
+              },
               {
                 "start": "2026-01-01",
                 "end": "2026-03-31",
@@ -4411,14 +4419,6 @@
                 "form": "10-Q",
                 "accn": "0001141391-26-000031",
                 "val": 299000000
-              },
-              {
-                "start": "2025-01-01",
-                "end": "2025-12-31",
-                "filed": "2026-02-11",
-                "form": "10-K",
-                "accn": "0001141391-26-000013",
-                "val": 1143000000
               }
             ]
           },
@@ -4561,13 +4561,21 @@
             "definition": "The cash inflow during the period from additional borrowings in aggregate debt. Includes proceeds from short-term and long-term debt.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-07-30",
+              "end": "2026-09-30",
+              "filed": "2026-10-29",
               "form": "10-Q",
-              "accn": "0001141391-26-000083",
+              "accn": "0001141391-26-000124",
               "val": 5596000000
             },
             "otherRecent": [
+              {
+                "start": "2026-01-01",
+                "end": "2026-06-30",
+                "filed": "2026-07-30",
+                "form": "10-Q",
+                "accn": "0001141391-26-000083",
+                "val": 5596000000
+              },
               {
                 "start": "2026-01-01",
                 "end": "2026-03-31",
@@ -4575,14 +4583,6 @@
                 "form": "10-Q",
                 "accn": "0001141391-26-000031",
                 "val": 0
-              },
-              {
-                "start": "2025-01-01",
-                "end": "2025-12-31",
-                "filed": "2026-02-11",
-                "form": "10-K",
-                "accn": "0001141391-26-000013",
-                "val": 1242000000
               }
             ]
           },
@@ -4627,13 +4627,21 @@
             "definition": "The cash outflow during the period from the repayment of aggregate short-term and long-term debt. Excludes payment of capital lease obligations.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-07-30",
+              "end": "2026-09-30",
+              "filed": "2026-10-29",
               "form": "10-Q",
-              "accn": "0001141391-26-000083",
-              "val": 0
+              "accn": "0001141391-26-000124",
+              "val": 618000000
             },
             "otherRecent": [
+              {
+                "start": "2026-01-01",
+                "end": "2026-06-30",
+                "filed": "2026-07-30",
+                "form": "10-Q",
+                "accn": "0001141391-26-000083",
+                "val": 0
+              },
               {
                 "start": "2026-01-01",
                 "end": "2026-03-31",
@@ -4641,14 +4649,6 @@
                 "form": "10-Q",
                 "accn": "0001141391-26-000031",
                 "val": 0
-              },
-              {
-                "start": "2025-01-01",
-                "end": "2025-12-31",
-                "filed": "2026-02-11",
-                "form": "10-K",
-                "accn": "0001141391-26-000013",
-                "val": 750000000
               }
             ]
           }
@@ -4661,28 +4661,28 @@
             "definition": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-07-30",
+              "end": "2026-09-30",
+              "filed": "2026-10-29",
               "form": "10-Q",
-              "accn": "0001141391-26-000083",
-              "val": 888000000
+              "accn": "0001141391-26-000124",
+              "val": 884000000
             },
             "otherRecent": [
               {
-                "start": "2026-04-01",
+                "start": "2026-07-01",
+                "end": "2026-09-30",
+                "filed": "2026-10-29",
+                "form": "10-Q",
+                "accn": "0001141391-26-000124",
+                "val": 876000000
+              },
+              {
+                "start": "2026-01-01",
                 "end": "2026-06-30",
                 "filed": "2026-07-30",
                 "form": "10-Q",
                 "accn": "0001141391-26-000083",
-                "val": 883000000
-              },
-              {
-                "start": "2026-01-01",
-                "end": "2026-03-31",
-                "filed": "2026-04-30",
-                "form": "10-Q",
-                "accn": "0001141391-26-000031",
-                "val": 893000000
+                "val": 888000000
               }
             ]
           }
@@ -4695,28 +4695,28 @@
             "definition": "Amount of current income tax expense (benefit) and deferred income tax expense (benefit) pertaining to continuing operations.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-07-30",
+              "end": "2026-09-30",
+              "filed": "2026-10-29",
               "form": "10-Q",
-              "accn": "0001141391-26-000083",
-              "val": 2028000000
+              "accn": "0001141391-26-000124",
+              "val": 3141000000
             },
             "otherRecent": [
               {
-                "start": "2026-04-01",
+                "start": "2026-07-01",
+                "end": "2026-09-30",
+                "filed": "2026-10-29",
+                "form": "10-Q",
+                "accn": "0001141391-26-000124",
+                "val": 1113000000
+              },
+              {
+                "start": "2026-01-01",
                 "end": "2026-06-30",
                 "filed": "2026-07-30",
                 "form": "10-Q",
                 "accn": "0001141391-26-000083",
-                "val": 1098000000
-              },
-              {
-                "start": "2026-01-01",
-                "end": "2026-03-31",
-                "filed": "2026-04-30",
-                "form": "10-Q",
-                "accn": "0001141391-26-000031",
-                "val": 930000000
+                "val": 2028000000
               }
             ]
           },
@@ -4761,13 +4761,21 @@
             "definition": "The increase (decrease) during the reporting period in amount due within one year (or one business cycle) from customers for the credit sale of goods and services.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-07-30",
+              "end": "2026-09-30",
+              "filed": "2026-10-29",
               "form": "10-Q",
-              "accn": "0001141391-26-000083",
-              "val": 448000000
+              "accn": "0001141391-26-000124",
+              "val": 661000000
             },
             "otherRecent": [
+              {
+                "start": "2026-01-01",
+                "end": "2026-06-30",
+                "filed": "2026-07-30",
+                "form": "10-Q",
+                "accn": "0001141391-26-000083",
+                "val": 448000000
+              },
               {
                 "start": "2026-01-01",
                 "end": "2026-03-31",
@@ -4775,14 +4783,6 @@
                 "form": "10-Q",
                 "accn": "0001141391-26-000031",
                 "val": 110000000
-              },
-              {
-                "start": "2025-01-01",
-                "end": "2025-12-31",
-                "filed": "2026-02-11",
-                "form": "10-K",
-                "accn": "0001141391-26-000013",
-                "val": 642000000
               }
             ]
           },
@@ -4793,13 +4793,21 @@
             "definition": "The increase (decrease) during the reporting period in the aggregate amount of liabilities incurred (and for which invoices have typically been received) and payable to vendors for goods and services received that are used in an entity's business.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-07-30",
+              "end": "2026-09-30",
+              "filed": "2026-10-29",
               "form": "10-Q",
-              "accn": "0001141391-26-000083",
-              "val": 124000000
+              "accn": "0001141391-26-000124",
+              "val": 95000000
             },
             "otherRecent": [
+              {
+                "start": "2026-01-01",
+                "end": "2026-06-30",
+                "filed": "2026-07-30",
+                "form": "10-Q",
+                "accn": "0001141391-26-000083",
+                "val": 124000000
+              },
               {
                 "start": "2026-01-01",
                 "end": "2026-03-31",
@@ -4807,14 +4815,6 @@
                 "form": "10-Q",
                 "accn": "0001141391-26-000031",
                 "val": 14000000
-              },
-              {
-                "start": "2025-01-01",
-                "end": "2025-12-31",
-                "filed": "2026-02-11",
-                "form": "10-K",
-                "accn": "0001141391-26-000013",
-                "val": 45000000
               }
             ]
           }

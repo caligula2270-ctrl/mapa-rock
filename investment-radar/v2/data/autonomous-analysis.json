@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "model": "research-analyst-evidence-gated-v1",
-  "asOf": "2026-10-29",
-  "sourceRetrievedAt": "2026-10-29T11:05:07.344058+00:00",
+  "asOf": "2026-10-30",
+  "sourceRetrievedAt": "2026-10-30T11:01:31.391699+00:00",
   "policy": "ZERO automatic buy/entry recommendations; values are diagnostics only.",
   "companies": [
     {
@@ -10,7 +10,7 @@
       "name": "Adobe",
       "sector": "software",
       "model": "owner_cash_proxy_equity_dcf",
-      "asOf": "2026-10-29",
+      "asOf": "2026-10-30",
       "lastFiscalYear": "2025-11-28",
       "latestInterimYTD": "2026-08-28",
       "evidence": {
@@ -173,7 +173,7 @@
       "name": "Chubb",
       "sector": "insurance",
       "model": "adjusted_book_and_normalized_core_roe_required",
-      "asOf": "2026-10-29",
+      "asOf": "2026-10-30",
       "lastFiscalYear": "2025-12-31",
       "latestInterimYTD": "2026-09-30",
       "evidence": {
@@ -242,7 +242,7 @@
       "name": "CME Group",
       "sector": "exchange",
       "model": "owner_cash_proxy_equity_dcf",
-      "asOf": "2026-10-29",
+      "asOf": "2026-10-30",
       "lastFiscalYear": "2025-12-31",
       "latestInterimYTD": "2026-09-30",
       "evidence": {
@@ -405,7 +405,7 @@
       "name": "Deere",
       "sector": "industrial",
       "model": "sum_of_industrial_finance_parts_required",
-      "asOf": "2026-10-29",
+      "asOf": "2026-10-30",
       "lastFiscalYear": "2025-11-02",
       "latestInterimYTD": "2026-08-02",
       "evidence": {
@@ -473,7 +473,7 @@
       "name": "Ferguson Enterprises",
       "sector": "distribution",
       "model": "owner_cash_proxy_equity_dcf",
-      "asOf": "2026-10-29",
+      "asOf": "2026-10-30",
       "lastFiscalYear": "2025-07-31",
       "latestInterimYTD": "2025-10-31",
       "evidence": {
@@ -550,7 +550,7 @@
       "name": "Alphabet",
       "sector": "digital_platform",
       "model": "owner_cash_proxy_equity_dcf",
-      "asOf": "2026-10-29",
+      "asOf": "2026-10-30",
       "lastFiscalYear": "2025-12-31",
       "latestInterimYTD": "2026-09-30",
       "evidence": {
@@ -717,9 +717,9 @@
       "name": "Mastercard",
       "sector": "payments",
       "model": "owner_cash_proxy_equity_dcf",
-      "asOf": "2026-10-29",
+      "asOf": "2026-10-30",
       "lastFiscalYear": "2025-12-31",
-      "latestInterimYTD": "2026-06-30",
+      "latestInterimYTD": "2026-09-30",
       "evidence": {
         "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001141391.json",
         "normalizedFactsAccession": "0001141391-26-000013",
@@ -881,7 +881,7 @@
       "name": "Microsoft",
       "sector": "software",
       "model": "owner_cash_proxy_equity_dcf",
-      "asOf": "2026-10-29",
+      "asOf": "2026-10-30",
       "lastFiscalYear": "2026-06-30",
       "latestInterimYTD": "2026-09-30",
       "evidence": {
@@ -1046,7 +1046,7 @@
       "name": "Visa",
       "sector": "payments",
       "model": "owner_cash_proxy_equity_dcf",
-      "asOf": "2026-10-29",
+      "asOf": "2026-10-30",
       "lastFiscalYear": "2025-09-30",
       "latestInterimYTD": "2026-03-31",
       "evidence": {

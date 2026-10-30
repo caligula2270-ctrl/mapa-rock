@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "engine": "SEC-annual-statement-normalizer-v1",
-  "sourceRetrievedAt": "2026-10-29T11:05:07.344058+00:00",
+  "sourceRetrievedAt": "2026-10-30T11:01:31.391699+00:00",
   "periodConvention": "10-K full fiscal periods: do NOT annualize quarters or combine incompatible fiscal periods",
   "financials": [
     {
@@ -5242,24 +5242,24 @@
       "interimYTD": {
         "type": "as_file_ytd_10q_not_annualized",
         "start": "2026-01-01",
-        "end": "2026-06-30",
-        "filed": "2026-07-30",
+        "end": "2026-09-30",
+        "filed": "2026-10-29",
         "metrics": {
-          "operatingCashFlow": 6772000000.0,
-          "capex": 445000000.0,
+          "operatingCashFlow": 11859000000.0,
+          "capex": 667000000.0,
           "revenue": null,
           "netIncome": null,
-          "freeCashFlowSimple": 6327000000.0
+          "freeCashFlowSimple": 11192000000.0
         },
         "sources": {
           "operatingCashFlow": {
-            "accn": "0001141391-26-000083",
-            "filed": "2026-07-30",
+            "accn": "0001141391-26-000124",
+            "filed": "2026-10-29",
             "unit": "USD"
           },
           "capex": {
-            "accn": "0001141391-26-000083",
-            "filed": "2026-07-30",
+            "accn": "0001141391-26-000124",
+            "filed": "2026-10-29",
             "unit": "USD"
           }
         }
