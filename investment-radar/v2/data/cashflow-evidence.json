@@ -2958,41 +2958,133 @@
       "sector": "payments",
       "fiscalAnnualBridges": [
         {
+          "fiscalYearEnd": "2026-09-30",
+          "sourceTags": {
+            "income_tax_expense": {
+              "start": "2025-10-01",
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
+              "form": "10-K"
+            },
+            "pretax_income": {
+              "start": "2025-10-01",
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2025-10-01",
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
+              "form": "10-K"
+            },
+            "repayments_long_term_debt": {
+              "start": "2025-10-01",
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
+              "form": "10-K"
+            },
+            "purchase_businesses_net_cash": {
+              "start": "2025-10-01",
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
+              "form": "10-K"
+            },
+            "ppe_accrued": {
+              "start": "2025-10-01",
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
+              "form": "10-K"
+            }
+          },
+          "reported": {
+            "revenue": 45903000000.0,
+            "EBIT": 28110000000.0,
+            "netIncome": 23504000000.0,
+            "cashFromOperations": 23728000000.0,
+            "capitalExpenditureCash": null,
+            "depreciationAndAmortization": null,
+            "interestExpense": null,
+            "taxExpense": 4589000000.0,
+            "pretaxIncome": 28093000000.0,
+            "reportedTaxRatioNotMarginal": 0.16335,
+            "changeOperatingWorkingCapitalUnverifiedSign": null,
+            "acquisitionCash": 705000000.0,
+            "unpaidPPE": 187000000.0,
+            "stockBasedCompensation": 928000000.0,
+            "debtProceedsLongTerm": 2995000000.0,
+            "debtRepaymentsLongTerm": 5565000000.0,
+            "otherDebtProceeds": null,
+            "otherDebtRepayments": null
+          },
+          "reconciliations": {
+            "cfoMinusPPECapex": null,
+            "cashAfterSBCProxy": null,
+            "netDebtIssuedPartial": null,
+            "fcfeCashPlusBorrowingProxy": null,
+            "fcffFromCFOAndReportedInterestTax": null,
+            "fcffEBITWorkingCapitalBridge": null,
+            "fcffCrossCheckGapPct": null
+          },
+          "issues": [
+            "CFO_OR_CAPEX_ABSENT",
+            "D_AND_A_MISSING",
+            "INTEREST_EXPENSE_MISSING",
+            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
+            "NET_BORROWING_CATEGORIES_UNRESOLVED"
+          ],
+          "fcffVerified": false,
+          "fcfeVerified": false
+        },
+        {
           "fiscalYearEnd": "2025-09-30",
           "sourceTags": {
             "income_tax_expense": {
               "start": "2024-10-01",
               "end": "2025-09-30",
-              "filed": "2025-11-06",
-              "accn": "0001403161-25-000089",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
               "form": "10-K"
             },
             "pretax_income": {
               "start": "2024-10-01",
               "end": "2025-09-30",
-              "filed": "2025-11-06",
-              "accn": "0001403161-25-000089",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2024-10-01",
+              "end": "2025-09-30",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
               "form": "10-K"
             },
             "repayments_long_term_debt": {
               "start": "2024-10-01",
               "end": "2025-09-30",
-              "filed": "2025-11-06",
-              "accn": "0001403161-25-000089",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
               "form": "10-K"
             },
             "purchase_businesses_net_cash": {
               "start": "2024-10-01",
               "end": "2025-09-30",
-              "filed": "2025-11-06",
-              "accn": "0001403161-25-000089",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
               "form": "10-K"
             },
             "ppe_accrued": {
               "start": "2024-10-01",
               "end": "2025-09-30",
-              "filed": "2025-11-06",
-              "accn": "0001403161-25-000089",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
               "form": "10-K"
             }
           },
@@ -3011,7 +3103,7 @@
             "acquisitionCash": 887000000.0,
             "unpaidPPE": 59000000.0,
             "stockBasedCompensation": 897000000.0,
-            "debtProceedsLongTerm": null,
+            "debtProceedsLongTerm": 3924000000.0,
             "debtRepaymentsLongTerm": 0.0,
             "otherDebtProceeds": null,
             "otherDebtRepayments": null
@@ -3041,36 +3133,43 @@
             "income_tax_expense": {
               "start": "2023-10-01",
               "end": "2024-09-30",
-              "filed": "2025-11-06",
-              "accn": "0001403161-25-000089",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
               "form": "10-K"
             },
             "pretax_income": {
               "start": "2023-10-01",
               "end": "2024-09-30",
-              "filed": "2025-11-06",
-              "accn": "0001403161-25-000089",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
+              "form": "10-K"
+            },
+            "proceeds_long_term_debt": {
+              "start": "2023-10-01",
+              "end": "2024-09-30",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
               "form": "10-K"
             },
             "repayments_long_term_debt": {
               "start": "2023-10-01",
               "end": "2024-09-30",
-              "filed": "2025-11-06",
-              "accn": "0001403161-25-000089",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
               "form": "10-K"
             },
             "purchase_businesses_net_cash": {
               "start": "2023-10-01",
               "end": "2024-09-30",
-              "filed": "2025-11-06",
-              "accn": "0001403161-25-000089",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
               "form": "10-K"
             },
             "ppe_accrued": {
               "start": "2023-10-01",
               "end": "2024-09-30",
-              "filed": "2025-11-06",
-              "accn": "0001403161-25-000089",
+              "filed": "2026-11-05",
+              "accn": "0001403161-26-000134",
               "form": "10-K"
             }
           },
@@ -3089,7 +3188,7 @@
             "acquisitionCash": 915000000.0,
             "unpaidPPE": 52000000.0,
             "stockBasedCompensation": 850000000.0,
-            "debtProceedsLongTerm": null,
+            "debtProceedsLongTerm": 0.0,
             "debtRepaymentsLongTerm": 0.0,
             "otherDebtProceeds": null,
             "otherDebtRepayments": null
@@ -3247,84 +3346,6 @@
             "stockBasedCompensation": 602000000.0,
             "debtProceedsLongTerm": null,
             "debtRepaymentsLongTerm": 1000000000.0,
-            "otherDebtProceeds": null,
-            "otherDebtRepayments": null
-          },
-          "reconciliations": {
-            "cfoMinusPPECapex": null,
-            "cashAfterSBCProxy": null,
-            "netDebtIssuedPartial": null,
-            "fcfeCashPlusBorrowingProxy": null,
-            "fcffFromCFOAndReportedInterestTax": null,
-            "fcffEBITWorkingCapitalBridge": null,
-            "fcffCrossCheckGapPct": null
-          },
-          "issues": [
-            "CFO_OR_CAPEX_ABSENT",
-            "D_AND_A_MISSING",
-            "INTEREST_EXPENSE_MISSING",
-            "OPERATING_WORKING_CAPITAL_DELTA_NOT_ISOLATED",
-            "NET_BORROWING_CATEGORIES_UNRESOLVED"
-          ],
-          "fcffVerified": false,
-          "fcfeVerified": false
-        },
-        {
-          "fiscalYearEnd": "2021-09-30",
-          "sourceTags": {
-            "income_tax_expense": {
-              "start": "2020-10-01",
-              "end": "2021-09-30",
-              "filed": "2023-11-15",
-              "accn": "0001403161-23-000099",
-              "form": "10-K"
-            },
-            "pretax_income": {
-              "start": "2020-10-01",
-              "end": "2021-09-30",
-              "filed": "2023-11-15",
-              "accn": "0001403161-23-000099",
-              "form": "10-K"
-            },
-            "repayments_long_term_debt": {
-              "start": "2020-10-01",
-              "end": "2021-09-30",
-              "filed": "2023-11-15",
-              "accn": "0001403161-23-000099",
-              "form": "10-K"
-            },
-            "purchase_businesses_net_cash": {
-              "start": "2020-10-01",
-              "end": "2021-09-30",
-              "filed": "2023-11-15",
-              "accn": "0001403161-23-000099",
-              "form": "10-K"
-            },
-            "ppe_accrued": {
-              "start": "2020-10-01",
-              "end": "2021-09-30",
-              "filed": "2023-11-15",
-              "accn": "0001403161-23-000099",
-              "form": "10-K"
-            }
-          },
-          "reported": {
-            "revenue": 24105000000.0,
-            "EBIT": 15804000000.0,
-            "netIncome": 12311000000.0,
-            "cashFromOperations": 15227000000.0,
-            "capitalExpenditureCash": null,
-            "depreciationAndAmortization": null,
-            "interestExpense": null,
-            "taxExpense": 3752000000.0,
-            "pretaxIncome": 16063000000.0,
-            "reportedTaxRatioNotMarginal": 0.23358,
-            "changeOperatingWorkingCapitalUnverifiedSign": null,
-            "acquisitionCash": 75000000.0,
-            "unpaidPPE": 41000000.0,
-            "stockBasedCompensation": 542000000.0,
-            "debtProceedsLongTerm": null,
-            "debtRepaymentsLongTerm": 3000000000.0,
             "otherDebtProceeds": null,
             "otherDebtRepayments": null
           },
@@ -4088,29 +4109,29 @@
             "label": "Amortization of Intangible Assets",
             "definition": "The aggregate expense charged against earnings to allocate the cost of intangible assets (nonphysical assets not used in production) in a systematic and rational manner to the periods expected to benefit from such assets. As a noncash expense, this element is added back to net in",
             "latest": {
-              "start": "2024-10-01",
-              "end": "2025-09-30",
-              "filed": "2025-11-06",
+              "start": "2025-10-01",
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
               "form": "10-K",
-              "accn": "0001403161-25-000089",
-              "val": 78000000
+              "accn": "0001403161-26-000134",
+              "val": 105000000
             },
             "otherRecent": [
               {
-                "start": "2023-10-01",
-                "end": "2024-09-30",
+                "start": "2024-10-01",
+                "end": "2025-09-30",
+                "filed": "2026-11-05",
+                "form": "10-K",
+                "accn": "0001403161-26-000134",
+                "val": 78000000
+              },
+              {
+                "start": "2024-10-01",
+                "end": "2025-09-30",
                 "filed": "2025-11-06",
                 "form": "10-K",
                 "accn": "0001403161-25-000089",
-                "val": 79000000
-              },
-              {
-                "start": "2023-10-01",
-                "end": "2024-09-30",
-                "filed": "2024-11-13",
-                "form": "10-K",
-                "accn": "0001403161-24-000058",
-                "val": 79000000
+                "val": 78000000
               }
             ]
           }
@@ -4152,32 +4173,64 @@
         "debt_proceeds": [
           {
             "taxonomy": "us-gaap",
-            "tag": "ProceedsFromIssuanceOfDebt",
-            "label": "Proceeds from Issuance of Debt",
-            "definition": "The cash inflow during the period from additional borrowings in aggregate debt. Includes proceeds from short-term and long-term debt.",
+            "tag": "ProceedsFromIssuanceOfLongTermDebt",
+            "label": "Proceeds from Issuance of Long-term Debt",
+            "definition": "The cash inflow from a debt initially having maturity due after one year or beyond the operating cycle, if longer.",
             "latest": {
               "start": "2025-10-01",
-              "end": "2026-03-31",
-              "filed": "2026-04-29",
-              "form": "10-Q",
-              "accn": "0001403161-26-000079",
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "form": "10-K",
+              "accn": "0001403161-26-000134",
               "val": 2995000000
             },
             "otherRecent": [
               {
                 "start": "2024-10-01",
                 "end": "2025-09-30",
-                "filed": "2025-11-06",
+                "filed": "2026-11-05",
                 "form": "10-K",
-                "accn": "0001403161-25-000089",
+                "accn": "0001403161-26-000134",
                 "val": 3924000000
               },
               {
-                "start": "2024-10-01",
-                "end": "2025-06-30",
-                "filed": "2025-07-30",
+                "start": "2023-10-01",
+                "end": "2024-09-30",
+                "filed": "2026-11-05",
+                "form": "10-K",
+                "accn": "0001403161-26-000134",
+                "val": 0
+              }
+            ]
+          },
+          {
+            "taxonomy": "us-gaap",
+            "tag": "ProceedsFromIssuanceOfDebt",
+            "label": "Proceeds from Issuance of Debt",
+            "definition": "The cash inflow during the period from additional borrowings in aggregate debt. Includes proceeds from short-term and long-term debt.",
+            "latest": {
+              "start": "2025-10-01",
+              "end": "2026-06-30",
+              "filed": "2026-07-29",
+              "form": "10-Q",
+              "accn": "0001403161-26-000104",
+              "val": 2995000000
+            },
+            "otherRecent": [
+              {
+                "start": "2025-10-01",
+                "end": "2026-03-31",
+                "filed": "2026-04-29",
                 "form": "10-Q",
-                "accn": "0001403161-25-000052",
+                "accn": "0001403161-26-000079",
+                "val": 2995000000
+              },
+              {
+                "start": "2024-10-01",
+                "end": "2025-09-30",
+                "filed": "2025-11-06",
+                "form": "10-K",
+                "accn": "0001403161-25-000089",
                 "val": 3924000000
               }
             ]
@@ -4191,28 +4244,28 @@
             "definition": "The cash outflow for debt initially having maturity due after one year or beyond the normal operating cycle, if longer.",
             "latest": {
               "start": "2025-10-01",
-              "end": "2026-03-31",
-              "filed": "2026-04-29",
-              "form": "10-Q",
-              "accn": "0001403161-26-000079",
-              "val": 4000000000
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "form": "10-K",
+              "accn": "0001403161-26-000134",
+              "val": 5565000000
             },
             "otherRecent": [
               {
                 "start": "2025-10-01",
-                "end": "2025-12-31",
-                "filed": "2026-01-30",
+                "end": "2026-06-30",
+                "filed": "2026-07-29",
                 "form": "10-Q",
-                "accn": "0001403161-26-000045",
-                "val": 4000000000
+                "accn": "0001403161-26-000104",
+                "val": 5565000000
               },
               {
-                "start": "2024-10-01",
-                "end": "2025-09-30",
-                "filed": "2025-11-06",
-                "form": "10-K",
-                "accn": "0001403161-25-000089",
-                "val": 0
+                "start": "2025-10-01",
+                "end": "2026-03-31",
+                "filed": "2026-04-29",
+                "form": "10-Q",
+                "accn": "0001403161-26-000079",
+                "val": 4000000000
               }
             ]
           }
@@ -4226,28 +4279,28 @@
             "definition": "Amount of current income tax expense (benefit) and deferred income tax expense (benefit) pertaining to continuing operations.",
             "latest": {
               "start": "2025-10-01",
-              "end": "2026-03-31",
-              "filed": "2026-04-29",
-              "form": "10-Q",
-              "accn": "0001403161-26-000079",
-              "val": 2026000000
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "form": "10-K",
+              "accn": "0001403161-26-000134",
+              "val": 4589000000
             },
             "otherRecent": [
               {
-                "start": "2026-01-01",
-                "end": "2026-03-31",
-                "filed": "2026-04-29",
+                "start": "2025-10-01",
+                "end": "2026-06-30",
+                "filed": "2026-07-29",
                 "form": "10-Q",
-                "accn": "0001403161-26-000079",
-                "val": 1153000000
+                "accn": "0001403161-26-000104",
+                "val": 3231000000
               },
               {
-                "start": "2025-10-01",
-                "end": "2025-12-31",
-                "filed": "2026-01-30",
+                "start": "2026-04-01",
+                "end": "2026-06-30",
+                "filed": "2026-07-29",
                 "form": "10-Q",
-                "accn": "0001403161-26-000045",
-                "val": 873000000
+                "accn": "0001403161-26-000104",
+                "val": 1205000000
               }
             ]
           },
@@ -4258,28 +4311,28 @@
             "definition": "The amount of cash paid during the current period to foreign, federal, state, and local authorities as taxes on income, net of any cash received during the current period as refunds for the overpayment of taxes.",
             "latest": {
               "start": "2025-10-01",
-              "end": "2026-03-31",
-              "filed": "2026-04-29",
-              "form": "10-Q",
-              "accn": "0001403161-26-000079",
-              "val": 3984000000
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "form": "10-K",
+              "accn": "0001403161-26-000134",
+              "val": 5684000000
             },
             "otherRecent": [
               {
                 "start": "2025-10-01",
-                "end": "2025-12-31",
-                "filed": "2026-01-30",
+                "end": "2026-06-30",
+                "filed": "2026-07-29",
                 "form": "10-Q",
-                "accn": "0001403161-26-000045",
-                "val": 1290000000
+                "accn": "0001403161-26-000104",
+                "val": 4887000000
               },
               {
-                "start": "2024-10-01",
-                "end": "2025-09-30",
-                "filed": "2025-11-06",
-                "form": "10-K",
-                "accn": "0001403161-25-000089",
-                "val": 4541000000
+                "start": "2025-10-01",
+                "end": "2026-03-31",
+                "filed": "2026-04-29",
+                "form": "10-Q",
+                "accn": "0001403161-26-000079",
+                "val": 3984000000
               }
             ]
           }
@@ -4292,28 +4345,28 @@
             "definition": "The increase (decrease) during the reporting period in amount due within one year (or one business cycle) from customers for the credit sale of goods and services.",
             "latest": {
               "start": "2025-10-01",
-              "end": "2026-03-31",
-              "filed": "2026-04-29",
-              "form": "10-Q",
-              "accn": "0001403161-26-000079",
-              "val": 237000000
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "form": "10-K",
+              "accn": "0001403161-26-000134",
+              "val": 587000000
             },
             "otherRecent": [
               {
                 "start": "2025-10-01",
-                "end": "2025-12-31",
-                "filed": "2026-01-30",
+                "end": "2026-06-30",
+                "filed": "2026-07-29",
                 "form": "10-Q",
-                "accn": "0001403161-26-000045",
-                "val": 109000000
+                "accn": "0001403161-26-000104",
+                "val": 368000000
               },
               {
-                "start": "2024-10-01",
-                "end": "2025-09-30",
-                "filed": "2025-11-06",
-                "form": "10-K",
-                "accn": "0001403161-25-000089",
-                "val": 542000000
+                "start": "2025-10-01",
+                "end": "2026-03-31",
+                "filed": "2026-04-29",
+                "form": "10-Q",
+                "accn": "0001403161-26-000079",
+                "val": 237000000
               }
             ]
           },
@@ -4324,28 +4377,28 @@
             "definition": "The increase (decrease) during the reporting period in the aggregate amount of liabilities incurred (and for which invoices have typically been received) and payable to vendors for goods and services received that are used in an entity's business.",
             "latest": {
               "start": "2025-10-01",
-              "end": "2026-03-31",
-              "filed": "2026-04-29",
-              "form": "10-Q",
-              "accn": "0001403161-26-000079",
-              "val": -25000000
+              "end": "2026-09-30",
+              "filed": "2026-11-05",
+              "form": "10-K",
+              "accn": "0001403161-26-000134",
+              "val": 1000000
             },
             "otherRecent": [
               {
                 "start": "2025-10-01",
-                "end": "2025-12-31",
-                "filed": "2026-01-30",
+                "end": "2026-06-30",
+                "filed": "2026-07-29",
                 "form": "10-Q",
-                "accn": "0001403161-26-000045",
-                "val": -114000000
+                "accn": "0001403161-26-000104",
+                "val": -28000000
               },
               {
-                "start": "2024-10-01",
-                "end": "2025-09-30",
-                "filed": "2025-11-06",
-                "form": "10-K",
-                "accn": "0001403161-25-000089",
-                "val": 67000000
+                "start": "2025-10-01",
+                "end": "2026-03-31",
+                "filed": "2026-04-29",
+                "form": "10-Q",
+                "accn": "0001403161-26-000079",
+                "val": -25000000
               }
             ]
           }

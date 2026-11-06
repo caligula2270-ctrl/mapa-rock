@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "engine": "SEC-annual-statement-normalizer-v1",
-  "sourceRetrievedAt": "2026-10-30T11:01:31.391699+00:00",
+  "sourceRetrievedAt": "2026-11-06T11:17:35.466039+00:00",
   "periodConvention": "10-K full fiscal periods: do NOT annualize quarters or combine incompatible fiscal periods",
   "financials": [
     {
@@ -6110,6 +6110,129 @@
       "sourceURL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001403161.json",
       "fiscalHistory": [
         {
+          "fiscalYearEnd": "2026-09-30",
+          "currency": "USD",
+          "filingPeriodsAreFiscalYears": true,
+          "incomeStatement": {
+            "revenue": 45903000000.0,
+            "operatingIncome": 28110000000.0,
+            "netIncome": 23504000000.0,
+            "operatingMargin": 0.61237828,
+            "revenueYoY": 0.147575
+          },
+          "cashFlow": {
+            "operatingCashFlow": 23728000000.0,
+            "propertyCapex": null,
+            "simpleFCF": null,
+            "stockCompensation": 928000000.0,
+            "ownerCashProxyAfterSBC": null,
+            "capexToRevenue": null,
+            "ownerProxyMargin": null
+          },
+          "balanceSheet": {
+            "assets": 94360000000.0,
+            "liabilities": 58249000000.0,
+            "equity": null,
+            "cash": 12938000000.0,
+            "reportedCurrentDebt": 2716000000.0,
+            "reportedLongTermDebt": 19355000000.0,
+            "reportedShortTermBorrowings": null,
+            "grossDebt": null,
+            "netDebt": null,
+            "netDebtCoverageComplete": false,
+            "assetsLessLiabilitiesLessEquityOverAssets": null
+          },
+          "shareCapital": {
+            "weightedDilutedShares": null,
+            "dilutionYoY": null,
+            "simpleFCFPerShare": null,
+            "ownerCashProxyPerShare": null,
+            "bookValuePerWeightedDilutedShare": null
+          },
+          "sourceIndex": {
+            "operating_cash_flow": {
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
+              "end": "2026-09-30",
+              "start": "2025-10-01",
+              "form": "10-K",
+              "unit": "USD"
+            },
+            "revenue_contract": {
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
+              "end": "2026-09-30",
+              "start": "2025-10-01",
+              "form": "10-K",
+              "unit": "USD"
+            },
+            "net_income": {
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
+              "end": "2026-09-30",
+              "start": "2025-10-01",
+              "form": "10-K",
+              "unit": "USD"
+            },
+            "operating_income": {
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
+              "end": "2026-09-30",
+              "start": "2025-10-01",
+              "form": "10-K",
+              "unit": "USD"
+            },
+            "stock_compensation": {
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
+              "end": "2026-09-30",
+              "start": "2025-10-01",
+              "form": "10-K",
+              "unit": "USD"
+            },
+            "assets": {
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
+              "end": "2026-09-30",
+              "start": null,
+              "form": "10-K",
+              "unit": "USD"
+            },
+            "liabilities": {
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
+              "end": "2026-09-30",
+              "start": null,
+              "form": "10-K",
+              "unit": "USD"
+            },
+            "cash": {
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
+              "end": "2026-09-30",
+              "start": null,
+              "form": "10-K",
+              "unit": "USD"
+            },
+            "current_debt": {
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
+              "end": "2026-09-30",
+              "start": null,
+              "form": "10-K",
+              "unit": "USD"
+            },
+            "long_term_debt": {
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
+              "end": "2026-09-30",
+              "start": null,
+              "form": "10-K",
+              "unit": "USD"
+            }
+          }
+        },
+        {
           "fiscalYearEnd": "2025-09-30",
           "currency": "USD",
           "filingPeriodsAreFiscalYears": true,
@@ -6151,80 +6274,80 @@
           },
           "sourceIndex": {
             "operating_cash_flow": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2025-09-30",
               "start": "2024-10-01",
               "form": "10-K",
               "unit": "USD"
             },
             "revenue_contract": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2025-09-30",
               "start": "2024-10-01",
               "form": "10-K",
               "unit": "USD"
             },
             "net_income": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2025-09-30",
               "start": "2024-10-01",
               "form": "10-K",
               "unit": "USD"
             },
             "operating_income": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2025-09-30",
               "start": "2024-10-01",
               "form": "10-K",
               "unit": "USD"
             },
             "stock_compensation": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2025-09-30",
               "start": "2024-10-01",
               "form": "10-K",
               "unit": "USD"
             },
             "assets": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2025-09-30",
               "start": null,
               "form": "10-K",
               "unit": "USD"
             },
             "liabilities": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2025-09-30",
               "start": null,
               "form": "10-K",
               "unit": "USD"
             },
             "cash": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2025-09-30",
               "start": null,
               "form": "10-K",
               "unit": "USD"
             },
             "current_debt": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2025-09-30",
               "start": null,
               "form": "10-K",
               "unit": "USD"
             },
             "long_term_debt": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2025-09-30",
               "start": null,
               "form": "10-K",
@@ -6274,40 +6397,40 @@
           },
           "sourceIndex": {
             "operating_cash_flow": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2024-09-30",
               "start": "2023-10-01",
               "form": "10-K",
               "unit": "USD"
             },
             "revenue_contract": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2024-09-30",
               "start": "2023-10-01",
               "form": "10-K",
               "unit": "USD"
             },
             "net_income": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2024-09-30",
               "start": "2023-10-01",
               "form": "10-K",
               "unit": "USD"
             },
             "operating_income": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2024-09-30",
               "start": "2023-10-01",
               "form": "10-K",
               "unit": "USD"
             },
             "stock_compensation": {
-              "accession": "0001403161-25-000089",
-              "filed": "2025-11-06",
+              "accession": "0001403161-26-000134",
+              "filed": "2026-11-05",
               "end": "2024-09-30",
               "start": "2023-10-01",
               "form": "10-K",
@@ -6487,7 +6610,7 @@
             "operatingIncome": 18813000000.0,
             "netIncome": 14957000000.0,
             "operatingMargin": 0.64186285,
-            "revenueYoY": 0.2159303
+            "revenueYoY": null
           },
           "cashFlow": {
             "operatingCashFlow": 18849000000.0,
@@ -6600,133 +6723,34 @@
               "unit": "USD"
             }
           }
-        },
-        {
-          "fiscalYearEnd": "2021-09-30",
-          "currency": "USD",
-          "filingPeriodsAreFiscalYears": true,
-          "incomeStatement": {
-            "revenue": 24105000000.0,
-            "operatingIncome": 15804000000.0,
-            "netIncome": 12311000000.0,
-            "operatingMargin": 0.65563161,
-            "revenueYoY": null
-          },
-          "cashFlow": {
-            "operatingCashFlow": 15227000000.0,
-            "propertyCapex": null,
-            "simpleFCF": null,
-            "stockCompensation": 542000000.0,
-            "ownerCashProxyAfterSBC": null,
-            "capexToRevenue": null,
-            "ownerProxyMargin": null
-          },
-          "balanceSheet": {
-            "assets": 82896000000.0,
-            "liabilities": 45307000000.0,
-            "equity": null,
-            "cash": 16487000000.0,
-            "reportedCurrentDebt": 999000000.0,
-            "reportedLongTermDebt": 19978000000.0,
-            "reportedShortTermBorrowings": null,
-            "grossDebt": null,
-            "netDebt": null,
-            "netDebtCoverageComplete": false,
-            "assetsLessLiabilitiesLessEquityOverAssets": null
-          },
-          "shareCapital": {
-            "weightedDilutedShares": null,
-            "dilutionYoY": null,
-            "simpleFCFPerShare": null,
-            "ownerCashProxyPerShare": null,
-            "bookValuePerWeightedDilutedShare": null
-          },
-          "sourceIndex": {
-            "operating_cash_flow": {
-              "accession": "0001403161-23-000099",
-              "filed": "2023-11-15",
-              "end": "2021-09-30",
-              "start": "2020-10-01",
-              "form": "10-K",
-              "unit": "USD"
-            },
-            "revenue_contract": {
-              "accession": "0001403161-23-000099",
-              "filed": "2023-11-15",
-              "end": "2021-09-30",
-              "start": "2020-10-01",
-              "form": "10-K",
-              "unit": "USD"
-            },
-            "net_income": {
-              "accession": "0001403161-23-000099",
-              "filed": "2023-11-15",
-              "end": "2021-09-30",
-              "start": "2020-10-01",
-              "form": "10-K",
-              "unit": "USD"
-            },
-            "operating_income": {
-              "accession": "0001403161-23-000099",
-              "filed": "2023-11-15",
-              "end": "2021-09-30",
-              "start": "2020-10-01",
-              "form": "10-K",
-              "unit": "USD"
-            },
-            "stock_compensation": {
-              "accession": "0001403161-23-000099",
-              "filed": "2023-11-15",
-              "end": "2021-09-30",
-              "start": "2020-10-01",
-              "form": "10-K",
-              "unit": "USD"
-            },
-            "assets": {
-              "accession": "0001403161-22-000081",
-              "filed": "2022-11-16",
-              "end": "2021-09-30",
-              "start": null,
-              "form": "10-K",
-              "unit": "USD"
-            },
-            "liabilities": {
-              "accession": "0001403161-22-000081",
-              "filed": "2022-11-16",
-              "end": "2021-09-30",
-              "start": null,
-              "form": "10-K",
-              "unit": "USD"
-            },
-            "cash": {
-              "accession": "0001403161-22-000081",
-              "filed": "2022-11-16",
-              "end": "2021-09-30",
-              "start": null,
-              "form": "10-K",
-              "unit": "USD"
-            },
-            "current_debt": {
-              "accession": "0001403161-22-000081",
-              "filed": "2022-11-16",
-              "end": "2021-09-30",
-              "start": null,
-              "form": "10-K",
-              "unit": "USD"
-            },
-            "long_term_debt": {
-              "accession": "0001403161-22-000081",
-              "filed": "2022-11-16",
-              "end": "2021-09-30",
-              "start": null,
-              "form": "10-K",
-              "unit": "USD"
-            }
-          }
         }
       ],
       "issues": [
         {
+          "yearEnd": "2026-09-30",
+          "code": "MISSING_FCF_SOURCE",
+          "severity": "block",
+          "detail": "CFO or PPE capex absent; simple FCF not computed"
+        },
+        {
+          "yearEnd": "2026-09-30",
+          "code": "MISSING_OWNER_CASH_PROXY",
+          "severity": "block",
+          "detail": "SBC, CFO or PPE capex absent"
+        },
+        {
+          "yearEnd": "2026-09-30",
+          "code": "DEBT_TAGS_INCOMPLETE",
+          "severity": "review",
+          "detail": "One or more debt categories have no SEC tag; net debt cannot be asserted"
+        },
+        {
+          "yearEnd": "2026-09-30",
+          "code": "DILUTED_SHARES_MISSING",
+          "severity": "block",
+          "detail": "Weighted annual diluted shares unavailable"
+        },
+        {
           "yearEnd": "2025-09-30",
           "code": "MISSING_FCF_SOURCE",
           "severity": "block",
@@ -6818,65 +6842,12 @@
         },
         {
           "yearEnd": "2022-09-30",
-          "code": "DILUTED_SHARES_MISSING",
-          "severity": "block",
-          "detail": "Weighted annual diluted shares unavailable"
-        },
-        {
-          "yearEnd": "2021-09-30",
-          "code": "MISSING_FCF_SOURCE",
-          "severity": "block",
-          "detail": "CFO or PPE capex absent; simple FCF not computed"
-        },
-        {
-          "yearEnd": "2021-09-30",
-          "code": "MISSING_OWNER_CASH_PROXY",
-          "severity": "block",
-          "detail": "SBC, CFO or PPE capex absent"
-        },
-        {
-          "yearEnd": "2021-09-30",
-          "code": "DEBT_TAGS_INCOMPLETE",
-          "severity": "review",
-          "detail": "One or more debt categories have no SEC tag; net debt cannot be asserted"
-        },
-        {
-          "yearEnd": "2021-09-30",
           "code": "DILUTED_SHARES_MISSING",
           "severity": "block",
           "detail": "Weighted annual diluted shares unavailable"
         }
       ],
-      "interimYTD": {
-        "type": "as_file_ytd_10q_not_annualized",
-        "start": "2025-10-01",
-        "end": "2026-03-31",
-        "filed": "2026-04-29",
-        "metrics": {
-          "operatingCashFlow": 9788000000.0,
-          "capex": null,
-          "revenue": 22131000000.0,
-          "netIncome": 11874000000.0,
-          "freeCashFlowSimple": null
-        },
-        "sources": {
-          "operatingCashFlow": {
-            "accn": "0001403161-26-000079",
-            "filed": "2026-04-29",
-            "unit": "USD"
-          },
-          "revenue": {
-            "accn": "0001403161-26-000079",
-            "filed": "2026-04-29",
-            "unit": "USD"
-          },
-          "netIncome": {
-            "accn": "0001403161-26-000079",
-            "filed": "2026-04-29",
-            "unit": "USD"
-          }
-        }
-      },
+      "interimYTD": null,
       "coverage": {
         "annualPeriods": 5,
         "ownerCashProxy3FY": false,
