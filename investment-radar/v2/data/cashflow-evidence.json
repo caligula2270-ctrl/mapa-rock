@@ -5964,13 +5964,21 @@
             "definition": "The aggregate expense recognized in the current period that allocates the cost of tangible assets, intangible assets, or depleting assets to periods that benefit from use of the assets.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-08-10",
+              "end": "2026-09-30",
+              "filed": "2026-11-09",
               "form": "10-Q",
-              "accn": "0002011641-26-000040",
-              "val": 196000000
+              "accn": "0002011641-26-000044",
+              "val": 312000000
             },
             "otherRecent": [
+              {
+                "start": "2026-01-01",
+                "end": "2026-06-30",
+                "filed": "2026-08-10",
+                "form": "10-Q",
+                "accn": "0002011641-26-000040",
+                "val": 196000000
+              },
               {
                 "start": "2026-01-01",
                 "end": "2026-03-31",
@@ -5978,14 +5986,6 @@
                 "form": "10-Q",
                 "accn": "0002011641-26-000030",
                 "val": 97000000
-              },
-              {
-                "start": "2025-08-01",
-                "end": "2025-10-31",
-                "filed": "2025-12-09",
-                "form": "10-Q",
-                "accn": "0002011641-25-000059",
-                "val": 94000000
               }
             ]
           },
@@ -6063,13 +6063,21 @@
             "definition": "The cash inflow during the period from additional borrowings in aggregate debt. Includes proceeds from short-term and long-term debt.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-08-10",
+              "end": "2026-09-30",
+              "filed": "2026-11-09",
               "form": "10-Q",
-              "accn": "0002011641-26-000040",
-              "val": 1475000000
+              "accn": "0002011641-26-000044",
+              "val": 4599000000
             },
             "otherRecent": [
+              {
+                "start": "2026-01-01",
+                "end": "2026-06-30",
+                "filed": "2026-08-10",
+                "form": "10-Q",
+                "accn": "0002011641-26-000040",
+                "val": 1475000000
+              },
               {
                 "start": "2026-01-01",
                 "end": "2026-03-31",
@@ -6077,14 +6085,6 @@
                 "form": "10-Q",
                 "accn": "0002011641-26-000030",
                 "val": 0
-              },
-              {
-                "start": "2025-08-01",
-                "end": "2025-10-31",
-                "filed": "2025-12-09",
-                "form": "10-Q",
-                "accn": "0002011641-25-000059",
-                "val": 1447000000
               }
             ]
           }
@@ -6097,13 +6097,21 @@
             "definition": "The cash outflow during the period from the repayment of aggregate short-term and long-term debt. Excludes payment of capital lease obligations.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-08-10",
+              "end": "2026-09-30",
+              "filed": "2026-11-09",
               "form": "10-Q",
-              "accn": "0002011641-26-000040",
-              "val": 700000000
+              "accn": "0002011641-26-000044",
+              "val": 2555000000
             },
             "otherRecent": [
+              {
+                "start": "2026-01-01",
+                "end": "2026-06-30",
+                "filed": "2026-08-10",
+                "form": "10-Q",
+                "accn": "0002011641-26-000040",
+                "val": 700000000
+              },
               {
                 "start": "2026-01-01",
                 "end": "2026-03-31",
@@ -6111,14 +6119,6 @@
                 "form": "10-Q",
                 "accn": "0002011641-26-000030",
                 "val": 0
-              },
-              {
-                "start": "2025-08-01",
-                "end": "2025-10-31",
-                "filed": "2025-12-09",
-                "form": "10-Q",
-                "accn": "0002011641-25-000059",
-                "val": 1475000000
               }
             ]
           }
@@ -6131,28 +6131,28 @@
             "definition": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-08-10",
+              "end": "2026-09-30",
+              "filed": "2026-11-09",
               "form": "10-Q",
-              "accn": "0002011641-26-000040",
+              "accn": "0002011641-26-000044",
               "val": 194400000
             },
             "otherRecent": [
               {
-                "start": "2026-04-01",
+                "start": "2026-07-01",
+                "end": "2026-09-30",
+                "filed": "2026-11-09",
+                "form": "10-Q",
+                "accn": "0002011641-26-000044",
+                "val": 193900000
+              },
+              {
+                "start": "2026-01-01",
                 "end": "2026-06-30",
                 "filed": "2026-08-10",
                 "form": "10-Q",
                 "accn": "0002011641-26-000040",
-                "val": 194000000
-              },
-              {
-                "start": "2026-01-01",
-                "end": "2026-03-31",
-                "filed": "2026-05-05",
-                "form": "10-Q",
-                "accn": "0002011641-26-000030",
-                "val": 194800000
+                "val": 194400000
               }
             ]
           }
@@ -6165,28 +6165,28 @@
             "definition": "Amount of current income tax expense (benefit) and deferred income tax expense (benefit) pertaining to continuing operations.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-08-10",
+              "end": "2026-09-30",
+              "filed": "2026-11-09",
               "form": "10-Q",
-              "accn": "0002011641-26-000040",
-              "val": 326000000
+              "accn": "0002011641-26-000044",
+              "val": 533000000
             },
             "otherRecent": [
               {
-                "start": "2026-04-01",
+                "start": "2026-07-01",
+                "end": "2026-09-30",
+                "filed": "2026-11-09",
+                "form": "10-Q",
+                "accn": "0002011641-26-000044",
+                "val": 207000000
+              },
+              {
+                "start": "2026-01-01",
                 "end": "2026-06-30",
                 "filed": "2026-08-10",
                 "form": "10-Q",
                 "accn": "0002011641-26-000040",
-                "val": 180000000
-              },
-              {
-                "start": "2026-01-01",
-                "end": "2026-03-31",
-                "filed": "2026-05-05",
-                "form": "10-Q",
-                "accn": "0002011641-26-000030",
-                "val": 146000000
+                "val": 326000000
               }
             ]
           },
@@ -6197,13 +6197,21 @@
             "definition": "The amount of cash paid during the current period to foreign, federal, state, and local authorities as taxes on income, net of any cash received during the current period as refunds for the overpayment of taxes.",
             "latest": {
               "start": "2026-01-01",
-              "end": "2026-06-30",
-              "filed": "2026-08-10",
+              "end": "2026-09-30",
+              "filed": "2026-11-09",
               "form": "10-Q",
-              "accn": "0002011641-26-000040",
-              "val": 421000000
+              "accn": "0002011641-26-000044",
+              "val": 598000000
             },
             "otherRecent": [
+              {
+                "start": "2026-01-01",
+                "end": "2026-06-30",
+                "filed": "2026-08-10",
+                "form": "10-Q",
+                "accn": "0002011641-26-000040",
+                "val": 421000000
+              },
               {
                 "start": "2026-01-01",
                 "end": "2026-03-31",
@@ -6211,14 +6219,6 @@
                 "form": "10-Q",
                 "accn": "0002011641-26-000030",
                 "val": 78000000
-              },
-              {
-                "start": "2025-08-01",
-                "end": "2025-10-31",
-                "filed": "2025-12-09",
-                "form": "10-Q",
-                "accn": "0002011641-25-000059",
-                "val": 9000000
               }
             ]
           }
