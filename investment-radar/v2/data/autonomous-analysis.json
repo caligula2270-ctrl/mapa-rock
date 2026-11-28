@@ -2,7 +2,7 @@
   "schema": 1,
   "model": "research-analyst-evidence-gated-v1",
   "asOf": "2026-11-28",
-  "sourceRetrievedAt": "2026-11-28T16:59:17.323494+00:00",
+  "sourceRetrievedAt": "2026-11-28T17:11:43.084373+00:00",
   "policy": "ZERO automatic buy/entry recommendations; values are diagnostics only.",
   "companies": [
     {

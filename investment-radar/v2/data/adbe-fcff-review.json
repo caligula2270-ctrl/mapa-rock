@@ -1,0 +1,563 @@
+{
+  "schema": 1,
+  "ticker": "ADBE",
+  "asOf": "2026-11-28",
+  "sourceRetrievedAt": "2026-11-28T17:11:43.084373+00:00",
+  "financialPeriod": "2026-08-28",
+  "status": "research_model_current",
+  "blockingIssues": [],
+  "sources": {
+    "annual": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+    "interim": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+    "guidance": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+  },
+  "ttmMillions": {
+    "revenue": 25970,
+    "ebit": 9271,
+    "ni": 7284,
+    "cfo": 10806,
+    "capex": 214,
+    "sbc": 2071,
+    "da": 766,
+    "interestPaid": 247,
+    "borrow": 493,
+    "repay": 250,
+    "acquisitions": 1560,
+    "workingCapitalCashEffect": 467,
+    "reportedFCFE": 10835,
+    "economicFCFEAfterSBCAndAcquisitions": 7204,
+    "historicalFCFFCashBridgeBeforeOtherNonoperatingAdjustments": 8712.425
+  },
+  "netDebtReportedMillions": 724,
+  "minimumCashAssumptionMillions": 519.4,
+  "netDebtForDCFMillions": 1243.3999999999996,
+  "sharesMillions": 395,
+  "checks": {
+    "cashFlowTieouts": {
+      "fy": 0,
+      "ytd": 0,
+      "prior": 0
+    },
+    "balanceSheetTieout": 0,
+    "xbrlComparisons": [
+      {
+        "period": "2025-11-28",
+        "field": "cfo",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000003"
+      },
+      {
+        "period": "2025-11-28",
+        "field": "capex",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000003"
+      },
+      {
+        "period": "2025-11-28",
+        "field": "sbc",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000003"
+      },
+      {
+        "period": "2025-11-28",
+        "field": "ebit",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000003"
+      },
+      {
+        "period": "2025-11-28",
+        "field": "ni",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000003"
+      },
+      {
+        "period": "2026-08-28",
+        "field": "cfo",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000156"
+      },
+      {
+        "period": "2026-08-28",
+        "field": "capex",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000156"
+      },
+      {
+        "period": "2026-08-28",
+        "field": "sbc",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000156"
+      },
+      {
+        "period": "2026-08-28",
+        "field": "ebit",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000156"
+      },
+      {
+        "period": "2026-08-28",
+        "field": "ni",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000156"
+      },
+      {
+        "period": "2025-08-29",
+        "field": "cfo",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000156"
+      },
+      {
+        "period": "2025-08-29",
+        "field": "capex",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000156"
+      },
+      {
+        "period": "2025-08-29",
+        "field": "sbc",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000156"
+      },
+      {
+        "period": "2025-08-29",
+        "field": "ebit",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000156"
+      },
+      {
+        "period": "2025-08-29",
+        "field": "ni",
+        "differenceMillions": 0.0,
+        "accn": "0000796343-26-000156"
+      }
+    ]
+  },
+  "guidance": {
+    "published": "2026-09-10",
+    "revenueLow": 26576,
+    "revenueHigh": 26626,
+    "arrGrowth": 0.102,
+    "gaapTax": 0.225
+  },
+  "scenarios": {
+    "downside": {
+      "assumptions": {
+        "growth": 0.05,
+        "margin": 0.3,
+        "incrementalROIC": 0.2,
+        "WACC": 0.12,
+        "terminalGrowth": 0.02,
+        "tax": 0.225,
+        "terminalROIC": 0.2
+      },
+      "enterpriseValueMillions": 59943.41,
+      "equityValueMillions": 58700.01,
+      "perShareUSD": 148.61,
+      "terminalValueShare": 0.4447,
+      "projectedCashflows": [
+        {
+          "year": 1,
+          "revenue": 27268.5,
+          "growth": 0.05,
+          "ebitMargin": 0.3,
+          "nopat": 6339.926,
+          "netReinvestment": 1584.982,
+          "fcff": 4754.945,
+          "discountedFCFF": 4245.486
+        },
+        {
+          "year": 2,
+          "revenue": 28631.925,
+          "growth": 0.05,
+          "ebitMargin": 0.3,
+          "nopat": 6656.923,
+          "netReinvestment": 1664.231,
+          "fcff": 4992.692,
+          "discountedFCFF": 3980.143
+        },
+        {
+          "year": 3,
+          "revenue": 30063.521,
+          "growth": 0.05,
+          "ebitMargin": 0.3,
+          "nopat": 6989.769,
+          "netReinvestment": 1747.442,
+          "fcff": 5242.327,
+          "discountedFCFF": 3731.384
+        },
+        {
+          "year": 4,
+          "revenue": 31566.697,
+          "growth": 0.05,
+          "ebitMargin": 0.3,
+          "nopat": 7339.257,
+          "netReinvestment": 1834.814,
+          "fcff": 5504.443,
+          "discountedFCFF": 3498.173
+        },
+        {
+          "year": 5,
+          "revenue": 33145.032,
+          "growth": 0.05,
+          "ebitMargin": 0.3,
+          "nopat": 7706.22,
+          "netReinvestment": 1926.555,
+          "fcff": 5779.665,
+          "discountedFCFF": 3279.537
+        },
+        {
+          "year": 6,
+          "revenue": 34603.414,
+          "growth": 0.044000000000000004,
+          "ebitMargin": 0.3,
+          "nopat": 8045.294,
+          "netReinvestment": 1769.965,
+          "fcff": 6275.329,
+          "discountedFCFF": 3179.277
+        },
+        {
+          "year": 7,
+          "revenue": 35918.343,
+          "growth": 0.038000000000000006,
+          "ebitMargin": 0.3,
+          "nopat": 8351.015,
+          "netReinvestment": 1586.693,
+          "fcff": 6764.322,
+          "discountedFCFF": 3059.836
+        },
+        {
+          "year": 8,
+          "revenue": 37067.73,
+          "growth": 0.032,
+          "ebitMargin": 0.3,
+          "nopat": 8618.247,
+          "netReinvestment": 1378.92,
+          "fcff": 7239.328,
+          "discountedFCFF": 2923.843
+        },
+        {
+          "year": 9,
+          "revenue": 38031.491,
+          "growth": 0.026000000000000002,
+          "ebitMargin": 0.3,
+          "nopat": 8842.322,
+          "netReinvestment": 1149.502,
+          "fcff": 7692.82,
+          "discountedFCFF": 2774.108
+        },
+        {
+          "year": 10,
+          "revenue": 38792.121,
+          "growth": 0.019999999999999997,
+          "ebitMargin": 0.3,
+          "nopat": 9019.168,
+          "netReinvestment": 901.917,
+          "fcff": 8117.251,
+          "discountedFCFF": 2613.538
+        }
+      ]
+    },
+    "central": {
+      "assumptions": {
+        "growth": 0.08,
+        "margin": 0.35,
+        "incrementalROIC": 0.3,
+        "WACC": 0.1,
+        "terminalGrowth": 0.025,
+        "tax": 0.225,
+        "terminalROIC": 0.2
+      },
+      "enterpriseValueMillions": 107327.064,
+      "equityValueMillions": 106083.664,
+      "perShareUSD": 268.57,
+      "terminalValueShare": 0.5591,
+      "projectedCashflows": [
+        {
+          "year": 1,
+          "revenue": 28047.6,
+          "growth": 0.08,
+          "ebitMargin": 0.35,
+          "nopat": 7607.912,
+          "netReinvestment": 2028.776,
+          "fcff": 5579.135,
+          "discountedFCFF": 5071.941
+        },
+        {
+          "year": 2,
+          "revenue": 30291.408,
+          "growth": 0.08,
+          "ebitMargin": 0.35,
+          "nopat": 8216.544,
+          "netReinvestment": 2191.079,
+          "fcff": 6025.466,
+          "discountedFCFF": 4979.724
+        },
+        {
+          "year": 3,
+          "revenue": 32714.721,
+          "growth": 0.08,
+          "ebitMargin": 0.35,
+          "nopat": 8873.868,
+          "netReinvestment": 2366.365,
+          "fcff": 6507.503,
+          "discountedFCFF": 4889.183
+        },
+        {
+          "year": 4,
+          "revenue": 35331.898,
+          "growth": 0.08,
+          "ebitMargin": 0.35,
+          "nopat": 9583.777,
+          "netReinvestment": 2555.674,
+          "fcff": 7028.103,
+          "discountedFCFF": 4800.289
+        },
+        {
+          "year": 5,
+          "revenue": 38158.45,
+          "growth": 0.08,
+          "ebitMargin": 0.35,
+          "nopat": 10350.48,
+          "netReinvestment": 2760.128,
+          "fcff": 7590.352,
+          "discountedFCFF": 4713.011
+        },
+        {
+          "year": 6,
+          "revenue": 40791.383,
+          "growth": 0.069,
+          "ebitMargin": 0.35,
+          "nopat": 11064.663,
+          "netReinvestment": 2726.649,
+          "fcff": 8338.014,
+          "discountedFCFF": 4706.591
+        },
+        {
+          "year": 7,
+          "revenue": 43157.283,
+          "growth": 0.058,
+          "ebitMargin": 0.35,
+          "nopat": 11706.413,
+          "netReinvestment": 2611.431,
+          "fcff": 9094.983,
+          "discountedFCFF": 4667.164
+        },
+        {
+          "year": 8,
+          "revenue": 45185.676,
+          "growth": 0.047,
+          "ebitMargin": 0.35,
+          "nopat": 12256.615,
+          "netReinvestment": 2400.254,
+          "fcff": 9856.361,
+          "discountedFCFF": 4598.065
+        },
+        {
+          "year": 9,
+          "revenue": 46812.36,
+          "growth": 0.036000000000000004,
+          "ebitMargin": 0.35,
+          "nopat": 12697.853,
+          "netReinvestment": 2077.83,
+          "fcff": 10620.022,
+          "discountedFCFF": 4503.926
+        },
+        {
+          "year": 10,
+          "revenue": 47982.669,
+          "growth": 0.024999999999999994,
+          "ebitMargin": 0.35,
+          "nopat": 13015.299,
+          "netReinvestment": 1626.912,
+          "fcff": 11388.387,
+          "discountedFCFF": 4390.716
+        }
+      ]
+    },
+    "upside": {
+      "assumptions": {
+        "growth": 0.105,
+        "margin": 0.38,
+        "incrementalROIC": 0.4,
+        "WACC": 0.09,
+        "terminalGrowth": 0.03,
+        "tax": 0.225,
+        "terminalROIC": 0.2
+      },
+      "enterpriseValueMillions": 163876.256,
+      "equityValueMillions": 162632.856,
+      "perShareUSD": 411.73,
+      "terminalValueShare": 0.6336,
+      "projectedCashflows": [
+        {
+          "year": 1,
+          "revenue": 28696.85,
+          "growth": 0.105,
+          "ebitMargin": 0.38,
+          "nopat": 8451.222,
+          "netReinvestment": 2218.446,
+          "fcff": 6232.776,
+          "discountedFCFF": 5718.144
+        },
+        {
+          "year": 2,
+          "revenue": 31710.019,
+          "growth": 0.105,
+          "ebitMargin": 0.38,
+          "nopat": 9338.601,
+          "netReinvestment": 2451.383,
+          "fcff": 6887.218,
+          "discountedFCFF": 5796.834
+        },
+        {
+          "year": 3,
+          "revenue": 35039.571,
+          "growth": 0.105,
+          "ebitMargin": 0.38,
+          "nopat": 10319.154,
+          "netReinvestment": 2708.778,
+          "fcff": 7610.376,
+          "discountedFCFF": 5876.607
+        },
+        {
+          "year": 4,
+          "revenue": 38718.726,
+          "growth": 0.105,
+          "ebitMargin": 0.38,
+          "nopat": 11402.665,
+          "netReinvestment": 2993.2,
+          "fcff": 8409.465,
+          "discountedFCFF": 5957.477
+        },
+        {
+          "year": 5,
+          "revenue": 42784.193,
+          "growth": 0.105,
+          "ebitMargin": 0.38,
+          "nopat": 12599.945,
+          "netReinvestment": 3307.485,
+          "fcff": 9292.459,
+          "discountedFCFF": 6039.461
+        },
+        {
+          "year": 6,
+          "revenue": 46634.77,
+          "growth": 0.09,
+          "ebitMargin": 0.38,
+          "nopat": 13733.94,
+          "netReinvestment": 3433.485,
+          "fcff": 10300.455,
+          "discountedFCFF": 6141.825
+        },
+        {
+          "year": 7,
+          "revenue": 50132.378,
+          "growth": 0.075,
+          "ebitMargin": 0.38,
+          "nopat": 14763.985,
+          "netReinvestment": 3460.309,
+          "fcff": 11303.676,
+          "discountedFCFF": 6183.498
+        },
+        {
+          "year": 8,
+          "revenue": 53140.32,
+          "growth": 0.06,
+          "ebitMargin": 0.38,
+          "nopat": 15649.824,
+          "netReinvestment": 3353.534,
+          "fcff": 12296.291,
+          "discountedFCFF": 6171.094
+        },
+        {
+          "year": 9,
+          "revenue": 55531.635,
+          "growth": 0.045,
+          "ebitMargin": 0.38,
+          "nopat": 16354.066,
+          "netReinvestment": 3066.387,
+          "fcff": 13287.679,
+          "discountedFCFF": 6118.017
+        },
+        {
+          "year": 10,
+          "revenue": 57197.584,
+          "growth": 0.03,
+          "ebitMargin": 0.38,
+          "nopat": 16844.688,
+          "netReinvestment": 2526.703,
+          "fcff": 14317.985,
+          "discountedFCFF": 6048.072
+        }
+      ]
+    }
+  },
+  "sensitivity": {
+    "terminalGrowth": [
+      0.015,
+      0.02,
+      0.025,
+      0.03,
+      0.035
+    ],
+    "rows": [
+      {
+        "wacc": 0.08,
+        "values": [
+          344.65,
+          360.05,
+          378.14,
+          399.75,
+          426.02
+        ]
+      },
+      {
+        "wacc": 0.09,
+        "values": [
+          293.13,
+          303.22,
+          314.78,
+          328.18,
+          343.92
+        ]
+      },
+      {
+        "wacc": 0.1,
+        "values": [
+          254.02,
+          260.87,
+          268.57,
+          277.3,
+          287.29
+        ]
+      },
+      {
+        "wacc": 0.11,
+        "values": [
+          223.38,
+          228.16,
+          233.44,
+          239.33,
+          245.94
+        ]
+      },
+      {
+        "wacc": 0.12,
+        "values": [
+          198.79,
+          202.18,
+          205.89,
+          209.96,
+          214.46
+        ]
+      }
+    ]
+  },
+  "reviewThresholdUSD": 188.0,
+  "marginOfSafetyAssumption": 0.3,
+  "decisionReady": false,
+  "limitations": [
+    "CFO line-item sums checked before TTM construction. Operating leases treated as operating costs; debt excludes operating lease liabilities. SBC remains in GAAP EBIT; no add-back in forecast. Quarterly diluted average is conservative denominator versus date-specific count, not fully diluted current outstanding. Semrush acquisition is historical cash outflow; forecast reinvestment includes growth funded by organic or acquired assets, not an additional arbitrary acquisition deduction. No forecast of buybacks. WACC and ROIC are analyst scenarios, not company guidance or observed market estimates.",
+    "FCFE is a historical reported cash measure; cash flows include non-operating items. Forecast is FCFF from GAAP operating margin, normalized taxes and incremental ROIC; reinvestment g/ROIC is an assumption, not measured historical ROIC. Scenario WACC is not a calibrated market WACC. When a later filing appears, the threshold is disabled until documentary bridge is refreshed. No trading or purchase approval."
+  ]
+}
