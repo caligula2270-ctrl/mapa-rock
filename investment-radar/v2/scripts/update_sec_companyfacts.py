@@ -34,6 +34,8 @@ TAGS={
  "shares_outstanding":("dei","EntityCommonStockSharesOutstanding","shares"),
  "diluted_weighted_shares":("us-gaap","WeightedAverageNumberOfDilutedSharesOutstanding","shares"),
  "cash":("us-gaap","CashAndCashEquivalentsAtCarryingValue","USD"),
+ "short_term_investments":("us-gaap","ShortTermInvestments","USD"),
+ "marketable_securities_current":("us-gaap","MarketableSecuritiesCurrent","USD"),
  "short_term_debt":("us-gaap","ShortTermBorrowings","USD"),
  "long_term_debt":("us-gaap","LongTermDebtNoncurrent","USD"),
  "current_debt":("us-gaap","LongTermDebtCurrent","USD"),
