@@ -167,12 +167,38 @@ async function loadSectorModels(){
   }).join('');
  }catch(e){$('sectorStatus').textContent='Información sectorial pendiente: '+e.message}
 }
+async function loadAdobeReviewed(){
+ const out=$('adbeStatus'),quote=$('adbeQuote');
+ try{
+  const res=await fetch('./data/adbe-fcff-review.json?'+Date.now(),{cache:'no-store'});
+  if(!res.ok)throw Error('HTTP '+res.status);
+  const d=await res.json();
+  if(d.ticker!=='ADBE'||!d.scenarios||!d.checks)throw Error('Formato de valoración incompatible');
+  const srcDate=Date.parse(d.sourceRetrievedAt||''),fyDate=Date.parse(d.financialPeriod||'');
+  const fresh=Number.isFinite(srcDate)&&Date.now()-srcDate>=-3600000&&Date.now()-srcDate<=7*86400000&&Number.isFinite(fyDate)&&Date.now()-fyDate<=125*86400000;
+  const usable=d.status==='research_model_current'&&fresh&&d.blockingIssues?.length===0&&typeof d.reviewThresholdUSD==='number'&&d.reviewThresholdUSD>0;
+  const fmt=x=>typeof x==='number'&&Number.isFinite(x)?num(x)+' USD':'—';
+  out.textContent=(usable?'Modelo de investigación con conciliaciones documentadas.':'Revisión documental requerida; umbral desactivado.')+' Cierre de datos: '+d.financialPeriod+' · actualización SEC: '+String(d.sourceRetrievedAt||'—').slice(0,10)+(d.blockingIssues?.length?' · '+d.blockingIssues.join(', '):'');
+  const rows=Object.entries(d.scenarios).map(([k,v])=>'<tr><td>'+esc({downside:'Bajista',central:'Central',upside:'Alcista'}[k]||k)+'</td><td>'+fmt(v.perShareUSD)+'</td><td>'+num(100*v.assumptions.growth)+'%</td><td>'+num(100*v.assumptions.WACC)+'%</td><td>'+num(100*v.assumptions.incrementalROIC)+'%</td><td>'+num(100*v.terminalValueShare)+'%</td></tr>').join('');
+  const sources=Object.entries(d.sources||{}).filter(([k,v])=>typeof v==='string'&&v.startsWith('https://www.sec.gov/')).map(([k,v])=>'<a href="'+esc(v)+'" target="_blank" rel="noopener">'+esc({annual:'10-K',interim:'10-Q',guidance:'Guidance 8-K'}[k]||k)+'</a>').join(' · ');
+  $('adbeModel').innerHTML='<p><b>Umbral de investigación: '+(usable?fmt(d.reviewThresholdUSD):'DESACTIVADO')+'</b> · margen de seguridad supuesto '+num(100*d.marginOfSafetyAssumption)+'%. No es un precio de compra aprobado.</p><div class="scroller"><table><thead><tr><th>Escenario</th><th>FCFF / acción</th><th>Crecimiento</th><th>WACC</th><th>ROIC incremental</th><th>Peso terminal</th></tr></thead><tbody>'+rows+'</tbody></table></div><p class="fine">FCFE histórico TTM: '+num(d.ttmMillions.reportedFCFE)+' MUSD; después de SBC y adquisiciones: '+num(d.ttmMillions.economicFCFEAfterSBCAndAcquisitions)+' MUSD. Fuentes: '+sources+'.</p><p class="fine">Conciliaciones XBRL: '+d.checks.xbrlComparisons.length+'; hipótesis de rentabilidad y coste de capital no homologadas.</p>';
+  if(!usable){quote.textContent='Comparación desactivada hasta renovar las fuentes y conciliar las cuentas.';return}
+  const cfg=JSON.parse(localStorage.getItem('ir_cloud_config_v3')||'null'),session=JSON.parse(sessionStorage.getItem('ir_cloud_session_v3')||'null');
+  if(!cfg?.url||!cfg?.key||!session?.access_token||Date.now()>=(Number(session.expires_at||0)*1000)){quote.textContent='Inicia sesión en Investment Radar para contrastar con el cierre IEX guardado.';return}
+  const q=await fetch(cfg.url+'/rest/v1/investment_radar_market_closes?ticker=eq.ADBE&select=close_price,session_date,feed',{headers:{apikey:cfg.key,Authorization:'Bearer '+session.access_token},cache:'no-store'});
+  if(!q.ok)throw Error('Cotización no disponible: HTTP '+q.status);
+  const rowsQ=await q.json(),r=rowsQ[0];
+  const px=Number(r?.close_price),qd=Date.parse(r?.session_date||'');
+  if(!r||r.feed!=='iex'||!Number.isFinite(px)||px<=0||!Number.isFinite(qd)||Date.now()-qd>5*86400000||qd>Date.now()){quote.textContent='Sin cierre IEX suficientemente reciente: no se genera indicación de revisión.';return}
+  quote.textContent='Cierre IEX no consolidado '+r.session_date+': '+fmt(px)+' · '+(px<=d.reviewThresholdUSD?'UMBRAL DE INVESTIGACIÓN ALCANZADO: revisar la tesis, no comprar automáticamente.':'No se alcanza el umbral de investigación.')+' Descuento frente al escenario central: '+num(100*(1-px/d.scenarios.central.perShareUSD))+'%.';
+ }catch(e){out.textContent='Modelo o cotización no disponible: '+e.message;quote.textContent='No hay señal de investigación verificada.'}
+}
 async function load(){
  try{
   const res=await fetch('./data/fundamental-research.json?'+Date.now(),{cache:'no-store'});
   if(!res.ok)throw Error('La primera ejecución del motor no está disponible: HTTP '+res.status);
   const d=await res.json();if(d.schema!==1||!Array.isArray(d.companies)||!d.summary)throw Error('Archivo de análisis incompatible');
-  dataset=d;render();await loadSectorModels();await loadFilingAudit();await loadAutoResearch();await loadFCFFFCFE();await loadSECtagCandidates();
+  dataset=d;render();await loadSectorModels();await loadFilingAudit();await loadAutoResearch();await loadFCFFFCFE();await loadSECtagCandidates();await loadAdobeReviewed();
  }catch(e){$('notice').textContent='Motor pendiente o no disponible: '+e.message}
 }
 $('search').oninput=()=>dataset&&render();$('filter').onchange=()=>dataset&&render();load();
