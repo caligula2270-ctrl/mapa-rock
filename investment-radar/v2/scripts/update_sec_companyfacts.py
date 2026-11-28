@@ -45,6 +45,7 @@ TAGS={
  "taxes":("us-gaap","IncomeTaxExpenseBenefit","USD"),
  "interest_expense":("us-gaap","InterestExpense","USD"),
  "cash_interest_paid":("us-gaap","InterestPaid","USD"),
+ "cash_interest_paid_net":("us-gaap","InterestPaidNet","USD"),
  "income_tax_expense":("us-gaap","IncomeTaxExpenseBenefit","USD"),
  "pretax_income":("us-gaap","IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest","USD"),
  "depreciation_and_amortization":("us-gaap","DepreciationDepletionAndAmortization","USD"),
@@ -95,7 +96,7 @@ def evidence_candidates(src:dict)->dict:
     if valid:
      matches.append({"taxonomy":namespace,"tag":tag,"label":v.get("label",tag),
       "definition":v.get("description","")[:280],
-      "latest":valid[0],"otherRecent":valid[1:3]})
+      "latest":valid[0],"otherRecent":valid[1:30]})
   result[family]=matches
  return result
 
@@ -135,8 +136,7 @@ def main():
   previous=json.loads(OUT.read_text())
   comparison={k:v for k,v in previous.items() if k!="retrievedAt"}
   if comparison==result:
-   print("No changes in source reporting periods or facts")
-   return
+   print("Source successfully rechecked; reported facts unchanged")
  result["retrievedAt"]=dt.datetime.now(dt.timezone.utc).isoformat()
  ROOT.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n")
