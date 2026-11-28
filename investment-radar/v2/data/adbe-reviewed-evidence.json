@@ -1,0 +1,117 @@
+{
+  "ticker": "ADBE",
+  "units": "USD millions; shares millions",
+  "reviewed": "2026-11-28",
+  "sources": {
+    "annual": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+    "interim": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+    "guidance": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+  },
+  "periods": {
+    "fy": {
+      "end": "2025-11-28",
+      "revenue": 23769,
+      "ebit": 8706,
+      "ni": 7130,
+      "cfo": 10031,
+      "capex": 179,
+      "sbc": 1942,
+      "da": 818,
+      "deferredTax": -512,
+      "impairment": 0,
+      "otherNoncash": 48,
+      "wc": [
+        -275,
+        -90,
+        64,
+        180,
+        -45,
+        771
+      ],
+      "interestPaid": 246,
+      "borrow": 1997,
+      "repay": 1500,
+      "acquisitions": 17
+    },
+    "ytd": {
+      "end": "2026-08-28",
+      "revenue": 19776,
+      "ebit": 7010,
+      "ni": 5428,
+      "cfo": 7646,
+      "capex": 180,
+      "sbc": 1582,
+      "da": 582,
+      "deferredTax": 164,
+      "impairment": 70,
+      "otherNoncash": 94,
+      "wc": [
+        278,
+        -497,
+        67,
+        -196,
+        3,
+        71
+      ],
+      "interestPaid": 197,
+      "borrow": 493,
+      "repay": 250,
+      "acquisitions": 1560
+    },
+    "prior": {
+      "end": "2025-08-29",
+      "revenue": 17575,
+      "ebit": 6445,
+      "ni": 5274,
+      "cfo": 6871,
+      "capex": 145,
+      "sbc": 1453,
+      "da": 634,
+      "deferredTax": -391,
+      "impairment": 0,
+      "otherNoncash": 37,
+      "wc": [
+        -25,
+        -157,
+        -23,
+        -195,
+        -11,
+        275
+      ],
+      "interestPaid": 196,
+      "borrow": 1997,
+      "repay": 1500,
+      "acquisitions": 17
+    }
+  },
+  "balance": {
+    "end": "2026-08-28",
+    "assets": 29981,
+    "liabilities": 18217,
+    "equity": 11764,
+    "cash": 4359,
+    "investments": 1280,
+    "debtCurrent": 1597,
+    "debtLong": 4766,
+    "operatingLeases": 399,
+    "sharesAtBalance": 391,
+    "sharesAtCover": 389.2,
+    "sharesAtCoverDate": "2026-09-18",
+    "quarterDiluted": 395
+  },
+  "guidance": {
+    "published": "2026-09-10",
+    "revenueLow": 26576,
+    "revenueHigh": 26626,
+    "arrGrowth": 0.102,
+    "gaapTax": 0.225
+  },
+  "policy": {
+    "marginOfSafety": 0.3,
+    "operatingCashReservePct": 0.02,
+    "terminalROIC": 0.2
+  },
+  "notes": [
+    "CFO line-item sums checked before TTM construction. Operating leases treated as operating costs; debt excludes operating lease liabilities. SBC remains in GAAP EBIT; no add-back in forecast. Quarterly diluted average is conservative denominator versus date-specific count, not fully diluted current outstanding. Semrush acquisition is historical cash outflow; forecast reinvestment includes growth funded by organic or acquired assets, not an additional arbitrary acquisition deduction. No forecast of buybacks. WACC and ROIC are analyst scenarios, not company guidance or observed market estimates."
+  ]
+}
